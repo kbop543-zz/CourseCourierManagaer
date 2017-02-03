@@ -34,7 +34,7 @@ As of right now all members are working on other aspects
 
 #### Artifacts
 
-*Determined Product Idea and Code base [url="https://docs.google.com/document/d/16WStC-LvLA7TRMHt6HLsg36zxYrUATyPOoTpAV7RrwE/edit?usp=sharing"]Here[/url]
+*Determined Product Idea and Code base https://docs.google.com/document/d/16WStC-LvLA7TRMHt6HLsg36zxYrUATyPOoTpAV7RrwE/edit?usp=sharingHere[
 
 
 
