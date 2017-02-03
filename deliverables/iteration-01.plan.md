@@ -2,8 +2,8 @@
 
 ## Iteration 01
 
- * Start date: 2/2/2017 9:00 pm
- * End date: 2/6/2017
+ *Start date: 2/2/2017 9:00 pm
+ *End date: 2/6/2017
 
 ## Process
 
@@ -29,8 +29,8 @@ As of right now all members are working on other aspects
 
 #### Goals and tasks
 
-* Determine Project Idea
-* Determine In Person Meeting Times
+*Determine Project Idea
+*Determine In Person Meeting Times
 
 #### Artifacts
 
