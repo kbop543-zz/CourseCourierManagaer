@@ -43,7 +43,9 @@ YOUR ANSWER GOES HERE ...
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-YOUR ANSWER GOES HERE ...
+Users would choose our product because it allows them to easily organize and chronologize their course load for all of their courses. It saves students the stress of looking at every single syllabus and having to write down everything for each course that is due by hand. This can be a time-consuming and exertive process. Our product takes that exhaustive process and turns it into the simple task of just uploading a syllabus and letting a pdf reader parse and organize their assignments in chronological order for the user. 
+
+Another reason they would use our product is it can help students to set goals for their performance in school. We want students to be able to create 'GPA goals' and have the ability to track their process. With our product, students can easily enter the grades they got on an assignment or test and our product can determine what that student's grade is for that course. Our product can then provide simple feedback on whether the student is on their way to their semester or course goals and what kind of grades they should get on the rest of their course assignments to stay on track. Without an interface like this, it would be difficult for a student to set a specific goal and stick to it.
 
  * Short (1 - 2 min' read max)
  * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
