@@ -8,15 +8,18 @@
 YOUR ANSWER GOES HERE ...
 
 *******
-##### Courier course manager is a simple way to organize your school goals.
-**Automated**
+#### Courier course manager is a simple way to organize your school goals
+
+###### Automated
 Given a minimal amount of information, such as a syllabus, Courier can provide a schedule that can help you commit to schoolwork more reliably.
 
-**Adaptive to the individual**
-Courier allows for variable timeframes and scheudle management based upon your educational goals and commitments.
+###### Adaptive to the individual
+Courier allows for variable timeframes and schedule management based upon your educational goals and commitments.
 
-**Scalable, Helpful, Intuitive**
+###### Scalable, Helpful, Intuitive
 Given the cloud based web app architechture, Courier can organize even the most busy schdules and people.
+
+![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/Timetable_view.png "Early prototype of timetable view")
 
 *******
 
@@ -43,7 +46,7 @@ YOUR ANSWER GOES HERE ...
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-Users would choose our product because it allows them to easily organize, weight  and chronologize their course load for all of their courses. It saves students the stress of looking at every single syllabus and having to write down everything for each course that is due by hand. This can be a time-consuming and exertive process. Our product takes that exhaustive process and turns it into the simple task of just uploading a syllabus and letting a pdf reader parse and organize their assignments in a chronological order for the user. 
+Users would choose our product because it allows them to easily organize, weight  and chronologize their course load for all of their courses. It saves students the stress of looking at every single syllabus and having to write down everything for each course that is due by hand. This can be a time-consuming and exertive process. Our product takes that exhaustive process and turns it into the simple task of just uploading a syllabus and letting a pdf reader parse and organize their assignments in a chronological order for the user.
 
 With the ability to weight each course assignment or test with the percentage it is worth, students can easily know how much a course task is worth and our product will calculate the grade accordingly.
 
