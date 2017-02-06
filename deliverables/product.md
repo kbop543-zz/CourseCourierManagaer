@@ -19,7 +19,7 @@ Courier allows for variable timeframes and schedule management based upon your e
 ###### Scalable, Helpful, Intuitive
 Given the cloud based web app architechture, Courier can organize even the most busy schdules and people.
 
-![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/Timetable_view.png "Early prototype of timetable view")
+![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/deliverables/Timetable_view_prototype.png "Early prototype of timetable view")
 
 *******
 
