@@ -49,23 +49,19 @@ Instructor Persona - Professor Pittain:
  * Be specific (e.g. )
  * Feel free (but not obligated) to use personas.        
    You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).
+   
+----
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-Users would choose our product because it allows them to easily organize, weight  and chronologize their course load for all of their courses. It saves students the stress of looking at every single syllabus and having to write down everything for each course that is due by hand. This can be a time-consuming and exertive process. Our product takes that exhaustive process and turns it into the simple task of just uploading a syllabus and letting a pdf reader parse and organize their assignments in a chronological order for the user.
+#####Organize their course load
+Users would choose our product because it allows them to easily organize, weigh  and chronologize their course load for all of their courses. It saves students the stress of looking at every single syllabus and having to write down everything for each course that is due by hand. This can be a time-consuming and exertive process. Our product takes that exhaustive process and turns it into the simple task of just uploading a syllabus. The chronological ordering of due dates will help students to avoid being surprised by deadlines that are coming up.
 
-With the ability to weight each course assignment or test with the percentage it is worth, students can easily know how much a course task is worth and our product will calculate the grade accordingly.
+#####Plan when to work
+The product will also allow instructors to suggest start dates for particular course tasks. This will act as a guide for the student so they know when to start working on a specific task. Our product will also allow users to set reminders to start working on a task. This will help students to not forget about certain courses because our product can alert them even if they don't check our app periodically. These features will help the student lay down the specifics of how they should prioritize their work.
 
-The product will also allow reminders to be set. We  want users to be able to set reminders for when a certain assignment or test is due. This will help students to not forget about certain courses because our product can alert them even if they don't check the app periodically.
-
-Another reason they would use our product is it can help students to set goals for their performance in school. We want students to be able to create 'GPA goals' and have the ability to track their process. With our product, students can easily enter the grades they got on an assignment or test and our product can determine what that student's grade is for that course. Our product can then provide simple feedback on whether the student is on their way to their semester or course goals and what kind of grades they should get on the rest of their course assignments to stay on track. Without an interface like this, it would be difficult for a student to set a specific goal and stick to it. Students would have to use third party softwares to calculate their grades and then another software to calculate those grades into gpa grades. Our product is saving the student time,organizing their course load and providing feedback on their goals.
-
- * Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
+#####Easy calculation of grades
+Students will be able to input the grades they get on certain assigned course tasks. Our product will calculate the grade they have in each course accordingly. This will benefit students because they can see where they stand in their course quickly and easily without having to constantly recalculate their grade throughout the semester. Depending on their grade, the user can also prioritize the course accordingly.
 
 
 ----
