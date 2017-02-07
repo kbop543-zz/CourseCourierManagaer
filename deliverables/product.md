@@ -61,7 +61,7 @@ Users would choose our product because it allows them to easily organize, weigh 
 The product will also allow instructors to suggest start dates for particular course tasks. This will act as a guide for the student so they know when to start working on a specific task. Our product will also allow users to set reminders to start working on a task. This will help students to not forget about certain courses because our product can alert them even if they don't check our app periodically. These features will help the student lay down the specifics of how they should prioritize their work.
 
 #####Easy calculation of grades
-Students will be able to input the grades they get on certain assigned course tasks. Our product will calculate the grade they have in each course accordingly. This will benefit students because they can see where they stand in their course quickly and easily without having to constantly recalculate their grade throughout the semester. Depending on their grade, the user can also prioritize the course accordingly.
+A user will be able to input the grades they get on certain assigned course tasks. Our product will calculate the grade they have in each course accordingly and incrementally. This will benefit students because they can see where they stand in their course quickly and easily without having to constantly recalculate their grade throughout the semester. Depending on their grade, the user can also prioritize the course accordingly so that they ensure they are meeting their goals. 
 
 
 ----
