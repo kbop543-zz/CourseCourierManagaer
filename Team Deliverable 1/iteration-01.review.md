@@ -7,8 +7,8 @@
 
 ## Iteration XX - Review & Retrospect
 
- * When: FILL IN THE DATE WHEN YOU ACTUALLY HAD YOUR REVIEW MEETING
- * Where: PHYSICAL LOCATION AND/OR ONLINE
+ * When: Thursday, February 9, 2017, 5 pm
+ * Where: Bahen with some people online
 
 ## Process - Reflection
 
@@ -18,7 +18,7 @@
 
 List process-related (i.e. team organization) decisions that, in retrospect, turned out to be successful.
 
-
+1. Dividing up the responsibilities seem to turn out well because everyone completed their part on time.
  * 2 - 4 decisions.
  * Ordered from most to least important.
  * Explain why (i.e. give a supporting argument) you consider a decision to be successful.
