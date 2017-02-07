@@ -40,6 +40,11 @@ Given the syllabi for courses, Courier schedules timeframes to complete each eva
 
 YOUR ANSWER GOES HERE ...
 
+Not only can this application help students stay organized, but it also allows professors to dynamically manage coursework they assign to their students.
+
+Student Persona - Nathan Campbell: https://app.xtensio.com/folio/58etyr0z
+Instructor Persona - Professor Pittain: 
+
  * Short (1 - 2 min' read max)
  * Be specific (e.g. )
  * Feel free (but not obligated) to use personas.        
