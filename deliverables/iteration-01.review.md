@@ -50,5 +50,6 @@ List process-related (i.e. team organization) decisions that, in retrospect, wer
 ## Meeting Highlights
 
 Going into the next iteration, our main insights are:
+
 1. We plan to use aspects of agile development more stringently in the future. Given how we had problems in the first iteration with aspects of planning adhering to an established development platform can help get things done more quickly and effectively.
 2. We will start developing basic UI and writing code for the product. The main goal here is to have a presentable product to show for our efforts.
