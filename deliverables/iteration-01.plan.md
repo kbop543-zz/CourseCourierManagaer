@@ -7,7 +7,7 @@
 
 ## Process
 
-The main purpose of this meeting was to determine what our product for our project would be. We decided to build a course goal organizer. We also discussed potential meetup times, for both in person and online meetings. We discussed the languages everyone was familiar with and settled with doing a web application using Javascript, HTML,CSS, Java using the frameworks NodeJs(?) and Ajax(?).
+The main purpose of this meeting was to determine what our product for our project would be. We decided to build a course goal organizer. We also discussed potential meetup times, for both in person and online meetings. We discussed the languages everyone was familiar with and settled with doing a web application using Javascript, HTML,CSS, Java likely using the frameworks NodeJs and Ajax.
 
 #### Roles & responsibilities
 
