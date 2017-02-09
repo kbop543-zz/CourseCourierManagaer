@@ -1,11 +1,8 @@
 # Courier Course Manager / TEAM Mighty Moose
 
- > _Note:_ This document is meant to evolve throughout the planning phase of your project.    
- > That is, it makes sense for you commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section).
-
+*******
 #### Q1: What are you planning to build?
 
-*******
 ### Courier course manager is a simple way to organize your school goals
 
 ##### Automated
