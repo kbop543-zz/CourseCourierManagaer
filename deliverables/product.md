@@ -26,8 +26,8 @@ A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/s
 
 Not only can this application help students stay organized, but it also allows professors to dynamically manage coursework they assign to their students.
 
-Student Persona - [Nathan Campbell](https://app.xtensio.com/folio/58etyr0z)
-Instructor Persona - Professor Pittain:
+* Student Persona - [Nathan Campbell](https://app.xtensio.com/folio/58etyr0z)
+* Instructor Persona - Professor Pittain:
 
 *******
 
