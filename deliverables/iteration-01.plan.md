@@ -11,13 +11,19 @@ The main purpose of this meeting was to determine what our product for our proje
 
 #### Roles & responsibilities
 
-As of right now all members are working on other aspects 
+We will the work for iteration 1 thusly:
+ * Filip will create an overall description of our product
+ * Hari will create some sample profiles of the users our product is tailored to
+ * Kyra will create some reasons for why users might want to use our product
+ * John will compile a list of highlights of our decision making process
+ * Jeremy will work on creating the plan.md and review.md
+ * Taha will create some sample mockups of our product
 
 #### Events
   * This meeting and others may be online depending
   * Next meeting will be on Tuesday 7/2/2017, at Bahen
   * Currently meetings are variable
-  * Use Slack to have improptu communication and 
+  * Use Slack to have improptu communication and ask questions when needed rather than wait for the next meeting 
 
 #### Artifacts
     
