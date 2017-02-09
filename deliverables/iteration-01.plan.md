@@ -28,6 +28,8 @@ We will the work for iteration 1 thusly:
 #### Artifacts
     
 * Maintain google documents for each meeting
+* Discuss and have meetings using Slack presenting ideas and discussing them as they see fit
+* In order to assign tasks to members we both notify them on Slack and in google documents
 * Create Personas for Users
 * User Stories
 
