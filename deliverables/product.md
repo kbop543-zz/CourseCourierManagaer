@@ -19,7 +19,7 @@ Given the cloud based web app architechture, Courier can organize even the most 
 Given the syllabi for multiple courses, Courier can dynamically schedule timeframes to work on each evaluation to meet the particular students needs. As the school term progresses, the student can update their marks for evaluations, and future work timeframes will adapt according to the percieved student needs. 
 After initial configuration, Courier intends to be used as a simple, lightweight accompaniment to a students average workday. Allowing optional notifications for both course and instuctor updates, Courier can also provide vital information in a simple, digestable format. 
 
-A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/screen/24617130)
+A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/screen/24775274)
 *******
 
 #### Q2: Who are your target users?
