@@ -16,7 +16,9 @@ Given the cloud based web app architechture, Courier can organize even the most 
 
 ![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/Timetable_view_prototype.png "Early prototype of timetable view")
 
-Given the syllabi for courses, Courier schedules timeframes to complete each evaluation to the students needs.  
+Given the syllabi for courses, Courier schedules timeframes to complete each evaluation to the students needs.
+
+A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/screen/24617130)
 *******
 
 #### Q2: Who are your target users?
