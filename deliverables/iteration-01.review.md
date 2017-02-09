@@ -22,7 +22,6 @@ List process-related (i.e. team organization) decisions that, in retrospect, tur
 
 #### Decisions that did not turn out as well as we hoped
 
-List process-related (i.e. team organization) decisions that, in retrospect, were not as successful as you thought they would be.
 1. Have not had an in person meeting where everyone was present yet
 2. Planned for multiple in-person meetings that did not occur
 3. Confusion about what our project actually was for a portion of the iteration.
