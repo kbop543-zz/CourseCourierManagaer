@@ -6,7 +6,7 @@
 ### Courier course manager is a simple way to organize your school goals
 
 ##### Automated
-Given a minimal amount of information, such as a syllabus, Courier can provide a schedule that can help you commit to schoolwork more reliably.
+Given a minimal amount of information, just a syllabus, Courier can provide a schedule that can help you commit to schoolwork more reliably.
 
 ##### Adaptive to the individual
 Courier allows for variable timeframes and schedule management based upon your educational goals and commitments.
@@ -14,9 +14,10 @@ Courier allows for variable timeframes and schedule management based upon your e
 ##### Scalable, Helpful, Intuitive
 Given the cloud based web app architechture, Courier can organize even the most busy schdules and people.
 
-![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/Timetable_view_prototype.png "Early prototype of timetable view")
+![timetable view prototype](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/Timetable_view_prototype.png "Early prototype of base timetable view")
 
-Given the syllabi for courses, Courier schedules timeframes to complete each evaluation to the students needs.
+Given the syllabi for multiple courses, Courier can dynamically schedule timeframes to work on each evaluation to meet the particular students needs. As the school term progresses, the student can update their marks for evaluations, and future work timeframes will adapt according to the percieved student needs. 
+After initial configuration, Courier intends to be used as a simple, lightweight accompaniment to a students average workday. Allowing optional notifications for both course and instuctor updates, Courier can also provide vital information in a simple, digestable format. 
 
 A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/screen/24617130)
 *******
