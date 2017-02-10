@@ -26,11 +26,13 @@ A sample mock up for Courier is available [here](https://marvelapp.com/2a3a6b6/s
 
 Not only can this application help students stay organized, but it also allows professors to dynamically manage coursework they assign to their students.
 
-We are targetting to the average student, who wants to successfully manage their school and social life and stop mentally managing his course load, portrayed by [Nathan Campbell](https://app.xtensio.com/folio/58etyr0z).
-We are also targetting to students with an above average workload who may find it hard to organize how to handle their immense work load such as <insert Student here>, the computer science student, and to students who may have a smaller than average workload such as <insert Student here>, the english major.
+* We are targetting to the average student, who wants to successfully manage their school and social life and stop mentally managing his course load, portrayed by [Nathan Campbell](https://app.xtensio.com/folio/58etyr0z).
 
-The instructors we are targetting to are committed to helping their students organize their work load. 
-* Instructor Persona - Professor Pittain:
+* We are also targetting to students with an above average workload who may find it hard to organize how to handle their immense work load such as ((insert Student here)), the computer science student.
+
+* We are also targetting to students who may have a smaller than average workload such as ((insert Student here)), the english major.
+
+* The instructors we are targetting to are committed to helping their students organize their work load such as Professor Pittain.
 
 *******
 
