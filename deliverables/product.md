@@ -28,11 +28,11 @@ Not only can this application help students stay organized, but it also allows p
 
 * We are targetting to the average student, who wants to successfully manage their school and social life and stop mentally managing his course load, portrayed by [Nathan Campbell](https://app.xtensio.com/folio/58etyr0z).
 
-* We are also targetting to students with an above average workload who may find it hard to organize how to handle their immense work load such as ((insert Student here)), the computer science student.
+* We are also targetting to students with an above average workload who may find it hard to organize how to handle their immense work load ,as portrayed by ((insert Student here)), the computer science student.
 
-* We are also targetting to students who may have a smaller than average workload such as [Georgina RR Martin](https://app.xtensio.com/folio/xdhjp4e3), the english major.
+* We are also targetting to students who may have a smaller than average workload ,as portrayed by [Georgina RR Martin](https://app.xtensio.com/folio/xdhjp4e3), the english major.
 
-* The instructors we are targetting to are committed to helping their students organize their work load such as Professor Pittain.
+* The instructors we are targetting to are committed to helping their students organize their work load ,as portrayed by Professor Pittain.
 
 *******
 
