@@ -47,13 +47,13 @@ A user will be able to input the grades they get on certain assigned course task
 
 ### Highlights
 
-1. Here are some of our ideas we thought were novel but had already been made:
+1. **Always check if your idea already exists.** Here are some of our ideas we thought were novel but had already been made:
     * A chrome extension that removes spoilers from your webpage
     * Pinterest for men
     * Grindr for queer women
     * A recipe maker
     * Seinfeld gif maker
-2. 
+2. **Don’t build something too complex.**
     * One idea we had was a textbook that a class would share with each other online, where they could highlight sections of it, and the app would create summaries of chapters based on what students were highlighting
 	    * While the idea has definite value for students, creating a shared document for multiple people to annotate would take some time
 	    * An even bigger challenge the app presents is the way to create summaries since natural language processing for information retrieval is a pretty challenging field of computer science
@@ -62,11 +62,11 @@ A user will be able to input the grades they get on certain assigned course task
 	    * Some challenges we had were that google maps doesn't have floor plans for every UofT building. There is a website where you can download blueprints of each floor of every UofT building, but you could only download the blueprint of one room at a time. In order to build something comprehensive, we would have to store thousands of blueprints, and then be able to intelligently move between different blueprints for the different floors and rooms
 	    * One workaround we considered were physical beacons set up throughout every floor of building to help you navigate based on those. A similar workaround used QR code stickers spread throughout campus to give you a similar idea of where you were
 	    * Both of these solutions were unfeasible because not only would we need to devise a system of communicating with these objects, we would have to buy/make them, and set them up.
-3. Here's a list of ideas we came up with that had obvious value but weren't technically legal:
+3. **Don't building something that breaks the law.** Here's a list of ideas we came up with that had obvious value but weren't technically legal:
  * An online group for sharing metropasses
  * An app that tries dozens of default wifi passwords on all the available wifi networks around you
  * Uber for alcohol
-4.  Our TAs suggested some ways that previous CSC301 students reframed their app ideas to target specific user groups and to elevate their app ideas beyond just entertainment
+4.  **Sometimes it can be useful to reframe your app ideas. ** Our TAs suggested some ways that previous CSC301 students reframed their app ideas to target specific user groups and to elevate their app ideas beyond just entertainment
   * Telecounselling app that allows instant messaging and video calls between shy students who feel uncomfortable talking in-person and counsellors who don't have enough time to meet every student in-person
   * A physics tanks game that made players input projectile equations to hit opponents, thus teaching players about physics
   * A Wolfenstein/Doom-like videogame for blind people
