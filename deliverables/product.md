@@ -66,7 +66,7 @@ A user will be able to input the grades they get on certain assigned course task
  * An online group for sharing metropasses
  * An app that tries dozens of default wifi passwords on all the available wifi networks around you
  * Uber for alcohol
-4.  **Sometimes it can be useful to reframe your app ideas. ** Our TAs suggested some ways that previous CSC301 students reframed their app ideas to target specific user groups and to elevate their app ideas beyond just entertainment
+4.  **Sometimes it can be useful to reframe your app ideas.** Our TAs suggested some ways that previous CSC301 students reframed their app ideas to target specific user groups and to elevate their app ideas beyond just entertainment
   * Telecounselling app that allows instant messaging and video calls between shy students who feel uncomfortable talking in-person and counsellors who don't have enough time to meet every student in-person
   * A physics tanks game that made players input projectile equations to hit opponents, thus teaching players about physics
   * A Wolfenstein/Doom-like videogame for blind people
