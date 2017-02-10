@@ -12,12 +12,10 @@ The main purpose of this meeting was to determine what our product for our proje
 #### Roles & responsibilities
 
 This is how the work was split up for team deliverable 1:
- * Filip will create an overall description of our product
- * Hari will create some sample profiles of the users our product is tailored to
- * Kyra will create some reasons for why users might want to use our product
- * John will compile a list of highlights of our decision making process
- * Jeremy will work on creating the plan.md and review.md
- * Taha will create some sample mockups of our product
+ * Product Conceptualizers: Filip and Kyra will create an overall description of our product. They will hash out the features that we discussed and agreed upon and ensure these features will be unique in their scope. 
+ * User Story Conceptualizer: Hari will create some sample profiles of the users our product is tailored to. The users he conceptualizes will benefit from the features our product will have because it satisfies their needs.
+ * Organizer: John and Jeremy will keep track of our design process. They will update the google documents with our meeting notes and track our progress to ensure we complete the goals of this iteration.
+ * Designer:Taha will create some sample mockups of our product. He will create diagrams and conceptualize how our features will be laid out.
 
 #### Events
   * This meeting on February 2, 2017 was on Google Hangouts. The purpose was to vote among the ideas ,which we informally brainstormed about in the tutorial on our slack. We decided to build a course organizer. We clarified details about our product that would make it possible for each member to start their assigned part of team deliverable 1.
