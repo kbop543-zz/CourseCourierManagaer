@@ -32,7 +32,7 @@ Not only can this application help students stay organized, but it also allows p
 
 * We are also targetting to students who may have a smaller than average workload ,as portrayed by [Georgina RR Martin](https://app.xtensio.com/folio/xdhjp4e3), the english major.
 
-* The instructors we are targetting to are committed to helping their students organize their work load ,as portrayed by Professor Pittain.
+* The instructors we are targetting to are committed to helping their students organize their work load ,as portrayed by [Professor Pittain](https://app.xtensio.com/folio/dt6b6myz).
 
 *******
 
