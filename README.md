@@ -15,6 +15,7 @@ ta da!
 
 
 *FOLDER ORGANIZATION*
+
 routes has the server code
 
 models has the database code
