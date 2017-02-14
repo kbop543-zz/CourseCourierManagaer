@@ -7,8 +7,8 @@
 
 ## Iteration XX - Review & Retrospect
 
- * When: Monday, February 13, 2017, 8 pm
- * Where: Whole team in Bahen Tutorial
+ * When: FILL IN THE DATE WHEN YOU ACTUALLY HAD YOUR REVIEW MEETING
+ * Where: PHYSICAL LOCATION AND/OR ONLINE
 
 ## Process - Reflection
 
