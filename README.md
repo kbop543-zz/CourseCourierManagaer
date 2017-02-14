@@ -12,3 +12,11 @@ How to run project
 
 
 ta da!
+
+
+*FOLDER ORGANIZATION*
+routes has the server code
+
+models has the database code
+
+assets has the css and javascript client side code
