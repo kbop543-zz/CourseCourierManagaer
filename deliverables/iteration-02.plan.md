@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# Courier Course Manager / TEAM Mighty Moose
 
  > _Note:_ This document is meant to be written during (or shortly after) your initial planning meeting.     
  > It does not really make sense for you to edit this document much (if at all) while working on the project - Instead, at the end of the planning phase, you can refer back to this document and decide which parts of your plan you are happy with and which parts you would like to change.
@@ -6,8 +6,8 @@
 
 ## Iteration XX
 
- * Start date: FILL IN THE DATE WHEN YOU HAD YOUR FIRST TEAM PLANNING MEETING
- * End date: FILL IN THE DATE WHEN YOU ARE PLANNING TO HAVE YOUR REVIEW MEETING
+ * When: Monday, February 13, 2017, 8 pm
+ * Where: Whole team in Bahen tutorial room
 
 ## Process
 
