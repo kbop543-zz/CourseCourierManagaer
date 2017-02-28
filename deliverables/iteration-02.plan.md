@@ -6,26 +6,45 @@
 
 ## Iteration XX
 
- * When: Monday, February 13, 2017, 8 pm
- * Where: Whole team in Bahen tutorial room
+ * When: Monday, February 27, 2017, 8 pm
+ * Where: Whole team in Bahen tutorial room with some people on line
 
 ## Process
 
-(Optional:) Quick introduction
+We discussed what exactly we want to showcase in our video and how we can break down what needs to get done so everyone has a part to do. We decided that we want a user to be able to sign in, upload a text file that would represent a syllabus, create a export calendar file that has the dates the course tasks that are due and display the course tasks in the web app in a table format with the course name, weight of the course task and date the course task is due. 
 
 #### Roles & responsibilities
 
-Describe the different roles on the team and the responsibilities associated with each role.
+User Session Maintainers: Kyra and Hari will set up the database for users and use the express session api to maintain user sessions. Each user will have their course task calendar associated with their email. 
+Front End Designers: Jeremy will primarily work on the html and css part of the project. He will format how the website should look when a user signs in.
+Text File Parse Manager: Filip, Hari, Taha will work on how the text file should be parsed to organize the course task 
 
 #### Events
 
 Describe meetings (and other events) you are planning to have:
 
+We had a very unofficial quick meeting on Feb 13th via google hangouts where we decided everyone shoudl research on potential ways we can parse a text file to create a table where each course task from a syllabus is displayed with the course it is associated with, weight of it and the date it is due.
+This official planning meeting had Filip, Kyra and John in person within the tutorial while Hari, Taha and Jeremy were on google hangouts for this official planning meeting. 
+We will have another meeting at Friday, March 3 at 4:00 -4:30 pm to check in on what everyone has done so far and how we can merge it into the master branch.
+We want to have everyone finished their parts completed by Tuesday , March 7th. We will have a google hangout meeting to tie up loose ends and plan how to do our demo video from there.
  * When and where? In-person or online?
  * What's the purpose of each meeting?
  * Other events could be coding sessions, code reviews, quick weekly sync' meeting online, etc.
 
 #### Artifacts
+
+We used github issues to assign tasks. People joined the issue based on their assigned roles and responsibilites.
+The issues we created in github was:
+-Create Video Showcasing Functionality
+-Develop Front-End for User Creation Page
+-Develop Back-End for User data (user objects with user data)
+-Develop Backend Code to Authenticate User and "Retrieve" User Calendars
+-Front End Style
+-Develop Code to Read Text file input and Parse into Internal Objects.
+-Develop Front-End to Add Calendar
+-Develop Front-End to View Calendar
+-Event Objects to Exported Calendar File
+
 
 List/describe the artifacts you will produce in order to organize your team.       
 
@@ -36,6 +55,8 @@ List/describe the artifacts you will produce in order to organize your team.
    * How do tasks get assigned to team members?
 
 #### Git / GitHub workflow
+
+Everyone will fork their own version of the project. For each persons section, they would have their own branch they would work on. Example, Kyra and Hari would have their own branch and one person from that section would merge the changes into the master branch. Everyone will pull from the master branch to work on their own section of the project. 
 
 Describe your Git / GitHub workflow.     
 Essentially, we want to understand how your team members share a codebase and avoid conflicts.
