@@ -81,10 +81,10 @@ Goals:
 * Create a sign up and login page
   * Tasks:
   
- * Be able to upload a text file and download a calendar export
+* Be able to upload a text file and download a calendar export
    * Tasks:
  
- * Have a functionable UI
+* Have a functionable UI
    * Tasks:
    
  * Describe your goals for this iteration and the tasks that you will have to complete in order to achieve these goals.
