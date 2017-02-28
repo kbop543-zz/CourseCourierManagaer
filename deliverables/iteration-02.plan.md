@@ -17,7 +17,7 @@ We discussed what exactly we want to showcase in our video and how we can break 
 
 * User Session Maintainers: Kyra and Hari will set up the database for users and use the express session api to maintain user sessions. Each user will have their course task calendar/table associated with their email. 
 * Front End Designers: Jeremy will primarily work on the html and css part of the project. He will format how the website should look when a user signs in.
-* Text File Parse Manager: Filip, Hari, Taha will work on how the text file should be parsed to organize the course task 
+* Text File Parse Manager: Filip, Hari, Taha will work on how the text file should be parsed to organize the course tasks for each course.
 
 #### Events
 
