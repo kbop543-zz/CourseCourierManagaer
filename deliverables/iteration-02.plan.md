@@ -7,11 +7,11 @@
 ## Iteration XX
 
  * When: Monday, February 27, 2017, 8 pm
- * Where: Whole team in Bahen tutorial room with some people on line
+ * Where: Whole team in Bahen tutorial room with some people online
 
 ## Process
 
-We discussed what exactly we want to showcase in our video and how we can break down what needs to get done so everyone has a part to do. We decided that we want a user to be able to sign in, upload a text file that would represent a syllabus, create a export calendar file that has the dates the course tasks that are due and display the course tasks in the web app in a table format with the course name, weight of the course task and date the course task is due. 
+We discussed what exactly we want to showcase in our video and how we can break down what needs to get done so everyone has a part to do. We decided that we want a user to be able to sign in, upload a text file that would represent a syllabus, and receive a calendar file of the tasks and a basic table of their schedule in the web app. Both the calendar file and the table show important task information: name, weight, and due date.
 
 #### Roles & responsibilities
 
