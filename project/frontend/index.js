@@ -3,11 +3,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-
+var courier = require('./routes/courier-routes');
 var app = express();
 
-app.set('view engine', 'pug');
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + '/'));
 
 
 
@@ -19,17 +19,13 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 // Main page. 
 app.get('/', function(req, res) {
-
-	res.render('index', {
-    title: 'Courier Course Manager'
-        });
-})
-
+    res.sendfile('index.html');
+});
 
 
 //Routes
 
-/*app.get('/thingHere', ta.findAll); */
+/*app.get('/thingHere', courier.findAll); */
 
 
 
