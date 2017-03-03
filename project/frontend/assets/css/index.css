@@ -1,5 +1,77 @@
+/*
+Important colors:
+deep aqua: #003B46
+ocean: #07575B
+wave: #66A5AD
+seafoam: #C4DF#6
+source: https://designschool.canva.com/blog/100-color-combinations/
+*/
+html {
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    color: #66A5AD;
+    background: #C4DFE6;
+}
+
 #logo {
-    width: 240px;
+    z-index: 100;
+    position: absolute;
+    font-family: Garamond, serif;
+    color: #003B46;
+    font-size: 300%;
+    margin-bottom: 50px;
+}
+img{
+    left: 0;
+    top: 0;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.6;
+}
+nav ul{
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #07575B;
+}
+
+nav li{
+    float: left;
+}
+
+nav li a{
+    color: #66A5AD;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: #07575B;
+    background: #66A5AD;
+}
+
+#logo {
     font-size: 46px;
     margin-bottom: 50px;
+    text-align: center;
+}
+
+/*
+Responsive UI stuff to be added
+*/
+@media screen and (min-width: 480px)
+{
+    
+}
+
+@media screen and (min-width: 768px)
+{
+}
+
+@media screen and (min-width: 1280px)
+{
 }
