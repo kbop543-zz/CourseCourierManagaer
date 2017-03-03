@@ -81,31 +81,31 @@ public class ExportedCalendarFile {
 		ExportedCalendarFile file = new ExportedCalendarFile();
 //		Keybaord Input
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Enter an event description: \n");
+		System.out.println("Enter an event description:");
 		summary = keyboard.nextLine();
-		System.out.println("Enter an event start time in the format HHMMSS: \n");
+		System.out.println("Enter an event start time in the format HHMMSS:");
 		startTime = keyboard.nextLine();
-		System.out.println("Enter an event start date in the format YYYYMMDD: \n");
+		System.out.println("Enter an event start date in the format YYYYMMDD:");
 		startDate = keyboard.nextLine();
-		System.out.println("Enter an event end time in the format HHMMSS: \n");
+		System.out.println("Enter an event end time in the format HHMMSS:");
 		endTime = keyboard.nextLine();
-		System.out.println("Enter an event end date in the format YYYYMMDD: \n");
+		System.out.println("Enter an event end date in the format YYYYMMDD:");
 		endDate = keyboard.nextLine();
-		System.out.println("Enter an event description: \n");
+		System.out.println("Enter an event description:");
 		description = keyboard.nextLine();
-		System.out.println("Enter an event location: \n");
+		System.out.println("Enter an event location:");
 		location = keyboard.nextLine();
-		System.out.println("Enter an event exTime in the format HHMMSS: \n");
+		System.out.println("Enter an event exTime in the format HHMMSS:");
 		exTime = keyboard.nextLine();
-		System.out.println("Enter an event exDate in the format YYYYMMDD: \n");
+		System.out.println("Enter an event exDate in the format YYYYMMDD:");
 		exDate = keyboard.nextLine();
-		System.out.println("Enter an alarm trigger in the format -PT1H: \n");
+		System.out.println("Enter an alarm trigger in the format -PT1H:");
 		trigger = keyboard.nextLine();
-		System.out.println("Enter a number of alarm repeats: \n");
+		System.out.println("Enter a number of alarm repeats:");
 		repeat = keyboard.nextLine();
-		System.out.println("Enter the duration of each alarm in the format PT15M: \n");
+		System.out.println("Enter the duration of each alarm in the format PT15M:");
 		duration = keyboard.nextLine();
-		System.out.println("Enter a description for the alarm: \n");
+		System.out.println("Enter a description for the alarm:");
 		alarmDescription = keyboard.nextLine();
 		String eventToWrite = file.BuildEvent(
 				summary,
@@ -122,7 +122,7 @@ public class ExportedCalendarFile {
 				duration,
 				alarmDescription);
 //		File Output
-		try(PrintWriter out = new PrintWriter("UserGeneratedCalendar.ics")) {
+		try(PrintWriter out = new PrintWriter("FridayTest.ics")) {
 			out.println(eventToWrite);
 		}
 	}
