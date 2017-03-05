@@ -1,5 +1,6 @@
 /bin/
 /target/
+/tomcat.8080/
 log/
 .settings/
 .project
