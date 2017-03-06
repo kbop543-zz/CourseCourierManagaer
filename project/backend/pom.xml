@@ -5,7 +5,7 @@
   <artifactId>CourierBackend</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>embeddedTomcatSample Maven Webapp</name>
+  <name>courierBackend Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
     <tomcat.version>8.0.28</tomcat.version>
@@ -43,7 +43,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>embeddedTomcatSample</finalName>
+    <finalName>courierBackend</finalName>
     <plugins>
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -57,9 +57,6 @@
                         <name>webapp</name>
                     </program>
                 </programs>
-                <processTypes>
-                    <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-                </processTypes>
             </configuration>
             <executions>
                 <execution>
@@ -70,11 +67,6 @@
                 </execution>
             </executions>
         </plugin>
-     	<plugin>
-        	<groupId>com.heroku.sdk</groupId>
-        	<artifactId>heroku-maven-plugin</artifactId>
-        	<version>1.1.3</version>
-      	</plugin>
     </plugins>
   </build>
 </project>
