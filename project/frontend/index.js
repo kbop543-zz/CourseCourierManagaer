@@ -2,14 +2,14 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var validator = require('express-validator');
+var session = require('express-session');
 
-var courier = require('./routes/courier-routes');
+
 var app = express();
 
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/'));
-
-
 
 
 app.use(bodyParser.json());       // to support JSON-encoded bodies
@@ -17,15 +17,45 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
+app.use(validator());
+app.use(session({
+    secret: 'csc301',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(function(req, res, next) {
+    res.locals.session = req.session;
+    next();
+});
+
 // Main page. 
-app.get('/', function(req, res) {
+app.get('/index', function(req, res) {
     res.sendfile('index.html');
 });
 
+app.get('/login', function(req, res) {
+	if (req.session.username == undefined) {
+        res.sendfile('login.html');
+    } else {
+        usersDb.findOne({
+            username: req.session.username
+        });
+        res.sendfile('index.html');
+    }
+});
 
-//Routes
 
-/*app.get('/thingHere', courier.findAll); */
+// Routes files
+var users = require('./routes/userRoutes.js');
+
+// Models
+var usersDb = require('./models/user');
+
+
+//user routes
+app.post('/createAccount', users.signUp);
+app.post('/signIn', users.signIn);
+app.get('/getOneUser', users.getOneUser);
 
 
 

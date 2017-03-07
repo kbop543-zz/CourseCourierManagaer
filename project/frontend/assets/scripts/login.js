@@ -41,7 +41,7 @@ function signInSetup() {
     $('#login').submit(function(event) {
 
         event.preventDefault();
-        
+        console.log(5 + 6);
 
         // Get the data from form
         let formData = $('#login').serialize();
