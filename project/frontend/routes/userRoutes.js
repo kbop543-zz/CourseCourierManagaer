@@ -131,10 +131,11 @@ exports.getOneUser = function(req, res) {
         	console.log(foundUser);
             res.send(foundUser);
 
-        } else {
+        /*} else {
             // Return error if user not found
             res.status(500).send('The user you are trying to edit does not exist');
-        }
+        }*/
+    }
     });
 };
 

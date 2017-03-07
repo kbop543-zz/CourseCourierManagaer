@@ -44,6 +44,23 @@ app.get('/login', function(req, res) {
     }
 });
 
+app.get('/profile', function(req, res) {
+	if (req.session.username == undefined) {
+        res.sendfile('login.html');
+    } else {
+        usersDb.findOne({
+            username: req.session.username
+        });
+        res.sendfile('profile.html');
+    }
+});
+
+// Redirect to login and reset session on log out
+app.get('/logout', function(req, res) {
+    req.session.username = undefined;
+    res.redirect('/');
+});
+
 
 // Routes files
 var users = require('./routes/userRoutes.js');
