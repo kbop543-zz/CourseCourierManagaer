@@ -11,4 +11,7 @@ $(document).ready(function(){
         $("main").empty();
         $("main").append("<p>Courier Course Manager is an easy way for instructors and students to create, maintain, and update their schedules.<p/>");
     });
+    $('#home').click(function () {
+        $("main").empty();
+    });
 });
