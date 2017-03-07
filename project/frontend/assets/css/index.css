@@ -1,0 +1,120 @@
+/*
+Important colors:
+deep aqua: #003B46
+ocean: #07575B
+wave: #66A5AD
+seafoam: #C4DF#6
+source: https://designschool.canva.com/blog/100-color-combinations/
+*/
+html {
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #66A5AD;
+    background: #C4DFE6;
+}
+
+#logo {
+    display: center;
+    font-family: Garamond, serif;
+    color: #003B46;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+img{
+    margin-bottom: 0;
+    max-height: 50px;
+    max-width: 100%;
+    opacity: 0.6;
+}
+nav ul,footer ul{
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #07575B;
+    margin-bottom: 50px;
+}
+
+nav li,footer li{
+    float: center;
+}
+
+nav a,footer a{
+    color: #66A5AD;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover,footer a:hover {
+    color: #07575B;
+    background: #66A5AD;
+}
+input{
+    padding: 14px 16px;
+    width: 50%;
+}
+input[type=file] {
+    width: 100%;
+    box-sizing: border-box;
+}
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+}
+footer {
+    background: #07575B;
+    padding: 14px 16px;
+    bottom: 0;
+    text-align: center;
+}
+/*
+Responsive UI stuff to be added
+*/
+@media screen and (min-width: 480px)
+{
+    #logo {
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    html {
+        text-align: left;
+    }
+    #logo{
+       display: inline-flex;
+        margin-bottom: 50px;
+        
+    }
+    header img{
+        display: inline-flex;
+        max-height: 100px;
+    }
+
+    input{
+        padding: 14px 16px;
+        width: 10%;
+    }
+    input[type=file] {
+        width: 25%;
+        box-sizing: none;
+    }
+    input[type=text] {
+        width: 25%;
+    }
+    nav li{
+        float: left;
+    }
+    
+    footer{
+        position: fixed;
+        width: 100%;
+    }
+
+
+}
