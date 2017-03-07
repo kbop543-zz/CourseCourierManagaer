@@ -1,4 +1,4 @@
-package algorithms;
+package backend;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ExportedCalendarFile {
+public class CalendarFileStringGenerator {
 	private String jsonData;
 	private List<ArrayList<String>> events = new ArrayList<ArrayList<String>>();
 	
@@ -89,14 +89,12 @@ public class ExportedCalendarFile {
 		Pattern p = Pattern.compile("\"courseCode\":\"(\\w+)\"");
 		Matcher m = p.matcher(jsonData);
 		m.find();
-		System.out.println("Course " + m.group(1) + ".");
 		String courseCode = m.group(1);
 
 //		Get Event Names
 		p = Pattern.compile("\"name\":\\s*\"(\\w+)\"");
 		m = p.matcher(jsonData);
 		while (m.find()) {
-			System.out.println("Name " + m.group(1) + ".");
 			ArrayList<String> innerList = new ArrayList<String>();
 			innerList.add(courseCode + " " + m.group(1));
 			events.add(innerList);
@@ -107,7 +105,6 @@ public class ExportedCalendarFile {
 		m = p.matcher(jsonData);
 		int index = 0;
 		while (m.find()) {
-			System.out.println("Weight " + m.group(1) + ".");
 			ArrayList<String> innerList = events.get(index);
 			innerList.add(m.group(1));
 			++index;
@@ -118,21 +115,21 @@ public class ExportedCalendarFile {
 		m = p.matcher(jsonData);
 		index = 0;
 		while (m.find()) {
-			System.out.println("Due Dates " + m.group(1) + ".");
 			ArrayList<String> innerList = events.get(index);
 			innerList.add(m.group(1));
 			++index;
 		}
     }
 	
-	public static void main(String [ ] args) throws FileNotFoundException, IOException {
-		ExportedCalendarFile file = new ExportedCalendarFile();
+	public String GenerateString() throws FileNotFoundException, IOException {
+		CalendarFileStringGenerator file = new CalendarFileStringGenerator();
 		file.readLinesInFile();
 		file.parseJson();
 		String eventsToWrite = file.BuildEvents();
+		return eventsToWrite;
 //		File Output
-		try(PrintWriter out = new PrintWriter("TuesdayTest.ics")) {
-			out.println(eventsToWrite);
-		}
+//		try(PrintWriter out = new PrintWriter("TuesdayTest.ics")) {
+//			out.println(eventsToWrite);
+//		}
 	}
 }
