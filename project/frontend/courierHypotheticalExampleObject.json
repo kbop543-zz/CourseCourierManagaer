@@ -1,0 +1,29 @@
+[
+  {
+  "courseCode":"CSC301",
+  "courseName":"Introduction to Software Engineering",
+  "markables":[
+    {
+      "name": "A1",
+      "weight": "10%",
+      "dueDate": "2017-01-26T16:00:00Z"
+    },{
+      "name": "A2",
+      "weight": "15%",
+      "dueDate": "2017-02-16T16:00:00Z"
+    },{
+      "name": "A3",
+      "weight": "20%",
+      "dueDate": "2017-02-28T16:00:00Z"
+    },{
+      "name": "Midterm",
+      "weight": "25%",
+      "dueDate": "2017-03-17T16:00:00Z"
+    },{
+      "name": "Exam",
+      "weight": "30%",
+      "dueDate": "2017-04-02T18:00:00Z"
+    }
+    ]
+  }
+]
