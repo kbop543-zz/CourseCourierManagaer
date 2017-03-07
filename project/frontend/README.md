@@ -4,8 +4,9 @@ How to run project
 
 -git clone the repository
 
-(For Mac Only):
+*(For Mac Only):*
 >-install homebrew by typing '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+
 >-install node by typing 'brew install node'
 
 -type 'npm install' in the terminal
