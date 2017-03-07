@@ -6,7 +6,14 @@
 #### To run locally ####
 
 -run `mvn package` in the project/backend directory
--run `heroku local` ( [must have heroku cli set up locally](https://devcenter.heroku.com/articles/heroku-cli))
+
+-run `sh target/bin/webapp` 
+then go to http://localhost:8080/ to see pretty server
+
+
+OR
+
+-run `heroku local web` ( [must have heroku cli set up locally](https://devcenter.heroku.com/articles/heroku-cli))
 
 then go to http://localhost:5000/ to see pretty server
 
