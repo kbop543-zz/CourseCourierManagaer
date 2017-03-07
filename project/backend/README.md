@@ -5,8 +5,22 @@
 
 #### To run locally ####
 
+-type 'brew install maven'
+
 -run `mvn package` in the project/backend directory
--run `heroku local` ( [must have heroku cli set up locally](https://devcenter.heroku.com/articles/heroku-cli))
+
+-add the following lines to your bash profile by typing 'vim ~/.bash_profile'
+
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export PATH=$JAVA_HOME/jre/bin:$PATH
+
+-run `sh target/bin/webapp` 
+then go to http://localhost:8080/ to see pretty server
+
+
+OR
+
+-run `heroku local web` ( [must have heroku cli set up locally](https://devcenter.heroku.com/articles/heroku-cli))
 
 then go to http://localhost:5000/ to see pretty server
 
