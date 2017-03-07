@@ -38,17 +38,19 @@ function signupSetup() {
 function signInSetup() {
 
     // Set the sign in button on-click function
-    $('#login').submit(function(event) {
+    $('#loginForm').submit(function(event) {
 
         event.preventDefault();
         console.log(5 + 6);
 
         // Get the data from form
-        let formData = $('#login').serialize();
+        let formData = $('#loginForm').serialize();
 
         // Send post AJAX
         $.post('/signIn', formData, function(data) {
             window.location.replace('/index');
+            
+
         })
 
         .fail(function(response) {
