@@ -28,7 +28,7 @@ img{
     max-width: 100%;
     opacity: 0.6;
 }
-ul{
+nav ul,footer ul{
     list-style-type: none;
     list-style-type: none;
     margin: 0;
@@ -38,18 +38,18 @@ ul{
     margin-bottom: 50px;
 }
 
-li{
+nav li,footer li{
     float: center;
 }
 
-a{
+nav a,footer a{
     color: #66A5AD;
     display: block;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-a:hover {
+nav a:hover,footer a:hover {
     color: #07575B;
     background: #66A5AD;
 }
@@ -68,8 +68,6 @@ input[type=text] {
 footer {
     background: #07575B;
     padding: 14px 16px;
-    position: fixed;
-    width: 100%;
     bottom: 0;
     text-align: center;
 }
@@ -86,12 +84,14 @@ Responsive UI stuff to be added
 @media screen and (min-width: 768px)
 {
     html {
-        text-align: center;
+        text-align: left;
     }
-    #logo {
-        display: inline-flex;
+    #logo{
+       display: inline-flex;
+        margin-bottom: 50px;
+        
     }
-    img{
+    header img{
         display: inline-flex;
         max-height: 100px;
     }
@@ -109,6 +109,11 @@ Responsive UI stuff to be added
     }
     nav li{
         float: left;
+    }
+    
+    footer{
+        position: fixed;
+        width: 100%;
     }
 
 
