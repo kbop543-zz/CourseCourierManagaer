@@ -1,4 +1,5 @@
 package backend;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -80,8 +81,7 @@ public class CalendarFileStringGenerator {
 	}
 	
 	public void readLinesInFile() throws IOException {
-		String filePath = "/Users/johnaxon/Documents/UofT/Winter 2017/"
-				+ "project-team-11/project/backend/src/main/resources/hypotheticalOutput.json";
+		String filePath = "src/main/resources/hypotheticalOutput.json";
 		jsonData = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8); 
     }
 	
