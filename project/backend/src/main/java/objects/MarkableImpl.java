@@ -12,7 +12,7 @@ public class MarkableImpl implements Markable
 
 	private final String dueDate;
 
-	MarkableImpl(
+	public MarkableImpl(
 			@JsonProperty( "name" ) final String name,
 			@JsonProperty( "weight" ) final String weight,
 			@JsonProperty( "dueDate" ) final String dueDate )

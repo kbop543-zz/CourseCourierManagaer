@@ -10,7 +10,7 @@ public class CalendarImpl implements Calendar
 
 	private final List< Course > courses;
 
-	CalendarImpl(
+	public CalendarImpl(
 			@JsonProperty( "courses" ) final List< Course > courses )
 	{
 		this.courses = Preconditions.checkNotNull( courses, "Precondition. courses is NULL in CalendarImpl::CalendarImpl" );

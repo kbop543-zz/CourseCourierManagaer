@@ -15,7 +15,7 @@ public class CourseImpl implements Course
 
 	private final List< Markable > markables;
 
-	CourseImpl(
+	public CourseImpl(
 			@JsonProperty( "courseCode" ) final String code,
 			@JsonProperty( "courseName" ) final String name,
 			@JsonProperty( "markables" ) final List< Markable > markables )
