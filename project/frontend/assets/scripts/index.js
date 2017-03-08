@@ -19,7 +19,7 @@ function signupSetup (){
         $('#email').val(data.email);*/
 
     })
-    
+
 }
 
 $(document).ready(function(){

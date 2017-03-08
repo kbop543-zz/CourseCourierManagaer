@@ -28,7 +28,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-// Main page. 
+// Main page.
 app.get('/index', function(req, res) {
     res.sendfile('index.html');
 });
