@@ -9,6 +9,8 @@ How to run project((NEW with database stuff))
 
 >-install node by typing 'brew install node'
 
+- `sudo npm install --global gulp`
+
 -type 'npm install' in the terminal
 
 -type 'export PATH=/u/csc309h/fall/pub/bin:$PATH' in terminal
@@ -19,9 +21,15 @@ How to run project((NEW with database stuff))
 
 -open another terminal and cd into project folder
 
+
 -type 'nodemon index.js' in the terminal
 
 -type 'http://127.0.0.1:3000/' in your browser window
+
+
+OR
+
+-type `gulp` in terminal (UNDER CONSTRUCTION)
 
 
 ta da!
