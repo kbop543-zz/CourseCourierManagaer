@@ -17,6 +17,15 @@
     "mongoose": "^4.6.8"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "gulp": "latest",
+    "gulp-util": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-coffee": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-open": "latest",
+    "gulp-htmlmin": "latest"
   }
 }
