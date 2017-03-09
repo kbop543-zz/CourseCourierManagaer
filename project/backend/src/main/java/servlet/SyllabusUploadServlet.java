@@ -1,8 +1,9 @@
 package servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Paths;
+import java.io.InputStreamReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-@MultipartConfig
 @WebServlet( name = "SyllabusUploadServlet", urlPatterns = { "/uploadSyllabus" } )
+@MultipartConfig
 public class SyllabusUploadServlet extends HttpServlet
 {
 
@@ -25,15 +26,16 @@ public class SyllabusUploadServlet extends HttpServlet
 	@Override
 	protected void doPost( final HttpServletRequest req, final HttpServletResponse resp ) throws ServletException, IOException
 	{
-		final String description = req.getParameter( "description" ); // Retrieves <input type="text" name="description">
+		//		final String description = req.getParameter( "description" ); // Retrieves <input type="text" name="description">
 
-		final Part filePart = req.getPart( "file" ); // Retrieves <input type="file" name="file">
+		final Part filePart = req.getPart( "syllabus" ); // Retrieves <input type="file" name="file">
 
-		final String fileName = Paths.get( filePart.getSubmittedFileName() ).getFileName().toString(); // MSIE fix.
+		//		final String fileName = Paths.get( filePart.getSubmittedFileName() ).getFileName().toString(); // MSIE fix.
 
-		final InputStream fileContents = filePart.getInputStream();
+		final InputStream inputStream = filePart.getInputStream();
+		final BufferedReader fileContents = new BufferedReader( new InputStreamReader( inputStream ) );
 
-		// regex reading of fileContents and creation of ClendarImpl, CourseImpl, and MarkableImpl objects
+		System.out.println( fileContents.readLine() );
 
 	}
 
