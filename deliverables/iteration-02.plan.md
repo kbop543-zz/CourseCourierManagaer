@@ -1,7 +1,7 @@
 # Courier Course Manager / TEAM Mighty Moose
 
 
-## Iteration XX
+## Iteration 2
 
  * When: Monday, February 27, 2017, 8 pm
  * Where: Whole team in Bahen tutorial room with some people online
@@ -61,25 +61,25 @@ We chose to use this workflow because it ensures everyone who is working on the 
 Goals:
 
 * Be able to convert text file to table object with all course tasks from syllabuses
-   * Tasks: 
+   #### Tasks: 
    - establish a template the syllabus should be written in
    - read file in given template
    - write algorithm to manipulate the read information using regex
    - output json file of parsed manipulated regex groups
    
 * Create a sign up and login page
-  * Tasks:
+  #### Tasks:
   - set up mongodb, express and express sessions in node.js
   - handle inputted user data from the user when signing in and make a user object
   - when a user logs in, find the user object in the database and keep them signed in
   
 * Be able to upload a text file and download a calendar export
-   * Tasks:
+   #### Tasks:
    - parse the outputted json file
    - create a calendar api for handling the json data that outputs a .ics file
  
 * Have a functionable UI
-   * Tasks:
+   #### Tasks:
    - design 'sign up', 'login in', 'upload syllabus' and 'about' view
    - make website responsive
    
