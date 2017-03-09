@@ -15,16 +15,20 @@ import backend.CalendarFileStringGenerator;
 @WebServlet( name = "CalendarServlet", urlPatterns = { "/calendar" } )
 public class CalendarServlet extends HttpServlet
 {
-	/**
-	 *
+	/*
+	 * This servlet uses a calendarFileStringGenerator to develop
+	 * a string representation of all events in a JSON file predefined
+	 * in the calendarFileStringGenerator class.
 	 */
 	private static final long serialVersionUID = 6532000220170482988L;
 
 	@Override
 	protected void doGet( final HttpServletRequest req, final HttpServletResponse resp ) throws ServletException, IOException
 	{
+		// Get a string representation of events in the JSON file
 		CalendarFileStringGenerator generator = new CalendarFileStringGenerator();
 		String calendarString = generator.GenerateString();
+		
 		final ServletOutputStream out = resp.getOutputStream();
 		String fileName = "Assignments.ics";		
 		InputStream fis = new ByteArrayInputStream(calendarString.getBytes(StandardCharsets.UTF_8));

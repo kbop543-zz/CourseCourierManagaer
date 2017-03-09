@@ -8,6 +8,8 @@ function signupSetup (){
         $('a#profile').show();
         $('#logout').show();
 
+        $("main").empty();
+        $("main").append("<p>Welcome<p/>" + data.username);
 
 
 /*
@@ -21,17 +23,7 @@ function signupSetup (){
 }
 
 $(document).ready(function(){
-    $('#upload').click(function () {
-        $('#uploadPdf').show();
-        $('#info').hide();
-    });
-    $('#about').click(function () {
-        $('#info').show();
-        $('#uploadPdf').hide();
-    });
-    $('#home').click(function () {
-        $("main").empty();
-    });
+
 
     signupSetup();
 
