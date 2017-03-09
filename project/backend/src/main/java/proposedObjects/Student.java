@@ -1,7 +1,9 @@
-package objects;
+package proposedObjects;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import objects.Calendar;
 
 public class Student implements User{
 	
