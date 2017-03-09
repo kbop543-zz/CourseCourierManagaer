@@ -1,4 +1,4 @@
-## Backend ##
+## Frontend ##
 
 How to run project((NEW with database stuff))
 
