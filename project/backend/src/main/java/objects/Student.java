@@ -1,11 +1,11 @@
 package objects;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student implements User{
 	
-	private List<Calendar> calendars = new ArrayList<Calendar>();
+	private Map<String, Calendar> calendars = new HashMap<String, Calendar>();
 	
 	private String name;
 	private String userName;
@@ -28,7 +28,7 @@ public class Student implements User{
 	}
 	
 	public Student(
-			List<Calendar> calendars,
+			Map<String, Calendar> calendars,
 			String name,
 			String userName,
 			String password,
@@ -38,6 +38,30 @@ public class Student implements User{
 		this(name, userName, password, email, institution);
 		
 		this.calendars = calendars;
+	}
+	
+	public void addCalendar(String calID, Calendar cal) {
+		this.calendars.put(calID, cal);
+	}
+	
+	public void deleteCalendar(String calID) {
+		this.calendars.remove(calID);
+	}
+	
+	public Calendar getCalendar(String calID) {
+		return this.calendars.get(calID);
+	}
+	
+	public void addEvent(String calID, Event event) {
+		
+	}
+	
+	public void deleteEvent(String calID, String eventID) {
+		
+	}
+	
+	public Event getEvent(String calID, String eventID) {
+		return null;
 	}
 
 	public String getName() {
