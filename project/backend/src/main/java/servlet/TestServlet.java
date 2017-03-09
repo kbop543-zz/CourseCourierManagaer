@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet
 {
 
-	/**
+	/*
 	 * This is a simple test servlet for the java web application.
 	 */
 	private static final long serialVersionUID = -3330016715468250635L;
