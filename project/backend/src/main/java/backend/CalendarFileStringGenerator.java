@@ -117,6 +117,12 @@ public class CalendarFileStringGenerator {
 		jsonData = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8); 
     }
 	
+	/*
+	 * Using regular expressions, this method parses event data from
+	 * the jsonData raw string data based on predefined event attributes.
+	 * The attributes are added to the respective ArrayList representation
+	 * of an event.
+	 */
 	public void parseJson() {
 		Pattern p = Pattern.compile("\"courseCode\":\"(\\w+)\"");
 		Matcher m = p.matcher(jsonData);
@@ -153,6 +159,10 @@ public class CalendarFileStringGenerator {
 		}
     }
 	
+	/*
+	 * This method reads events from a predefined JSON file and returns
+	 * a string representation of all events.
+	 */
 	public String GenerateString() throws FileNotFoundException, IOException {
 		CalendarFileStringGenerator file = new CalendarFileStringGenerator();
 		file.readLinesInFile();
