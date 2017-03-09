@@ -48,7 +48,7 @@ function signInSetup() {
 
         // Send post AJAX
         $.post('/signIn', formData, function(data) {
-            window.location.replace('/index');
+            window.location.replace('/profile');
             
 
         })
