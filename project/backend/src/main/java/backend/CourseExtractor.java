@@ -22,6 +22,10 @@ public class CourseExtractor
 		this.s = s;
 	}
 
+	/*
+	 * This method reads all lines from a file through the BufferedReader s.
+	 * The lines are deliniated by newline characters.
+	 */
 	private String getFile()
 	{
 
