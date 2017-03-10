@@ -46,8 +46,8 @@ For the most part, everyone made progress on their given task: The login and sig
 #### Goals and/or tasks that were planned but not met/completed:
  
 * The frontend and backend are currently separated. Both work but need to be integrated into each other. The frontend cannot currently show the calendar or JSON objects. It took a while before we got the format for those objects and as such we ran out of time.
- * The syllabus parser algorithm only works for one file. We didn't have enough time to add a functionality that would make sure it can parse multiple files and organize the course tasks accordingly.
- * Parts of the UI do not look presentable, some added functionalities affected the styling in ways we were not anticipating.
+* The syllabus parser algorithm only works for one file. We didn't have enough time to add a functionality that would make sure it can parse multiple files and organize the course tasks accordingly.
+* Parts of the UI do not look presentable, some added functionalities affected the styling in ways we were not anticipating.
 
 ## Meeting Highlights
 
