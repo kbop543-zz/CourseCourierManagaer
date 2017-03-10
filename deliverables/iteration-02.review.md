@@ -21,7 +21,7 @@ For the most part, everyone made progress on their given task: The login and sig
 
  * We wanted to have an in person meeting in this iteration. However this did not happen. Although we were able to meet over Google Hangouts, it was challenging when multiple people spoke at once.
  * We wanted to work on the project during reading week. However, not everyone did this. The majority started working on their parts later than we planned, so combining everything together at the last-minute was challenging.
-* Following the gitflow workflow. We had some members upload directly to the master, instead of forking their repository of their branch.
+ * Following the gitflow workflow. We had some members upload directly to the master, instead of forking their repository of their branch.
 
 
 #### Planned changes
