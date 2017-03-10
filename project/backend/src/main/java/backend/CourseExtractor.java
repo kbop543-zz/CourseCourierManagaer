@@ -23,8 +23,7 @@ public class CourseExtractor
 	}
 
 	/*
-	 * This method reads all lines from a file through the BufferedReader s.
-	 * The lines are deliniated by newline characters.
+	 * This method reads all lines from a file through the BufferedReader s. The lines are deliniated by newline characters.
 	 */
 	private String getFile()
 	{

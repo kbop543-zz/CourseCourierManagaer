@@ -3,74 +3,89 @@ package proposedObjects;
 import java.sql.Date;
 import java.sql.Time;
 
-public class SameDayEvent implements Event {
+public class SameDayEvent implements Event
+{
 
-	public Time getStartTime() {
+	public Time getStartTime()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Time getEndTime() {
+	public Time getEndTime()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public int getDuration() {
+	public int getDuration()
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public String getLocation() {
+	public String getLocation()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Date getAnnouncedDate() {
+	public Date getAnnouncedDate()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Date getDueDate() {
+	public Date getDueDate()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public int getWeight() {
+	public int getWeight()
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public Time setStartTime() {
+	public Time setStartTime()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Time setEndTime() {
+	public Time setEndTime()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public int setDuration() {
+	public int setDuration()
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public String setLocation() {
+	public String setLocation()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Date setAnnouncedDate() {
+	public Date setAnnouncedDate()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Date setDueDate() {
+	public Date setDueDate()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public int setWeight() {
+	public int setWeight()
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
