@@ -1,77 +1,71 @@
-# YOUR PRODUCT/TEAM NAME
-
- > _Note:_ This document is meant to be written during (or shortly after) your initial planning meeting.     
- > It does not really make sense for you to edit this document much (if at all) while working on the project - Instead, at the end of the planning phase, you can refer back to this document and decide which parts of your plan you are happy with and which parts you would like to change.
-
+# Courier Course Manager / TEAM Mighty Moose
 
 ## Iteration 3
 
- * Start date: FILL IN THE DATE WHEN YOU HAD YOUR FIRST TEAM PLANNING MEETING
- * End date: FILL IN THE DATE WHEN YOU ARE PLANNING TO HAVE YOUR REVIEW MEETING
+ * Start date: Thursday, March 16, 2017, 5 pm
+ * End date: Friday, March 24, 2017, 4 pm
+ * Where: All members of the team online, through Google Hangouts
 
 ## Process
 
-(Optional:) Quick introduction
-
 #### Changes from previous iteration
 
-List the most significant changes you made to your process (if any).
-
- * At most 3 items
- * Start with the most significant change
- * For each change, explain why you are making it and what you are hoping to achieve from it
- * Ideally, for each change, you will define a clear success metric (i.e. something you can measure at the end of the iteration to determine whether the change you made was successful)
-
- > *Note:* If you are not making any changes to your process, it means that you are happy with all of the decisions you made in the previous iterations.
- > In this case, list what you consider to be the most significant process decisions your team made. For each decision, explain why you consider it successful, and what success metric you are using (or could use) to assert that the decision is successful.
+* List high-level requirements for our product, so that everyone in the group has a good sense of our team’s goals. This way, every team member will develop code towards a common goal, instead of developing code for requirements that might be unnecessary for the end product. This will also resolve conflicts between code developed by different group members. Success metric: a high-level diagram of the entities and relationships in our assignment will be created by Tuesday.
+* Review and commit code at least once every 3 days. This will allow more discussion and refinement and a better product at the end of the iteration. This will also prevent conflicts of ideas between group members, and can prevent merge conflicts. Success metric: Every group member has reviewed code for their segment of the assignment (hopefully a commit, if only a review, create inline comments regarding current progress) every three days.
+* Be more open with communicating with other members about development issues that might be occurring, through the use of slack, as well as more verbose code commenting. If our communication is more open and frequent, then when team members hit any roadblocks in development or if they are busy with other responsibilities, they could let the rest of the team know and the team wouldn’t be confused or left hanging. Success metric: a targeted issue (using @user) on slack should be addressed within the same day (max 6 hours).
 
 #### Roles & responsibilities
 
-Describe the different roles on the team and the responsibilities associated with each role.
+* User Session Maintainers: Kyra will set up the database for users and use the express session api to maintain user sessions. Each user will have their course task calendar/table associated with their email.
+* Front End Designers: Jeremy will primarily work on the html and css part of the project. He will format how the website should look when a user signs in.
+* Text File Parse Manager: Filip, Hari, Taha will work on how the text file should be parsed to organize the course tasks for each course.
+* Calendar Manager: John will work on outputing the calendar files given a json file.
+
 
 #### Events
 
 Describe meetings (and other events) you are planning to have:
 
- * When and where? In-person or online?
- * What's the **purpose** of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync' meeting online, etc.
+ * We will continue to host meetings online via Slack and Google Hangouts 
+ * Online on Mondays at 8 pm during tutorial and Thursdays at 5 pm
+ * In addition, we will have online meetings on the weekend for the backend and frontend groups
 
 #### Artifacts
 
-List/describe the artifacts you will produce in order to organize your team.       
-
- * Artifacts can be to-do lists, task boards, schedule(s), etc.
- * We want to understand:
-   * How do you keep track of what needs to get done?
-   * How do you prioritize tasks?
-   * How do tasks get assigned to team members?
+* Github issues will be our main method of showing progress and how we assigned roles for this iteration        
+* Maintain Slack Chat logs to show discussion between members during this iteration.
+* Diagram showing entities and responsibilities to illustrate the main structures of our application.
 
 #### Git / GitHub workflow
 
-Describe your Git / GitHub workflow.     
-Essentially, we want to understand how your team members share a codebase and avoid conflicts.
-
- * Be concise, yet precise.      
-For example, "we use pull-requests" is not a precise statement since it leaves too many open questions - Pull-requests from where to where? Who reviews the pull-requests? Who is responsible for merging them? etc.
- * If applicable, specify any naming conventions or standards you decide to adopt.
- * Don't forget to **explain why** you chose this workflow.
-
-
+* Members will maintain personal branches and ensure when they merge to the master that their code will not conflict with others’ contributions. If members were to directly upload to the head then it is highly likely the code will be buggy or not work at all.
+* Continue to use github issues to show progress on different aspects of the project. This will prevent multiple people from working on the same problem and wasting time.
+* If any design changes occur, update any relevant README files and notify the group of such 
+change
 
 ## Product
 
 #### Goals and tasks
 
- * Describe your goals for this iteration and the tasks that you will have to complete in order to achieve these goals.
- * Order the items from most to least important.
- * Feel free (but not obligated) to specify some/all tasks as user stories.
+* Work on converting a PDF (of a fixed format) to a text file so you can regex the text file
+* Expand calendar objects to have end dates and locations and other useful attributes
+* Expand file upload so that it creates a JSON with all your classes
+* Reliably connect backed to front end
+* Create backend Java objects to demonstrate backend functionality of the application (may not be incorporated in final product).
+* (If time permits) Create different user roles (students, teachers).
+* Expand calendar file generation to include google calendar
+* Support calendar file generation for multiple courses
+* Expand calendar file generation to support locations, and end times
+* Add manual course through form
+* Display course info
+* Fix some formatting CSS issues
+* Upload multiple files
 
 #### Artifacts
 
 List/describe the artifacts you will produce in order to present your project idea.
+* A video displaying the functional frontend of the website from the user’s perspective
+* Entity/Relationship diagrams and SPN data-flow models to show the structures and workflow of our application. 
+* Mockups for the UI to show our process of how we tackled design difficulties.
+* Bring up a live hosted server on heroku for the backend, in order to prepare for full website deployment.
 
- * Artifacts can be text, code, images, videos, interactive mock-ups and/or any other useful artifact you can think of.
- * Make sure to explain the purpose of each artifact (i.e. Why is it on your to-do list? Why is it useful for your team?)
- * Be concise, yet precise.         
-   For example: "Build the website" is not precise at all, but "Build a static home page and upload it somewhere, so that it is publicly accessible" is much clearer.
