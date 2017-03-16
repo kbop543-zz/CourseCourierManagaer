@@ -24,8 +24,6 @@
 
 #### Events
 
-Describe meetings (and other events) you are planning to have:
-
  * We will continue to host meetings online via Slack and Google Hangouts 
  * Online on Mondays at 8 pm during tutorial and Thursdays at 5 pm
  * In addition, we will have online meetings on the weekend for the backend and frontend groups
@@ -40,8 +38,7 @@ Describe meetings (and other events) you are planning to have:
 
 * Members will maintain personal branches and ensure when they merge to the master that their code will not conflict with others’ contributions. If members were to directly upload to the head then it is highly likely the code will be buggy or not work at all.
 * Continue to use github issues to show progress on different aspects of the project. This will prevent multiple people from working on the same problem and wasting time.
-* If any design changes occur, update any relevant README files and notify the group of such 
-change
+* If any design changes occur, update any relevant README files and notify the group of such change
 
 ## Product
 
