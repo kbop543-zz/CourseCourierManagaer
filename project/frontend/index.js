@@ -30,28 +30,28 @@ app.use(function(req, res, next) {
 
 // Main page.
 app.get('/index', function(req, res) {
-    res.sendfile('index.html');
+    res.sendfile('views/index.html');
 });
 
 app.get('/login', function(req, res) {
 	if (req.session.username == undefined) {
-        res.sendfile('login.html');
+        res.sendfile('views/login.html');
     } else {
         usersDb.findOne({
             username: req.session.username
         });
-        res.sendfile('index.html');
+        res.sendfile('views/index.html');
     }
 });
 
 app.get('/profile', function(req, res) {
 	if (req.session.username == undefined) {
-        res.sendfile('login.html');
+        res.sendfile('views/login.html');
     } else {
         usersDb.findOne({
             username: req.session.username
         });
-        res.sendfile('profile.html');
+        res.sendfile('views/profile.html');
     }
 });
 
