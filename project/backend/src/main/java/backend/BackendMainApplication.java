@@ -11,16 +11,12 @@ import org.apache.catalina.webresources.StandardRoot;
 public class BackendMainApplication
 {
 	/*
-	 * For this project, we are using embedded Tomcat for a Java web 
-	 * application with Heroku. This file is known as the launcher 
-	 * class. It is required to launch the server. 
-	 * Complete guide can be found at:
-	 *       https://devcenter.heroku.com/
-	 *       articles/create-a-java-web-application-using-embedded-tomcat
+	 * For this project, we are using embedded Tomcat for a Java web application with Heroku. This file is known as the launcher class. It is required to launch
+	 * the server. Complete guide can be found at: https://devcenter.heroku.com/ articles/create-a-java-web-application-using-embedded-tomcat
 	 */
 	public static void main( final String[] args ) throws Exception
 	{
-		
+
 		final String webappDirLocation = "src/main/webapp/";
 		final Tomcat tomcat = new Tomcat();
 

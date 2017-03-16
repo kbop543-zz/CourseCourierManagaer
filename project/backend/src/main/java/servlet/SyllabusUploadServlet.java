@@ -62,6 +62,7 @@ public class SyllabusUploadServlet extends HttpServlet
 			System.out.println( courseFromSyllabus.getMarkables().get( 4 ).getDueDate() );
 
 			System.out.println( "" );
+
 		}
 		catch( final Exception e )
 		{

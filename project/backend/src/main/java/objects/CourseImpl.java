@@ -53,9 +53,7 @@ public class CourseImpl implements Course
 		if( object instanceof CourseImpl )
 		{
 			final CourseImpl that = (CourseImpl)object;
-			return Objects.equal( this.courseCode, that.courseCode )
-					&& Objects.equal( this.courseName, that.courseName )
-					&& Objects.equal( this.markables, that.markables );
+			return Objects.equal( this.courseCode, that.courseCode ) && Objects.equal( this.courseName, that.courseName ) && Objects.equal( this.markables, that.markables );
 		}
 		return false;
 	}

@@ -51,9 +51,7 @@ public class MarkableImpl implements Markable
 		if( object instanceof MarkableImpl )
 		{
 			final MarkableImpl that = (MarkableImpl)object;
-			return Objects.equal( this.name, that.name )
-					&& Objects.equal( this.weight, that.weight )
-					&& Objects.equal( this.dueDate, that.dueDate );
+			return Objects.equal( this.name, that.name ) && Objects.equal( this.weight, that.weight ) && Objects.equal( this.dueDate, that.dueDate );
 		}
 		return false;
 	}
