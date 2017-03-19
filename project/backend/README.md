@@ -14,7 +14,7 @@
     export JAVA_HOME=$(/usr/libexec/java_home)
     export PATH=$JAVA_HOME/jre/bin:$PATH
 
--run `sh target/bin/webapp` 
+-run `sh target/bin/webapp` or for windows `C:/> target/bin/webapp.bat`
 then go to http://localhost:8080/ to see pretty server
 
 
