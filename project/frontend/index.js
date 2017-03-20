@@ -28,20 +28,41 @@ app.use(function(req, res, next) {
     next();
 });
 
-// Main page. 
+// Main page.
 app.get('/index', function(req, res) {
-    res.sendfile('index.html');
+    res.sendfile('views/index.html');
 });
 
 app.get('/login', function(req, res) {
 	if (req.session.username == undefined) {
-        res.sendfile('login.html');
+        res.sendfile('views/login.html');
     } else {
         usersDb.findOne({
             username: req.session.username
         });
-        res.sendfile('index.html');
+        res.sendfile('views/index.html');
     }
+});
+
+app.get('/profile', function(req, res) {
+	if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    } else {
+        usersDb.findOne({
+            username: req.session.username
+        });
+        res.sendfile('views/profile.html');
+    }
+});
+
+app.get('/courses', function(req, res) {
+    res.sendfile('views/courses.html');
+});
+
+// Redirect to login and reset session on log out
+app.get('/logout', function(req, res) {
+    req.session.username = undefined;
+    res.redirect('/');
 });
 
 

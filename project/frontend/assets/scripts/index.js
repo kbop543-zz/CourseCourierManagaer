@@ -1,13 +1,39 @@
+/* Set up the update user form */
+function signupSetup (){
+
+    // Fetch the user's current info
+    $.get('/getOneUser', function(data){
+
+        $('a#login').hide();
+        $('a#courses').show();
+        $('a#profile').show();
+        $('#logout').show();
+
+
+
+/*
+        $('#username').val(data.username);
+        $('#firstName').val(data.firstName);
+        $('#lastName').val(data.lastName);
+        $('#email').val(data.email);*/
+
+    })
+
+}
+
 $(document).ready(function(){
     $('#upload').click(function () {
-        $("main").empty(); 
-        $("main").append('<form action="/actiononfile">Course: <input type="file" name="coursefile"><br><input type="submit" value="Upload"><input type="reset" value="Reset"><br></form>');
+        $('#uploadPdf').show();
+        $('#info').hide();
     });
     $('#about').click(function () {
-        $("main").empty();
-        $("main").append("<p>Courier Course Manager is an easy way for instructors and students to create, maintain, and update their schedules.<p/>");
+        $('#info').show();
+        $('#uploadPdf').hide();
     });
     $('#home').click(function () {
         $("main").empty();
     });
-});
+
+    signupSetup();
+
+})

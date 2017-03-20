@@ -22,6 +22,14 @@ html {
     display: inline-block;
 }
 
+#uploadPdf{
+    display:none;
+}
+
+#info{
+    display:none;
+}
+
 #logo {
     display: center;
     font-family: Garamond, serif;
@@ -29,6 +37,17 @@ html {
     font-size: 40px;
     margin-bottom: 50px;
 }
+#profile{
+    display:none;
+}
+#courses{
+    display:none;
+}
+
+#logout{
+    display:none;
+}
+
 img{
     margin-bottom: 0;
     max-height: 50px;
@@ -100,7 +119,7 @@ Responsive UI stuff to be added
     #logo{
        display: inline-flex;
         margin-bottom: 50px;
-        
+
     }
     header img{
         display: inline-flex;
@@ -121,7 +140,7 @@ Responsive UI stuff to be added
     nav li{
         float: left;
     }
-    
+
     footer{
         position: fixed;
         width: 100%;
