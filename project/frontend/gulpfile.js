@@ -24,7 +24,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src('*.html')
+  return gulp.src('views/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('build'))
     .pipe(connect.reload())
@@ -36,7 +36,7 @@ gulp.task('watch', function() {
   gulp.watch('routes/*.js', ['js'])
   gulp.watch('index.js', ['js']);
   gulp.watch('assets/css/*.css', ['css']);
-  gulp.watch('index.html', ['html']);
+  gulp.watch('views/*.html', ['html']);
 });
 
 gulp.task('connect', function() {
@@ -50,7 +50,7 @@ gulp.task('connect', function() {
 gulp.task('app', function(){
   gulp.src('index.js')
   .pipe(open({
-    uri: 'http://localhost:3000'}));
+    uri: 'http://localhost:3000/index#main'}));
 });
 
 gulp.task('default', ['html', 'js', 'css', 'connect', 'watch', 'app']);

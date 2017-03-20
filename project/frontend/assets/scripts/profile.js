@@ -5,6 +5,7 @@ function signupSetup (){
     $.get('/getOneUser', function(data){
 
         $('a#login').hide();
+        $('#courses').show();
         $('a#profile').show();
         $('#logout').show();
 
