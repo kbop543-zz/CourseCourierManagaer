@@ -17,7 +17,7 @@ public class BackendMainApplication
 	public static void main( final String[] args ) throws Exception
 	{
 
-		final String webappDirLocation = "src/main/webapp/";
+		final String webappDirLocation = "src/main/webapp/"; //webApp property files
 		final Tomcat tomcat = new Tomcat();
 
 		//The port that we should run on can be set into an environment variable
@@ -37,7 +37,7 @@ public class BackendMainApplication
 		// Servlet 3.0 annotation will work
 		final File additionWebInfClasses = new File( "target/classes" );
 		final WebResourceRoot resources = new StandardRoot( ctx );
-		resources.addPreResources( new DirResourceSet( resources, "/WEB-INF/classes", additionWebInfClasses.getAbsolutePath(), "/" ) );
+		resources.addPreResources( new DirResourceSet( resources, "/WEB-INF/classes", additionWebInfClasses.getAbsolutePath(), "/" ) ); // bind each servlet to the WebApp
 		ctx.setResources( resources );
 
 		tomcat.start();

@@ -89,7 +89,6 @@
         </plugin>
     </plugins>
   </build>
-</project>
 <profiles>
   <profile>
     <id>test</id>
@@ -120,3 +119,4 @@
     </build>
   </profile>
 </profiles>
+</project>
