@@ -40,6 +40,9 @@ html {
 #profile{
     display:none;
 }
+#courses{
+    display:none;
+}
 
 #logout{
     display:none;
@@ -116,7 +119,7 @@ Responsive UI stuff to be added
     #logo{
        display: inline-flex;
         margin-bottom: 50px;
-        
+
     }
     header img{
         display: inline-flex;
@@ -137,7 +140,7 @@ Responsive UI stuff to be added
     nav li{
         float: left;
     }
-    
+
     footer{
         position: fixed;
         width: 100%;

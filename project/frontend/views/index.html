@@ -18,6 +18,7 @@
 <nav>
     <ul id = "menu">
             <li><a href="/index#main" id="upload">Upload Course File</a></li>
+            <li><a href="/courses" id="courses">My Courses</a></li>
             <li><a href="/profile" id="profile">My Profile</a></li>
             <li><a href="/login" id="login">Login</a></li>
             <li><a href="/index#main" id="about">About</a></li>
@@ -26,8 +27,8 @@
 </nav>
 <main>
 
-<form action="/actiononfile" id="uploadPdf" >Course:
-<input type="file" name="coursefile">
+<form action="http://localhost:8080/uploadSyllabus" method="POST" enctype='multipart/form-data' id="uploadPdf" name="uploadPdf" >Course:
+<input type="file" name="file">
 <br>
 <input type="submit" value="Upload">
 <input type="reset" value="Reset">
