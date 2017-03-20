@@ -55,6 +55,10 @@ app.get('/profile', function(req, res) {
     }
 });
 
+app.get('/courses', function(req, res) {
+    res.sendfile('views/courses.html');
+});
+
 // Redirect to login and reset session on log out
 app.get('/logout', function(req, res) {
     req.session.username = undefined;

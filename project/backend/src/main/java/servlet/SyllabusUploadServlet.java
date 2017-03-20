@@ -29,7 +29,7 @@ public class SyllabusUploadServlet extends HttpServlet
 	@Override
 	protected void doPost( final HttpServletRequest req, final HttpServletResponse resp ) throws ServletException, IOException
 	{
-		final Part filePart = req.getPart( "syllabus" ); // Retrieves <input type="file" name="file">
+		final Part filePart = req.getPart( "file" ); // Retrieves <input type="file" name="file">
 		//		final String fileName = Paths.get( filePart.getSubmittedFileName() ).getFileName().toString(); // If we ever want to reference the original filename
 		final InputStream inputStream = filePart.getInputStream();
 		final BufferedReader fileContents = new BufferedReader( new InputStreamReader( inputStream ) );
@@ -38,11 +38,9 @@ public class SyllabusUploadServlet extends HttpServlet
 		try
 		{
 			final Course courseFromSyllabus = syllabusExtractor.run();
-
 			System.out.println( "" );
 			System.out.println( "HERE IS EVERYTHING, BUT PARSED AND INTO JAVA OBJECTS!" );
 			System.out.println( "" );
-
 			System.out.println( courseFromSyllabus.getCourseCode() );
 			System.out.println( courseFromSyllabus.getCourseDescription() );
 			System.out.println( courseFromSyllabus.getMarkables().get( 0 ).getMarkableName() );
@@ -60,16 +58,13 @@ public class SyllabusUploadServlet extends HttpServlet
 			System.out.println( courseFromSyllabus.getMarkables().get( 4 ).getMarkableName() );
 			System.out.println( courseFromSyllabus.getMarkables().get( 4 ).getWeight() );
 			System.out.println( courseFromSyllabus.getMarkables().get( 4 ).getDueDate() );
-
 			System.out.println( "" );
-
 		}
 		catch( final Exception e )
 		{
 			System.out.println( "FAILED TO PARSE SYLLABUS" );
 			e.printStackTrace();
 		}
-
 	}
 
 }
