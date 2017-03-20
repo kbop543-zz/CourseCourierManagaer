@@ -9,7 +9,6 @@ How to run project((NEW with database stuff))
 
 >-install node by typing 'brew install node'
 
-- `sudo npm install --global gulp`
 
 -type 'npm install' in the terminal
 
@@ -36,10 +35,9 @@ https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 
 -type 'http://127.0.0.1:3000/index' in your browser window
 
+[to have it work with the backend follow the instructions on getting the backend server up and running](https://github.com/csc301-winter-2017/project-team-11/edit/master/project/backend/README.md)
 
-OR
 
--type `gulp` in terminal (UNDER CONSTRUCTION)
 
 
 ta da!
