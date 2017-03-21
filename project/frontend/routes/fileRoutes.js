@@ -5,12 +5,17 @@ var fs = require('fs');
 /*helper function to split text file line by line and read*/
 function read(file, cb) {
   fs.readFile('./uploads/'+file, 'utf8', function(err, data) {
-    if (!err) {
-        cb(data.toString().split('\n'))
-    } else {
-        console.log(err)
-    }
-  });
+    var myRegexp = /(CSC[0-9]*)([\w\d\s\W\D\S]*Description\s*Weight\s*Due\s*)([A-Z0-9]*)/g;
+	match = myRegexp.exec(data);
+	while (match != null) {
+	  // matched text: match[0]
+	  // match start: match.index
+	  // capturing group n: match[n]
+	  //console.log(match[3])
+	  //match = myRegexp.exec(data);
+	  cb(match[1]);
+	}
+})
 }
 
 //parse pdf and upload the parsed file to console 
@@ -26,7 +31,8 @@ exports.parsePdf = function(req, res) {
       read(filename, function(data) {
       	var syllabusObj = [];
       	for(var thing in data){
-      		console.log(data[thing]);
+      		syllabusObj.push(data[thing]);
+      		console.log(syllabusObj);
       	}
       });
   })
