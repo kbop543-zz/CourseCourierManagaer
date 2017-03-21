@@ -22,13 +22,6 @@ html {
     display: inline-block;
 }
 
-#uploadPdf{
-    display:none;
-}
-
-#info{
-    display:none;
-}
 
 #logo {
     display: center;
@@ -36,16 +29,6 @@ html {
     color: #003B46;
     font-size: 40px;
     margin-bottom: 50px;
-}
-#profile{
-    display:none;
-}
-#courses{
-    display:none;
-}
-
-#logout{
-    display:none;
 }
 
 img{
