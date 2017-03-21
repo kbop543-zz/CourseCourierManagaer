@@ -64,6 +64,9 @@ function signInSetup() {
 
 /* Set up the page */
 $(document).ready(function() {
+	$('#courses').hide();
+    $('#profile').hide();
+    $('#logout').hide();
     signupSetup();
     signInSetup();
 })
