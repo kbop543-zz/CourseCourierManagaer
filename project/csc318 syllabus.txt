@@ -1,0 +1,275 @@
+CSC318H1S (Winter 2017) 
+Course Information Sheet 
+User-centred design of interactive systems; methodologies, principles, and metaphors. 
+Interdisciplinary design; the role of graphic design, industrial design, and the behavioural 
+sciences. Interactive hardware and software; Typography, layout, colour, sound, video, 
+gesture, and usability enhancements. Students work on projects in interdisciplinary teams. 
+ 
+ 
+
+L0101 
+
+L0201, L2001 
+
+Lectures 
+
+MW 11 am - noon 
+(GB220) 
+
+T 4-6 pm  
+(GB119) 
+
+Tutorials 
+
+F 11 am - noon  
+(GB303, GB304, GB405) 
+
+T 6-7 pm 
+(BA1230, BA2145, BA2155) 
+
+Discussion 
+board 
+
+piazza.com/utoronto.ca/ 
+piazza.com/utoronto.ca/ 
+winter2017/csc318l0101mw  winter2017/csc318l0201t 
+
+ 
+Instructor: Velian Pandeliev (vpandeli@cs.utoronto.ca)  
+Ofﬁce Hours: Wednesdays 1-3 pm (room TBA)  
+Course website: Blackboard (portal.utoronto.ca) 
+Submit your work: MarkUs (https://markus.teach.cs.toronto.edu/csc318-2017-01)  
+ 
+Contact policy: Questions about the material should be posted to the Piazza discussion board 
+or brought to ofﬁce hours, not emailed to the instructor. When emailing with administrative or 
+personal issues, please begin your subject line with “[CSC318]”, followed by a meaningful 
+phrase, e.g., “[CSC318]: I have a conﬂict with the next test”. Please include your full name, your 
+section and student number in the body of the email. Please allow up to 72 hours for a reply. 
+ 
+Resources: Lecture slides, additional readings, announcements and assignments will all be 
+posted to Blackboard. It is your responsibility to check Blackboard regularly for incidental 
+communication and updates. 
+ 
+Academic Offenses: All of the work you submit must be done by you (individually or within 
+your group), and your work must not be submitted by someone else. Plagiarism is academic 
+fraud and is taken very seriously. Please read the Rules and Regulations from the U of T 
+Calendar (especially the Code of Behaviour on Academic Matters): 
+http://www.artsandscience.utoronto.ca/ofr/calendar/rules.htm 
+ 
+You should also review this document regarding plagiarism in the context of CS: 
+http://www.cs.toronto.edu/~fpitt/documents/plagiarism.html 
+ 
+
+Please don’t cheat. It is unpleasant for everyone involved, including us. Here are a couple of 
+general guidelines to help you avoid plagiarism: 
+● Never look at another student’s work, on paper or on the computer screen. 
+● Never show another student your work. This applies to all drafts of a solution and to 
+incomplete solutions. 
+
+ 
+Evaluation 
+●
+●
+●
+●
+●
+
+(47%) Phases of a group project in which you will research a problem space, ascertain 
+user needs, design and create a prototype. You will work in groups of 5. 
+(30%) Assignments: individual solutions to speciﬁc, constrained problems. 
+(14%) Tutorials: 50-minute guided exercises that allow you to practice important skills. 
+Earn marks through attendance and earnest participation. 
+(9%) Blog entries: biweekly meaningful participation in a design  
+(+3%) Bonus mark attained by attending 3 TUX talks this term. 
+
+ 
+All submissions are due by 11:00 pm on the due date. 
+Unless otherwise speciﬁed, that date is the Monday of each week. 
+
+ 
+ 
+
+ 
+
+Description 
+
+Weight 
+
+Due 
+
+P1 
+
+Group formation 
+
+1% 
+
+Jan. 16 
+
+P2 
+
+Problem space and literature review 
+
+4% 
+
+Jan. 23 
+
+P3 
+
+Research instruments script 
+
+4% 
+
+Jan. 30 
+
+P4 
+
+Revised research instruments script 
+
+2% 
+
+Feb. 6 
+
+A1 
+
+Harness new technology 
+
+10% 
+
+Feb. 6 
+
+P5 
+
+Research summary and interpretation 
+
+8% 
+
+Feb. 27 
+
+A2 
+
+Heuristic evaluation 
+
+10% 
+
+Feb. 27 
+
+P6 
+
+Brainstorm and representative sketch 
+
+4% 
+
+Mar. 6 
+
+P7 
+
+Prototype and usability testing script 
+
+4% 
+
+Mar. 13 
+
+P8 
+
+Updated prototype and testing results 
+
+8% 
+
+Mar. 27 
+
+P9 
+
+Final project presentation 
+
+4% 
+
+Mar. 31 
+
+A3 
+
+Skin a wireframe 
+
+10% 
+
+Apr. 2 
+
+P10 
+
+Write-up and project submission 
+
+8% 
+
+Apr. 5 
+
+Tutorials 
+
+Guided exercises or project work 
+
+14% 
+
+weekly 
+
+Blogs 
+
+Meaningful design discourse 
+
+9% 
+
+biweekly 
+
+Bonus  
+
+TUX talk attendance 
+
+(+3%) 
+
+bonus 
+
+Late policy 
+● Submissions <8 hours late are graded as normal.  
+● Submissions <24 hours late incur a 10% penalty.  
+● Submissions <48 hours late incur a 30% penalty.  
+● Submissions more than 48 hours late are not accepted and earn a mark of 0. 
+Exceptions to this policy are to be made only in extreme circumstances and would require a 
+medical certiﬁcate or similar document. 
+ 
+Course goals 
+● Practice research methods for understanding user needs and practices 
+● Interpret raw data and create design artifacts (e.g., personas, experience maps, 
+scenarios) 
+● Brainstorm, sketch and design prototypes that solve real user problems 
+● Evaluate prototypes (yours and others’) for usability, learnability and usefulness 
+● Understand human cognition and perception 
+ 
+Skills / Knowledge testing in the course 
+● Group project (47%) 
+○ Research user needs in a particular problem domain  
+○ Interpret research into design guidelines 
+○ Ideate and create prototype 
+○ Evaluate prototype 
+○ Summarize project 
+● Individual assessments (30%) 
+○ Design a new interaction set for a recent technical innovation  
+○ Perform heuristic evaluation on an existing website or interface  
+○ Graphic and visual design 
+● Tutorial participation (14%) 
+○ Practice skills discussed in class, individually or in your project groups 
+● Blog posts (9%) 
+○ Meaningfully contribute to design discourse 
+ 
+Prerequisite skills 
+No required background, but any of the following an asset: 
+● Graphic design / image manipulation 
+● Technical writing 
+● Research and literature review experience 
+● Development, especially mobile or web 
+● Psychology or human cognition 
+ 
+References and recommended reading 
+● Interaction Design (4th Ed.) by Rogers, Sharp & Preece 
+● The Design of Everyday Things by Don Norman 
+● Don’t Make Me Think (revisited) by Steve Krug 
+● 100 Things Every Designer Needs To Know About People by S. Weinschenk 
+● Simple and Usable by Giles Colborne 
+
+
