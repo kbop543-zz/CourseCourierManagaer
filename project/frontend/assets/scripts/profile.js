@@ -3,7 +3,6 @@ function signupSetup (){
 
     // Fetch the user's current info
     $.get('/getOneUser', function(data){
-
         $('a#login').hide();
         $('#courses').show();
         $('a#profile').show();
@@ -25,7 +24,9 @@ function signupSetup (){
 
 $(document).ready(function(){
 
-
+	$('#courses').hide();
+    $('#profile').hide();
+    $('#logout').hide();
     signupSetup();
 
 })

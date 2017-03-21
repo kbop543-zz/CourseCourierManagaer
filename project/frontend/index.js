@@ -28,6 +28,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', function(req, res) {
+    res.sendfile('views/index.html');
+});
+
 // Main page.
 app.get('/index', function(req, res) {
     res.sendfile('views/index.html');
