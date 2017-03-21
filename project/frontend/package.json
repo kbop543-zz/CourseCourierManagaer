@@ -14,7 +14,8 @@
     "express-session": "^1.14.2",
     "express-validator": "^2.7.0",
     "pug": "^2.0.0-beta6",
-    "mongoose": "^4.6.8"
+    "mongoose": "^4.6.8",
+    "multer": "1.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
