@@ -3,9 +3,9 @@ function loadCourses (){
 
 
   $.ajax({
-      type: "GET",
+      type: "POST",
       dataType: 'json',
-      url: "http://localhost:8080/calendarJson"
+      url: "/parsePdf"
     })
     .done(function( data ) {
         $("main").empty();
