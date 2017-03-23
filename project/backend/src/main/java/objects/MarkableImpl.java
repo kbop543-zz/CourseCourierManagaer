@@ -7,23 +7,23 @@ import com.google.common.base.Preconditions;
 public class MarkableImpl implements Markable
 {
 	private final String name;
-
 	private final String weight;
-
 	private final String dueDate;
-	
 	private String location;
+	private String endDate;
 
 	public MarkableImpl(
 			@JsonProperty( "name" ) final String name,
 			@JsonProperty( "weight" ) final String weight,
 			@JsonProperty( "dueDate" ) final String dueDate,
-			@JsonProperty("location") String location)
+			@JsonProperty("location") String location, 
+			@JsonProperty("endDate") String endDate)
 	{
 		this.name = Preconditions.checkNotNull( name, "Precondition: name is NULL in MarkableImpl#MarkableImpl" );;
 		this.weight = Preconditions.checkNotNull( weight, "Precondition: weight is NULL in MarkableImpl#MarkableImpl" );;
 		this.dueDate = Preconditions.checkNotNull( dueDate, "Precondition: dueDate is NULL in MarkableImpl#MarkableImpl" );;
 		this.location = Preconditions.checkNotNull( location, "Precondition: location is NULL in MarkableImpl#MarkableImpl" );;
+		this.endDate = Preconditions.checkNotNull( endDate, "Precondition: endDate is NULL in MarkableImpl#MarkableImpl" );;
 	}
 
 	public String getMarkableName()
@@ -60,6 +60,10 @@ public class MarkableImpl implements Markable
 
 	public String getLocation() {
 		return location;
+	}
+	
+	public String getEndDate() {
+		return endDate;
 	}
 
 }

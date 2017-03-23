@@ -77,11 +77,12 @@ public class CourseExtractor
 		lines.remove(courseName);
 		lines.remove(0); //markables line
 		final List< Markable > markables = new ArrayList< Markable >();
-		int numAttributes = 4;
+		int numAttributes = 5;
 		String mname = "";
 		String percentage = "";
 		String dueDate = "";
 		String location = "";
+		String endDate = "";
 		for (int i = 0; i < lines.size(); ++i) {
 			switch (i % numAttributes) {
 				case 0:
@@ -94,8 +95,11 @@ public class CourseExtractor
 	            	dueDate = lines.get(i);
                     break;
 	            case 3:  
+	            	endDate = lines.get(i);
+                    break;
+	            case 4:  
 					location = lines.get(i);
-					markables.add( new MarkableImpl( mname, percentage, dueDate, location));
+					markables.add(new MarkableImpl( mname, percentage, dueDate, location, endDate));
                     break;
 	            default: 
                     break;

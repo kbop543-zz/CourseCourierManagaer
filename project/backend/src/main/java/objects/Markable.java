@@ -34,5 +34,11 @@ public interface Markable
 	 */
 	@JsonProperty( "location" )
 	public String getLocation();
-
+	
+	/**
+	 * Gets the end date of the markable
+	 * @return the end date of the markable
+	 */
+	@JsonProperty( "endDate" )
+	public String getEndDate();
 }
