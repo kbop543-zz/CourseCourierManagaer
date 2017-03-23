@@ -3,23 +3,32 @@
 var User = require('../models/user');
 
 var fs = require('fs');
+var courseObj;
+
+fs.readFile('courses.json', 'utf-8', function(err, data) {
+    if(err) throw err;
+    courseObj = JSON.parse(data);
+    console.log(courseObj.courses);
+});
 
 /*helper function to split text file line by line and read*/
 function read(file, cb) {
-  fs.readFile('./uploads/'+file, 'utf8', function(err, data) {
+  var filePath = './uploads/'+file;
+
+
+  var everything = [];
+  var markables =[];
+  var courseData2;
+  var courseData;
+
+  let i,j,k,l;
+
+  fs.readFile(filePath, 'utf8', function(err, data) {
     var myRegexp = /(.*)\n(.*)([\w\d\s\W\D\S]*Description\s*Weight\s*Due\s*)([\w\d\s\W\D\S]*)/g;
   var match = myRegexp.exec(data);
   var courseCode;
   var courseName;
-  var courseData;
 
-  // cT stands for 'course task'.. anyone have a better acronym?
-  var cTAcronym =[];
-  var cTDescription =[];
-  var cTPercentage =[];
-  var cTDate = [];
-
-  let i,j,k,l;
 
  
   while (match != null) {
@@ -29,28 +38,51 @@ function read(file, cb) {
     break;
 
   }
-  console.log(courseCode);
-  console.log(courseName);
-  console.log(courseData);
+  
+  
 
-  var courseData2 = courseData.split("\n");
-  console.log(courseData2);
+  courseData2 = courseData.split("\n");
+  //filter out empty strings that are there as a result of 
+  courseData2 = courseData2.filter(function(element){
+    return element !== "";
+  })
+
+
+console.log(courseData2);
+
 
   
 
-  for(i=0, j=0, k = 0, l=0;
-   i< courseData.length 
-   && j<courseData.length 
-   && k<courseData.length 
-   && l<courseData.length; i+4,j+4,k+4,l+4){
-    cTAcronym.push(courseData2[i]);
-    cTDescription.push(courseData2[i]);
-    cTPercentage.push(courseData2[i]);
-    cTDate.push(courseData2[i]);
-  }
-  //console.log(cTAcronym);
+  for(i=0, j=1, k = 2, l=3;
+   i< courseData2.length 
+   && j<courseData2.length 
+   && k<courseData2.length 
+   && l<courseData2.length; i+=4,j+=4,k+=4,l+=4){
+    markables.push({
+      "name": courseData2[i],
+      "description": courseData2[j],
+      "weight": courseData2[k],
+      "dueDate": courseData2[l]
 
-})
+    })
+  console.log(markables);
+    
+  }
+
+  everything.push({
+      "courseCode": courseCode,
+      "courseName": courseName,
+      "markables": markables
+    });
+
+  console.log(everything);
+  console.log(courseObj.courses);
+  courseObj.courses.push(everything);
+  cb(courseObj);
+  })
+  
+
+
 }
 
 //parse pdf and upload the parsed file to console 
@@ -64,12 +96,13 @@ exports.parsePdf = function(req, res) {
     }
     filenames.forEach(function(filename) {
       read(filename, function(data) {
-        var syllabusObj = [];
-        for(var thing in data){
-          //syllabusObj.push(data[thing]);
-          //console.log(data[thing]);
-        }
+
+        //console.log(data)
+        res.send(data);
       });
   })
 })
+    
 }
+
+
