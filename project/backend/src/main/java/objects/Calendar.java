@@ -13,5 +13,5 @@ public interface Calendar
 	 * @return the Course of the class
 	 */
 	@JsonProperty( "courses" )
-	public List< Course > getMarkables();
+	public List< Course > getCourses();
 }

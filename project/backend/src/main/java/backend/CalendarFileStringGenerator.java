@@ -7,8 +7,17 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import objects.Calendar;
+import objects.CalendarImpl;
+import objects.Course;
+import objects.CourseImpl;
+import objects.Markable;
+import objects.MarkableImpl;
 
 public class CalendarFileStringGenerator
 {
@@ -35,7 +44,7 @@ public class CalendarFileStringGenerator
 	/*
 	 * This method returns a string representing all events in events
 	 */
-	public String BuildEvents()
+	public String BuildEvents( final Calendar calendar )
 	{
 		//Header
 		String calendarFileString = new StringBuilder()
@@ -45,14 +54,21 @@ public class CalendarFileStringGenerator
 			.toString();
 		final String footer = "END:VCALENDAR";
 
-		//Add Events
-		for( int i = 0; i < events.size(); ++i )
+		for( final Course course : calendar.getCourses() )
 		{
-			final String summary = events.get( i ).get( 0 );
-			final String description = events.get( i ).get( 1 );
-			final String startDateAndTime = jsonTimeStampToEventTimeStamp( events.get( i ).get( 2 ) );
-			calendarFileString = calendarFileString + ( BuildEvent( summary, startDateAndTime, description ) );
+			//Add markables
+			for( final Markable markable : course.getMarkables() )
+			{
+				final String summary = markable.getMarkableName();
+				final String description = markable.getWeight();
+				final String startDateAndTime = jsonTimeStampToEventTimeStamp(markable.getDueDate());
+				final String endDateAndTime = jsonTimeStampToEventTimeStamp(markable.getEndDate());
+				calendarFileString = calendarFileString + 
+						(BuildEvent(course.getCourseCode() + " " + summary, startDateAndTime, 
+								description, endDateAndTime, markable.getLocation()));
+			}
 		}
+
 		return calendarFileString + footer;
 	}
 
@@ -63,39 +79,24 @@ public class CalendarFileStringGenerator
 	public String BuildEvent(
 			final String summary,
 			final String startDateAndTime,
-			final String description )
+			final String description,
+			String endDate,
+			String location)
 	{
-
-		final String hour = startDateAndTime.substring( 9, 11 );
-
-		final int duration = 1;
-
-		final int hourInt = Integer.parseInt( hour );
-
-		final int newHourInt = hourInt + duration;
-
-		final String newHourString = Integer.toString( newHourInt );
-
-		final String endDateAndTime = startDateAndTime.substring( 0, 9 ) + newHourString + startDateAndTime.substring( 11, startDateAndTime.length() );
-		//		String location = location == null ? "BA 1200" : location;
-		final String location = "";
-
+		if(location.equals("Not applicable"))
+			location = "";
 		final String exDateAndTime = startDateAndTime;
-
 		final String trigger = "-PT1H";
-
 		final String repeat = "4";
-
 		final String alarmDuration = "PT15M";
-
 		final String alarmDescription = summary;
-
+		
 		// Construct a string representation of the event
 		final String event = new StringBuilder()
 			.append( String.format( "BEGIN:VEVENT\n" ) )
 			.append( String.format( "SUMMARY:%s\n", summary ) )
 			.append( String.format( "DTSTART;TZID=America/Toronto:%s\n", startDateAndTime ) )
-			.append( String.format( "DTEND;TZID=America/Toronto:%s\n", endDateAndTime ) )
+			.append( String.format( "DTEND;TZID=America/Toronto:%s\n", endDate ) )
 			.append( String.format( "DESCRIPTION:%s\n", description ) )
 			.append( String.format( "LOCATION:%s\n", location ) )
 			.append( String.format( "EXDATE;TZID=America/Toronto:%s\n", exDateAndTime ) )
@@ -123,59 +124,45 @@ public class CalendarFileStringGenerator
 	 * Using regular expressions, this method parses event data from the jsonData raw string data based on predefined event attributes. The attributes are added
 	 * to the respective ArrayList representation of an event.
 	 */
-	public void parseJson()
+	// this will have to change to involve two different courses
+	public Calendar parseJson() throws JsonParseException, JsonMappingException, IOException
 	{
-		Pattern p = Pattern.compile( "\"courseCode\":\"(\\w+)\"" );
-		Matcher m = p.matcher( jsonData );
-		m.find();
-		final String courseCode = m.group( 1 );
+		final ObjectMapper objectMapper = new ObjectMapper();
+		final List< Course > courseList = new ArrayList< Course >();
+		final List< Markable > markableList = new ArrayList< Markable >();
 
-		//		Get Event Names
-		p = Pattern.compile( "\"name\":\\s*\"(\\w+)\"" );
-		m = p.matcher( jsonData );
-		while( m.find() )
-		{
-			final ArrayList< String > innerList = new ArrayList< String >();
-			innerList.add( courseCode + " " + m.group( 1 ) );
-			events.add( innerList );
-		}
-
-		//		Get Event Weights
-		p = Pattern.compile( "\"weight\":\\s*\"(\\w+%)\"" );
-		m = p.matcher( jsonData );
-		int index = 0;
-		while( m.find() )
-		{
-			final ArrayList< String > innerList = events.get( index );
-			innerList.add( m.group( 1 ) );
-			++index;
-		}
-
-		//		Get Event Due Dates
-		p = Pattern.compile( "\"dueDate\":\\s*\"(\\d+-\\d+-\\d+T\\d+:\\d+:\\d+Z)\"" );
-		m = p.matcher( jsonData );
-		index = 0;
-		while( m.find() )
-		{
-			final ArrayList< String > innerList = events.get( index );
-			innerList.add( m.group( 1 ) );
-			++index;
-		}
+		markableList.add( new MarkableImpl( "Test", "Test", "Test", "Test", "Test") );
+		courseList.add( new CourseImpl( "Test", "Test", markableList ) );
+		Calendar calendar = new CalendarImpl( courseList );
+		calendar = objectMapper.readValue( jsonData, CalendarImpl.class );
+		return calendar;
 	}
 
 	/*
 	 * This method reads events from a predefined JSON file and returns a string representation of all events.
 	 */
-	public String GenerateString() throws FileNotFoundException, IOException
+	public String generateString() throws FileNotFoundException, IOException
 	{
 		final CalendarFileStringGenerator file = new CalendarFileStringGenerator();
 		file.readLinesInFile();
-		file.parseJson();
-		final String eventsToWrite = file.BuildEvents();
+		final Calendar calendar = file.parseJson();
+		final String eventsToWrite = file.BuildEvents( calendar );
 		return eventsToWrite;
-		//		File Output
-		//		try(PrintWriter out = new PrintWriter("TuesdayTest.ics")) {
-		//			out.println(eventsToWrite);
-		//		}
+	}
+
+	/*
+	 * This method reads events from a predefined JSON file and returns a string representation of all events.
+	 */
+	public String generateStringFromCalendar( final List< Course > courseList ) throws FileNotFoundException, IOException
+	{
+		final Calendar calendar = new CalendarImpl( courseList );
+		final String eventsToWrite = BuildEvents( calendar );
+		return eventsToWrite;
+	}
+
+	public static void main( final String[] args ) throws FileNotFoundException, IOException
+	{
+		final CalendarFileStringGenerator c = new CalendarFileStringGenerator();
+		c.generateString();
 	}
 }

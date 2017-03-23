@@ -3,10 +3,10 @@ function signupSetup (){
 
     // Fetch the user's current info
     $.get('/getOneUser', function(data){
-		
-        $('#login').hide();
-        $('#courses').show();
-        $('#profile').show();
+
+        $('a#login').hide();
+        $('a#courses').show();
+        $('a#profile').show();
         $('#logout').show();
 
 
@@ -21,10 +21,27 @@ function signupSetup (){
 
 }
 
+/*function handleUpload(){
+
+    $('#uploadPdf').submit(function(event) {
+
+        event.preventDefault();
+
+        // Get the data from form
+        let formData = $('#uploadPdf').serialize();
+
+        $.get('/uploadSyllabus', formData, function(data) {
+            alert('Syllabus added.');
+        })
+
+        return false;
+    });
+}*/
+
 $(document).ready(function(){
-	$('#courses').hide();
-    $('#profile').hide();
-    $('#logout').hide();
+	    $('a#courses').hide();
+        $('a#profile').hide();
+        $('#logout').hide();
     $('#upload').click(function () {
         $('#uploadPdf').show();
         $('#info').hide();
@@ -38,5 +55,7 @@ $(document).ready(function(){
     });
 
     signupSetup();
+
+    //handleUpload();
 
 })

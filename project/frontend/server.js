@@ -4,7 +4,19 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 var session = require('express-session');
-
+/*multer reads files*/
+var multer  =   require('multer');
+/*set directory where the uploaded file must go*/
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-Syllabus' + Date.now());
+  }
+});
+/*upload handles input called 'file'*/
+var upload = multer({ storage : storage}).array('file',6);
 
 var app = express();
 
@@ -32,13 +44,22 @@ app.get('/', function(req, res) {
     res.sendfile('views/index.html');
 });
 
+app.post('/uploadSyllabus',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.sendfile('views/courses.html');
+    });
+});
+
 // Main page.
 app.get('/index', function(req, res) {
     res.sendfile('views/index.html');
 });
 
 app.get('/login', function(req, res) {
-	if (req.session.username == undefined) {
+    if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     } else {
         usersDb.findOne({
@@ -49,7 +70,7 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-	if (req.session.username == undefined) {
+    if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     } else {
         usersDb.findOne({
@@ -72,6 +93,7 @@ app.get('/logout', function(req, res) {
 
 // Routes files
 var users = require('./routes/userRoutes.js');
+var file = require('./routes/fileRoutes.js');
 
 // Models
 var usersDb = require('./models/user');
@@ -81,6 +103,9 @@ var usersDb = require('./models/user');
 app.post('/createAccount', users.signUp);
 app.post('/signIn', users.signIn);
 app.get('/getOneUser', users.getOneUser);
+
+//file routes
+app.post('/parsePdf',file.parsePdf);
 
 
 

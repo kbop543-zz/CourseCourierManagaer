@@ -16,7 +16,7 @@ public class CalendarImpl implements Calendar
 		this.courses = Preconditions.checkNotNull( courses, "Precondition. courses is NULL in CalendarImpl::CalendarImpl" );
 	}
 
-	public List< Course > getMarkables()
+	public List< Course > getCourses()
 	{
 		return courses;
 	}
