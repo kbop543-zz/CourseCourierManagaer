@@ -1,4 +1,5 @@
 CSC318H1S (Winter 2017) 
+DESIGN OF INTERACTIVE COMPUTATIONAL MEDIA
 Course Information Sheet 
 User-centred design of interactive systems; methodologies, principles, and metaphors. 
 Interdisciplinary design; the role of graphic design, industrial design, and the behavioural 
@@ -103,7 +104,8 @@ Group formation 
 
 1% 
 
-Jan. 16 
+2017-­01-­16  
+16:00:00  
 
 P2 
 
@@ -111,7 +113,8 @@ Problem space and literature review 
 
 4% 
 
-Jan. 23 
+2017-­01-­23  
+16:00:00  
 
 P3 
 
@@ -119,7 +122,8 @@ Research instruments script 
 
 4% 
 
-Jan. 30 
+2017-­01-­30  
+16:00:00  
 
 P4 
 
@@ -127,7 +131,8 @@ Revised research instruments script 
 
 2% 
 
-Feb. 6 
+2017-­02-­06  
+16:00:00  
 
 A1 
 
@@ -135,7 +140,8 @@ Harness new technology 
 
 10% 
 
-Feb. 6 
+2017-02-15
+16:00:00
 
 P5 
 
@@ -143,7 +149,8 @@ Research summary and interpretation 
 
 8% 
 
-Feb. 27 
+2017-­02-­27  
+16:00:00  
 
 A2 
 
@@ -151,7 +158,8 @@ Heuristic evaluation 
 
 10% 
 
-Feb. 27 
+2017-02-27
+16:00:00
 
 P6 
 
@@ -159,7 +167,8 @@ Brainstorm and representative sketch 
 
 4% 
 
-Mar. 6 
+2017-­03-­05  
+16:00:00  
 
 P7 
 
@@ -167,7 +176,8 @@ Prototype and usability testing script 
 
 4% 
 
-Mar. 13 
+2017-­03-­15  
+16:00:00   
 
 P8 
 
@@ -175,7 +185,8 @@ Updated prototype and testing results 
 
 8% 
 
-Mar. 27 
+2017-­03-­27  
+16:00:00  
 
 P9 
 
@@ -183,7 +194,8 @@ Final project presentation 
 
 4% 
 
-Mar. 31 
+2017-­03-­30  
+16:00:00 
 
 A3 
 
@@ -191,7 +203,8 @@ Skin a wireframe 
 
 10% 
 
-Apr. 2 
+2017-04-22
+16:00:00
 
 P10 
 
@@ -199,7 +212,8 @@ Write-up and project submission 
 
 8% 
 
-Apr. 5 
+2017-­04-­05  
+16:00:00  
 
 Tutorials 
 
@@ -224,52 +238,3 @@ TUX talk attendance 
 (+3%) 
 
 bonus 
-
-Late policy 
-● Submissions <8 hours late are graded as normal.  
-● Submissions <24 hours late incur a 10% penalty.  
-● Submissions <48 hours late incur a 30% penalty.  
-● Submissions more than 48 hours late are not accepted and earn a mark of 0. 
-Exceptions to this policy are to be made only in extreme circumstances and would require a 
-medical certiﬁcate or similar document. 
- 
-Course goals 
-● Practice research methods for understanding user needs and practices 
-● Interpret raw data and create design artifacts (e.g., personas, experience maps, 
-scenarios) 
-● Brainstorm, sketch and design prototypes that solve real user problems 
-● Evaluate prototypes (yours and others’) for usability, learnability and usefulness 
-● Understand human cognition and perception 
- 
-Skills / Knowledge testing in the course 
-● Group project (47%) 
-○ Research user needs in a particular problem domain  
-○ Interpret research into design guidelines 
-○ Ideate and create prototype 
-○ Evaluate prototype 
-○ Summarize project 
-● Individual assessments (30%) 
-○ Design a new interaction set for a recent technical innovation  
-○ Perform heuristic evaluation on an existing website or interface  
-○ Graphic and visual design 
-● Tutorial participation (14%) 
-○ Practice skills discussed in class, individually or in your project groups 
-● Blog posts (9%) 
-○ Meaningfully contribute to design discourse 
- 
-Prerequisite skills 
-No required background, but any of the following an asset: 
-● Graphic design / image manipulation 
-● Technical writing 
-● Research and literature review experience 
-● Development, especially mobile or web 
-● Psychology or human cognition 
- 
-References and recommended reading 
-● Interaction Design (4th Ed.) by Rogers, Sharp & Preece 
-● The Design of Everyday Things by Don Norman 
-● Don’t Make Me Think (revisited) by Steve Krug 
-● 100 Things Every Designer Needs To Know About People by S. Weinschenk 
-● Simple and Usable by Giles Colborne 
-
-
