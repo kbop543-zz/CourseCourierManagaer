@@ -22,11 +22,22 @@ function loadCourses (){
 			});
           $("main").append('<h2 id = "courselist">' + course.courseCode + ": " + course.courseName + '</h2>');
   		for (let j in mark){
+			var markdate;
+			if(mark[j].dueDate == null){
+				markdate = null;
+			}
+			else if (mark[j].dueDate.split(' ').length > 1){
+				markdate = mark[j].dueDate.split(' ')[0].split('-')[1] + 
+				' ' + mark[j].dueDate.split(' ')[0].split('-')[2] + ', ' 
+				+ mark[j].dueDate.split(' ')[0].split('-')[0];
+			}else{
+				markdate = mark[j].dueDate;
+			}
   			$("h2#courselist").append('<ul id = "mark"><li>' +
   			"Name: " + mark[j].name + "</li><li>" +
   			"Description: " + mark[j].description + "</li><li>" +
   			"Weight: " + mark[j].weight + "</li><li>" +
-  			"Due Date: " + mark[j].dueDate + "</li></ul>");
+  			"Due Date: " + markdate + "</li></ul>");
   		}
   }
     });
