@@ -7,27 +7,32 @@
             {
                "name":"A1",
                "weight":"10%",
-               "dueDate":"2017-01-26T16:00:00Z"
+               "dueDate":"2017-01-26T16:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"A2",
                "weight":"15%",
-               "dueDate":"2017-02-16T16:00:00Z"
+               "dueDate":"2017-02-16T16:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"A3",
                "weight":"20%",
-               "dueDate":"2017-02-28T16:00:00Z"
+               "dueDate":"2017-02-28T16:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"Midterm",
                "weight":"25%",
-               "dueDate":"2017-03-17T16:00:00Z"
+               "dueDate":"2017-03-17T16:00:00Z",
+               "location":"EX100"
             },
             {
                "name":"Exam",
                "weight":"30%",
-               "dueDate":"2017-04-02T18:00:00Z"
+               "dueDate":"2017-04-02T18:00:00Z",
+               "location":"EX200"
             }
          ]
       },
@@ -38,27 +43,32 @@
             {
                "name":"A4",
                "weight":"10%",
-               "dueDate":"2017-01-26T17:00:00Z"
+               "dueDate":"2017-01-26T17:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"A5",
                "weight":"15%",
-               "dueDate":"2017-02-16T17:00:00Z"
+               "dueDate":"2017-02-16T17:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"A6",
                "weight":"20%",
-               "dueDate":"2017-02-28T17:00:00Z"
+               "dueDate":"2017-02-28T17:00:00Z",
+               "location":"Not applicable"
             },
             {
                "name":"Midterm2",
                "weight":"25%",
-               "dueDate":"2017-03-17T17:00:00Z"
+               "dueDate":"2017-03-17T17:00:00Z",
+               "location":"EX300"
             },
             {
                "name":"Exam2",
                "weight":"30%",
-               "dueDate":"2017-04-02T18:00:00Z"
+               "dueDate":"2017-04-02T18:00:00Z",
+               "location":"EX400"
             }
          ]
       }

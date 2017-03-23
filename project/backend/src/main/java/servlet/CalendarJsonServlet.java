@@ -36,11 +36,11 @@ public class CalendarJsonServlet extends HttpServlet
 		final List< Course > courseList = new ArrayList< Course >();
 		final List< Markable > markableList = new ArrayList< Markable >();
 
-		markableList.add( new MarkableImpl( "A1", "10%", "2017-01-26T16:00:00Z" ) );
-		markableList.add( new MarkableImpl( "A2", "15%", "2017-02-16T16:00:00Z" ) );
-		markableList.add( new MarkableImpl( "A3", "20%", "2017-02-28T16:00:00Z" ) );
-		markableList.add( new MarkableImpl( "Midterm", "25%", "2017-03-17T16:00:00Z" ) );
-		markableList.add( new MarkableImpl( "Exam", "30%", "2017-04-02T18:00:00Z" ) );
+		markableList.add( new MarkableImpl( "A1", "10%", "2017-01-26T16:00:00Z", "Not applicable" ) );
+		markableList.add( new MarkableImpl( "A2", "15%", "2017-02-16T16:00:00Z", "Not applicable" ) );
+		markableList.add( new MarkableImpl( "A3", "20%", "2017-02-28T16:00:00Z", "Not applicable" ) );
+		markableList.add( new MarkableImpl( "Midterm", "25%", "2017-03-17T16:00:00Z", "EX100" ) );
+		markableList.add( new MarkableImpl( "Exam", "30%", "2017-04-02T18:00:00Z", "EX200" ) );
 		courseList.add( new CourseImpl( "csc300", "csc300h1", markableList ) );
 		courseList.add( new CourseImpl( "csc301", "csc301h1", markableList ) );
 		courseList.add( new CourseImpl( "csc302", "csc302h1", markableList ) );

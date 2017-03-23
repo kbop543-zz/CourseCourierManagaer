@@ -11,17 +11,19 @@ public class MarkableImpl implements Markable
 	private final String weight;
 
 	private final String dueDate;
+	
+	private String location;
 
 	public MarkableImpl(
 			@JsonProperty( "name" ) final String name,
 			@JsonProperty( "weight" ) final String weight,
-			@JsonProperty( "dueDate" ) final String dueDate )
+			@JsonProperty( "dueDate" ) final String dueDate,
+			@JsonProperty("location") String location)
 	{
 		this.name = Preconditions.checkNotNull( name, "Precondition: name is NULL in MarkableImpl#MarkableImpl" );;
 		this.weight = Preconditions.checkNotNull( weight, "Precondition: weight is NULL in MarkableImpl#MarkableImpl" );;
 		this.dueDate = Preconditions.checkNotNull( dueDate, "Precondition: dueDate is NULL in MarkableImpl#MarkableImpl" );;
-
-
+		this.location = Preconditions.checkNotNull( location, "Precondition: location is NULL in MarkableImpl#MarkableImpl" );;
 	}
 
 	public String getMarkableName()
@@ -54,6 +56,10 @@ public class MarkableImpl implements Markable
 			return Objects.equal( this.name, that.name ) && Objects.equal( this.weight, that.weight ) && Objects.equal( this.dueDate, that.dueDate );
 		}
 		return false;
+	}
+
+	public String getLocation() {
+		return location;
 	}
 
 }
