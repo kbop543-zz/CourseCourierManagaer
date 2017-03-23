@@ -3,7 +3,7 @@ Important colors:
 deep aqua: #003B46
 ocean: #07575B
 wave: #66A5AD
-seafoam: #C4DF#6
+seafoam: #C4DFE6
 source: https://designschool.canva.com/blog/100-color-combinations/
 */
 html {
@@ -88,8 +88,18 @@ footer {
     display: none;
 }
 
-ul{
-    list-style-type: none;	
+#courselist{
+	color: #003B46;
+}
+
+#mark{
+    list-style-type: none;
+	font-size: 24px;
+	color: #66A5AD;
+	background: #07575B;
+	padding: 10 px;
+	border: 2px solid;
+    border-radius: 25px;
 }
 
 /*

@@ -15,9 +15,14 @@ function loadCourses (){
   			var course = obj.courses[i];
         console.log("this is the course" +course);
   			var mark = course.markables;
-          $("main").append('<p id = "courselist">' + course.courseCode + ": " + course.courseName + '</p>');
+			mark.sort(function(a,b){
+					var c = new Date(a.dueDate);
+					var d = new Date(b.dueDate);
+					return c-d;
+			});
+          $("main").append('<h2 id = "courselist">' + course.courseCode + ": " + course.courseName + '</h2>');
   		for (let j in mark){
-  			$("p#courselist").append('<ul id = "mark"><li>' +
+  			$("h2#courselist").append('<ul id = "mark"><li>' +
   			"Name: " + mark[j].name + "</li><li>" +
   			"Description: " + mark[j].description + "</li><li>" +
   			"Weight: " + mark[j].weight + "</li><li>" +
