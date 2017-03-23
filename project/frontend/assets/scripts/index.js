@@ -39,6 +39,9 @@ function handleUpload(){
 }
 
 $(document).ready(function(){
+	    $('a#courses').hide();
+        $('a#profile').hide();
+        $('#logout').hide();
     $('#upload').click(function () {
         $('#uploadPdf').show();
         $('#info').hide();
