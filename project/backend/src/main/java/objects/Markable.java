@@ -27,5 +27,18 @@ public interface Markable
 	 */
 	@JsonProperty( "dueDate" )
 	public String getDueDate();
-
+	
+	/**
+	 * Gets the location of the markable
+	 * @return the location of the markable
+	 */
+	@JsonProperty( "location" )
+	public String getLocation();
+	
+	/**
+	 * Gets the end date of the markable
+	 * @return the end date of the markable
+	 */
+	@JsonProperty( "endDate" )
+	public String getEndDate();
 }

@@ -8,7 +8,7 @@ var courseObj;
 fs.readFile('courses.json', 'utf-8', function(err, data) {
     if(err) throw err;
     courseObj = JSON.parse(data);
-    console.log(courseObj.courses);
+    
 });
 
 /*helper function to split text file line by line and read*/
@@ -38,17 +38,15 @@ function read(file, cb) {
     break;
 
   }
-  
-  
 
   courseData2 = courseData.split("\n");
-  //filter out empty strings that are there as a result of 
+
+  //filter out empty strings that are there as a result of spaces between lines
   courseData2 = courseData2.filter(function(element){
     return element !== "";
   })
 
 
-console.log(courseData2);
 
 
   
@@ -65,7 +63,7 @@ console.log(courseData2);
       "dueDate": courseData2[l]
 
     })
-  console.log(markables);
+
     
   }
 
@@ -75,34 +73,48 @@ console.log(courseData2);
       "markables": markables
     });
 
-  console.log(everything);
-  console.log(courseObj.courses);
-  courseObj.courses.push(everything);
+  var temp = {"courses" : everything}
+  courseObj.courses.push(temp.courses[0]);
+  var json = JSON.stringify(courseObj);
+
+
+  /*fs.writeFile('courses.json', json, 'utf8',function(err) {
+    if(err) throw err;
+  });*/
+
   cb(courseObj);
-  })
-  
-
-
+  fs.unlinkSync(filePath);
+})
 }
 
 //parse pdf and upload the parsed file to console 
 exports.parsePdf = function(req, res) {
     console.log('parsePdf');
+    var finalObj;
 
     fs.readdir('./uploads', function(err, filenames) {
+
     if (err) {
       throw err;
       return;
     }
     filenames.forEach(function(filename) {
       read(filename, function(data) {
-
-        //console.log(data)
-        res.send(data);
+        
       });
   })
+   /* //delete the file(s) after we are done with them
+    filenames.forEach(function(filename) {
+      fs.unlinkSync('./uploads/' + filename);
+    });*/
+    
+    
+
 })
     
+    res.send(courseObj);
+
 }
+
 
 
