@@ -42,7 +42,8 @@ function read(file, cb) {
   
 
   courseData2 = courseData.split("\n");
-  //filter out empty strings that are there as a result of 
+
+  //filter out empty strings that are there as a result of spaces between lines
   courseData2 = courseData2.filter(function(element){
     return element !== "";
   })
@@ -80,6 +81,7 @@ console.log(courseData2);
   courseObj.courses.push(everything);
   cb(courseObj);
   })
+
   
 
 
@@ -102,6 +104,7 @@ exports.parsePdf = function(req, res) {
       });
   })
 })
+//fs.unlinkSync('./uploads');
     
 }
 
