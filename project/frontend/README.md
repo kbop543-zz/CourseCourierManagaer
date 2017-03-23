@@ -28,10 +28,10 @@ https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 
 -open another terminal and cd into project folder
 
--type 'nodemon index.js' in the terminal
+-type 'nodemon server.js' in the terminal
 
 *Note:*
->If typing 'nodemon index.js' returns and error like Error: Cannot find module 'express-validator', try running 'npm install' again
+>If typing 'nodemon server.js' returns and error like Error: Cannot find module 'express-validator', try running 'npm install' again
 
 -type 'http://127.0.0.1:3000/index' in your browser window
 
