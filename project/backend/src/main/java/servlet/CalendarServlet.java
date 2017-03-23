@@ -39,10 +39,8 @@ public class CalendarServlet extends HttpServlet
 	{
 		// Get a string representation of events in the JSON file
 		final CalendarFileStringGenerator generator = new CalendarFileStringGenerator();
-
-		//		final String calendarString = generator.GenerateString();
-
-		final String calendarString = generator.generateStringFromCalenar( uploadedCourses );
+//		final String calendarString = generator.generateStringFromCalendar(uploadedCourses);
+		final String calendarString = generator.generateString();
 
 
 		final ServletOutputStream out = resp.getOutputStream();
@@ -100,18 +98,23 @@ public class CalendarServlet extends HttpServlet
 				System.out.println( course.getMarkables().get( 0 ).getMarkableName() );
 				System.out.println( course.getMarkables().get( 0 ).getWeight() );
 				System.out.println( course.getMarkables().get( 0 ).getDueDate() );
+				System.out.println( course.getMarkables().get( 0 ).getLocation() );
 				System.out.println( course.getMarkables().get( 1 ).getMarkableName() );
 				System.out.println( course.getMarkables().get( 1 ).getWeight() );
 				System.out.println( course.getMarkables().get( 1 ).getDueDate() );
+				System.out.println( course.getMarkables().get( 1 ).getLocation() );
 				System.out.println( course.getMarkables().get( 2 ).getMarkableName() );
 				System.out.println( course.getMarkables().get( 2 ).getWeight() );
 				System.out.println( course.getMarkables().get( 2 ).getDueDate() );
+				System.out.println( course.getMarkables().get( 2 ).getLocation() );
 				System.out.println( course.getMarkables().get( 3 ).getMarkableName() );
 				System.out.println( course.getMarkables().get( 3 ).getWeight() );
 				System.out.println( course.getMarkables().get( 3 ).getDueDate() );
+				System.out.println( course.getMarkables().get( 3 ).getLocation() );
 				System.out.println( course.getMarkables().get( 4 ).getMarkableName() );
 				System.out.println( course.getMarkables().get( 4 ).getWeight() );
 				System.out.println( course.getMarkables().get( 4 ).getDueDate() );
+				System.out.println( course.getMarkables().get( 4 ).getLocation() );
 				System.out.println( "" );
 			}
 		}
