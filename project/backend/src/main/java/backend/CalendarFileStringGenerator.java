@@ -61,8 +61,11 @@ public class CalendarFileStringGenerator
 			{
 				final String summary = markable.getMarkableName();
 				final String description = markable.getWeight();
-				final String startDateAndTime = jsonTimeStampToEventTimeStamp( markable.getDueDate() );
-				calendarFileString = calendarFileString + ( BuildEvent( course.getCourseCode() + " " + summary, startDateAndTime, description ) );
+				final String startDateAndTime = jsonTimeStampToEventTimeStamp(markable.getDueDate());
+				final String endDateAndTime = jsonTimeStampToEventTimeStamp(markable.getEndDate());
+				calendarFileString = calendarFileString + 
+						(BuildEvent(course.getCourseCode() + " " + summary, startDateAndTime, 
+								description, endDateAndTime, markable.getLocation()));
 			}
 		}
 
@@ -76,39 +79,24 @@ public class CalendarFileStringGenerator
 	public String BuildEvent(
 			final String summary,
 			final String startDateAndTime,
-			final String description )
+			final String description,
+			String endDate,
+			String location)
 	{
-
-		final String hour = startDateAndTime.substring( 9, 11 );
-
-		final int duration = 1;
-
-		final int hourInt = Integer.parseInt( hour );
-
-		final int newHourInt = hourInt + duration;
-
-		final String newHourString = Integer.toString( newHourInt );
-
-		final String endDateAndTime = startDateAndTime.substring( 0, 9 ) + newHourString + startDateAndTime.substring( 11, startDateAndTime.length() );
-		//		String location = location == null ? "BA 1200" : location;
-		final String location = "";
-
+		if(location.equals("Not applicable"))
+			location = "";
 		final String exDateAndTime = startDateAndTime;
-
 		final String trigger = "-PT1H";
-
 		final String repeat = "4";
-
 		final String alarmDuration = "PT15M";
-
 		final String alarmDescription = summary;
-
+		
 		// Construct a string representation of the event
 		final String event = new StringBuilder()
 			.append( String.format( "BEGIN:VEVENT\n" ) )
 			.append( String.format( "SUMMARY:%s\n", summary ) )
 			.append( String.format( "DTSTART;TZID=America/Toronto:%s\n", startDateAndTime ) )
-			.append( String.format( "DTEND;TZID=America/Toronto:%s\n", endDateAndTime ) )
+			.append( String.format( "DTEND;TZID=America/Toronto:%s\n", endDate ) )
 			.append( String.format( "DESCRIPTION:%s\n", description ) )
 			.append( String.format( "LOCATION:%s\n", location ) )
 			.append( String.format( "EXDATE;TZID=America/Toronto:%s\n", exDateAndTime ) )
@@ -143,8 +131,8 @@ public class CalendarFileStringGenerator
 		final List< Course > courseList = new ArrayList< Course >();
 		final List< Markable > markableList = new ArrayList< Markable >();
 
-		markableList.add( new MarkableImpl( "Test", "Test", "Test" ) );
-		courseList.add( new CourseImpl( "csc300", "csc300h1", markableList ) );
+		markableList.add( new MarkableImpl( "Test", "Test", "Test", "Test", "Test") );
+		courseList.add( new CourseImpl( "Test", "Test", markableList ) );
 		Calendar calendar = new CalendarImpl( courseList );
 		calendar = objectMapper.readValue( jsonData, CalendarImpl.class );
 		return calendar;
@@ -153,7 +141,7 @@ public class CalendarFileStringGenerator
 	/*
 	 * This method reads events from a predefined JSON file and returns a string representation of all events.
 	 */
-	public String GenerateString() throws FileNotFoundException, IOException
+	public String generateString() throws FileNotFoundException, IOException
 	{
 		final CalendarFileStringGenerator file = new CalendarFileStringGenerator();
 		file.readLinesInFile();
@@ -165,11 +153,9 @@ public class CalendarFileStringGenerator
 	/*
 	 * This method reads events from a predefined JSON file and returns a string representation of all events.
 	 */
-	public String generateStringFromCalenar( final List< Course > courseList ) throws FileNotFoundException, IOException
+	public String generateStringFromCalendar( final List< Course > courseList ) throws FileNotFoundException, IOException
 	{
-
 		final Calendar calendar = new CalendarImpl( courseList );
-
 		final String eventsToWrite = BuildEvents( calendar );
 		return eventsToWrite;
 	}
@@ -177,6 +163,6 @@ public class CalendarFileStringGenerator
 	public static void main( final String[] args ) throws FileNotFoundException, IOException
 	{
 		final CalendarFileStringGenerator c = new CalendarFileStringGenerator();
-		c.GenerateString();
+		c.generateString();
 	}
 }

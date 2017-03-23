@@ -14,7 +14,11 @@ html {
     color: #66A5AD;
     background: #C4DFE6;
 }
-
+#main {
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
 #signUpForm {
     width: 220px;
     padding: 15px;
@@ -38,7 +42,6 @@ img{
     opacity: 0.6;
 }
 nav ul,footer ul{
-    list-style-type: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -84,6 +87,11 @@ footer {
 #signUp{
     display: none;
 }
+
+ul{
+    list-style-type: none;	
+}
+
 /*
 Responsive UI stuff to be added
 */
