@@ -21,22 +21,22 @@ function signupSetup (){
 
 }
 
-function handleUpload(){
+/*function handleUpload(){
 
-    $('#uploadPdfButton').submit(function(event) {
+    $('#uploadPdf').submit(function(event) {
 
         event.preventDefault();
 
         // Get the data from form
         let formData = $('#uploadPdf').serialize();
 
-        $.post('/uploadSyllabus', formData, function(data) {
+        $.get('/uploadSyllabus', formData, function(data) {
             alert('Syllabus added.');
         })
 
         return false;
     });
-}
+}*/
 
 $(document).ready(function(){
     $('#upload').click(function () {
@@ -53,6 +53,6 @@ $(document).ready(function(){
 
     signupSetup();
 
-    handleUpload();
+    //handleUpload();
 
 })
