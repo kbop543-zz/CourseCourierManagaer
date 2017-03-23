@@ -8,7 +8,7 @@ var courseObj;
 fs.readFile('courses.json', 'utf-8', function(err, data) {
     if(err) throw err;
     courseObj = JSON.parse(data);
-    console.log(courseObj.courses);
+    
 });
 
 /*helper function to split text file line by line and read*/
@@ -47,7 +47,6 @@ function read(file, cb) {
   })
 
 
-//console.log(courseData2);
 
 
   
@@ -64,7 +63,7 @@ function read(file, cb) {
       "dueDate": courseData2[l]
 
     })
-  //console.log(markables);
+
     
   }
 
@@ -74,12 +73,10 @@ function read(file, cb) {
       "markables": markables
     });
 
-  //console.log(everything);
-  //console.log(courseObj.courses);
   var temp = {"courses" : everything}
   courseObj.courses.push(temp.courses[0]);
   var json = JSON.stringify(courseObj);
-  console.log(JSON.stringify(courseObj));
+
 
   /*fs.writeFile('courses.json', json, 'utf8',function(err) {
     if(err) throw err;
@@ -104,10 +101,6 @@ exports.parsePdf = function(req, res) {
     filenames.forEach(function(filename) {
       read(filename, function(data) {
         
-
-        
-        //console.log("final obj is" + data);
-        
       });
   })
    /* //delete the file(s) after we are done with them
@@ -118,15 +111,10 @@ exports.parsePdf = function(req, res) {
     
 
 })
-    res.send(courseObj);
-    //sendData(res,req);
-
-//fs.unlinkSync('./uploads');
     
+    res.send(courseObj);
+
 }
 
-function sendData(res,req){
-  res.send(courseObj);
-}
 
 
