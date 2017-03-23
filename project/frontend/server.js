@@ -16,7 +16,7 @@ var storage =   multer.diskStorage({
   }
 });
 /*upload handles input called 'file'*/
-var upload = multer({ storage : storage}).single('file');
+var upload = multer({ storage : storage}).array('file',6);
 
 var app = express();
 

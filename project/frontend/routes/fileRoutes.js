@@ -38,8 +38,6 @@ function read(file, cb) {
     break;
 
   }
-  
-  
 
   courseData2 = courseData.split("\n");
 
@@ -49,7 +47,7 @@ function read(file, cb) {
   })
 
 
-console.log(courseData2);
+//console.log(courseData2);
 
 
   
@@ -66,7 +64,7 @@ console.log(courseData2);
       "dueDate": courseData2[l]
 
     })
-  console.log(markables);
+  //console.log(markables);
     
   }
 
@@ -76,36 +74,59 @@ console.log(courseData2);
       "markables": markables
     });
 
-  console.log(everything);
-  console.log(courseObj.courses);
-  courseObj.courses.push(everything);
+  //console.log(everything);
+  //console.log(courseObj.courses);
+  var temp = {"courses" : everything}
+  courseObj.courses.push(temp.courses[0]);
+  var json = JSON.stringify(courseObj);
+  console.log(JSON.stringify(courseObj));
+
+  /*fs.writeFile('courses.json', json, 'utf8',function(err) {
+    if(err) throw err;
+  });*/
+
   cb(courseObj);
-  })
-
-  
-
-
+  fs.unlinkSync(filePath);
+})
 }
 
 //parse pdf and upload the parsed file to console 
 exports.parsePdf = function(req, res) {
     console.log('parsePdf');
+    var finalObj;
 
     fs.readdir('./uploads', function(err, filenames) {
+
     if (err) {
       throw err;
       return;
     }
     filenames.forEach(function(filename) {
       read(filename, function(data) {
+        
 
-        //console.log(data)
-        res.send(data);
+        
+        //console.log("final obj is" + data);
+        
       });
   })
+   /* //delete the file(s) after we are done with them
+    filenames.forEach(function(filename) {
+      fs.unlinkSync('./uploads/' + filename);
+    });*/
+    
+    
+
 })
+    res.send(courseObj);
+    //sendData(res,req);
+
 //fs.unlinkSync('./uploads');
     
+}
+
+function sendData(res,req){
+  res.send(courseObj);
 }
 
 
