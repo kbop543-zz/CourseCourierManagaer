@@ -39,8 +39,7 @@ public class CalendarServlet extends HttpServlet
 	{
 		// Get a string representation of events in the JSON file
 		final CalendarFileStringGenerator generator = new CalendarFileStringGenerator();
-//		final String calendarString = generator.generateStringFromCalendar(uploadedCourses);
-		final String calendarString = generator.generateString();
+		final String calendarString = generator.generateStringFromCalendar(uploadedCourses);
 
 
 		final ServletOutputStream out = resp.getOutputStream();
