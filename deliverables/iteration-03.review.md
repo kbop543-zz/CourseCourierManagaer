@@ -1,66 +1,54 @@
-# YOUR PRODUCT/TEAM NAME
+# Courier Course Manager / TEAM Mighty Moose
 
- > _Note:_ This document is meant to be written during (or shortly after) your review meeting, which should happen fairly close to the due date.      
- >      
- > _Suggestion:_ Have your review meeting a day or two before the due date. This way you will have some time to go over (and edit) this document, and all team members should have a chance to make their contribution.
+## Iteration 3 - Review & Retrospect
 
-
-## Iteration XX - Review & Retrospect
-
- * When: FILL IN THE DATE WHEN YOU ACTUALLY HAD YOUR REVIEW MEETING
- * Where: PHYSICAL LOCATION AND/OR ONLINE
+ * When: Thursday, March 23, 9 pm
+ * Where: Everyone present online on google hangouts
 
 ## Process - Reflection
 
-(Optional) Short introduction
-
 #### Decisions that turned out well
 
-List process-related (i.e. team organization) decisions that, in retrospect, turned out to be successful.
+* Using Trello was a decision that turned out well because it gave us a better perspective on the high-level tasks we still needed to complete. We were able to assign high-level tasks to specific individuals who could then break the task up into smaller tasks. Now, our team uses git issues for low-level tasks and Trello for high-level ones. [Our trello is here.](https://trello.com/coursecourier)
 
-
- * 2 - 4 decisions.
- * Ordered from most to least important.
- * Explain why (i.e. give a supporting argument) you consider a decision to be successful.
- * Feel free to refer/link to process artifact(s).
+* The decision to respond to directed messages within 6 hours of being posted in Slack worked well, and really improved communication between group members. This allowed us to quickly determine what issues other members were facing during development. We could quickly share responsibilities with other group members who had more experience developing certain parts of the project.
 
 #### Decisions that did not turn out as well as we hoped
 
-List process-related (i.e. team organization) decisions that, in retrospect, were not as successful as you thought they would be.
+* Originally, we used independent Java servlets to parse the uploaded syllabus file into a calendar object. We began looking into solutions so that data and and user information could be cross-referenced within the backend. This over-complicated the design of the app and left some teammates doubtful of the direction that it was going. Instead, we parsed the syllabus file on the frontend with javascript. This simplified the app design because we didn’t have to pass the calendar object from a java backend to the frontend. [The original git issue is here.](https://github.com/csc301-winter-2017/project-team-11/issues/26)
 
- * 2 - 4 decisions.
- * Ordered from most to least important.
- * Feel free to refer/link to process artifact(s).
-
+* It was difficult to have everyone consistently commit code changes every three days. Many group members had commitments to other classes, especially over the weekend, that prevented us to contribute as frequently as wished. This resulted in us not being able to implement some features we wanted for this iteration and also resulted in some group members doing significantly more work than others in order to complete other features.
 
 #### Planned changes
 
-List any process-related changes you are planning to make (if there are any)
-
- * Ordered from most to least important.
- * Explain why you are making a change.
+* We will have our first planning meeting on Friday, March 24th at 5 pm. In previous iterations, including this one, progress was stalled by having our planning meeting too late in the process. This change will clarify which team members are doing what earlier eliminating confusion and allowing us to get to work earlier.
+* We are making a commitment to use Trello to organize our tasks. We realized how productive it was in this iteration because it allows us to assign tasks to groups of people easily, sort the tasks into different iterations, and break down these tasks in a way that git issues just doesn’t allow. 
+* We want to formally schedule meeting times between subgroups who are working on similar parts of the project. Previously, we paired up developers to tackle harder tasks. Since the two team members were working independently of one another, the same work sometimes got done twice. This will allow us to avoid redundantly doing work someone else is already handling. We can also quickly figure out what parts of the project members are comfortable with, given the time until the planning meeting.
 
 
 ## Product - Review
 
 #### Goals and/or tasks that were met/completed:
 
- * From most to least important.
- * Refer/link to artifact(s) that show that a goal/task was met/completed.
- * If a goal/task was not part of the original iteration plan, please mention it.
+* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) ([An example Mockup of our My Courses page](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png))
+* [Allow for uploading multiple syllabus files](https://github.com/csc301-winter-2017/project-team-11/issues/32) 
+* [Expand calendar objects to have end dates, locations, and other useful attributes](https://github.com/csc301-winter-2017/project-team-11/issues/28)
+* [Expand file upload so that it creates a JSON file with all the user's courses](https://github.com/csc301-winter-2017/project-team-11/issues/27) 
+* [Reliably connect the backend to the frontend](https://github.com/csc301-winter-2017/project-team-11/issues/26) 
+* [Support calendar file generation for multiple courses](https://trello.com/b/vn6knkIB/make-calendar-download-link-work-for-more-than-two-courses) 
+* [Fix some formatting CSS issues](https://trello.com/b/noVtyHlu/fix-stying) 
 
 #### Goals and/or tasks that were planned but not met/completed:
 
- * From most to least important.
- * For each goal/task, explain why it was not met/completed.      
-   e.g. Did you change your mind, or did you just not get to it yet?
+* Convert a PDF (of a fixed format) to a text file so you can regex the text file. This task was not because when we tried to parse the text in the PDF, the website kept crashing. We will try to get this working in the last iteration.
+* Create backend Java objects to demonstrate backend functionality of the application. This task did not get completed because we decided to move our backend to javascript, so these Java objects were no longer needed. This allowed for easier communication between the frontend and the backend, eliminating the need to call Java methods from the frontend code.
+* Add functionality for the user to be able to manually add course tasks if their syllabus wasn’t in the format specified. We didn’t have enough time to add this feature for this iteration.
+* Expand calendar file generation to be imported by Google Calendar. We tried to import a calendar file generator library that Google Calendar recognizes. While the library worked in a java main method, we ran into problems when we tried to use the imported library in the backend java server.
+* Create different user roles. This was a stretch goal and was not a high priority for this product. We are not implementing this feature in order to work on other features adequately. 
 
 ## Meeting Highlights
 
-Going into the next iteration, our main insights are:
+* We should be thinking about creating a presentable final product. We need to ensure that our frontend and backend works elegantly with each other and that the user has a pleasant experience.
+* There are still many unmet goals that we need to complete in the next week. The two biggest goals are a “grade calculator” feature that will tell the student their prospective grade in the course and a “suggested start time” feature that will suggest to the student when they should start an assignment.
 
- * 2 - 4 items
- * Short (no more than one short paragraph per item)
- * High-level concepts that should guide your work for the next iteration.
- * These concepts should help you decide on where to focus your efforts.
- * Can be related to product and/or process.
+
