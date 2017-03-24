@@ -30,7 +30,7 @@
 
 #### Goals and/or tasks that were met/completed:
 
-* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) ([An example Mockup of our My Courses page that we used to guide us](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/My%20Courses%20(1).png)
+* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) ([An example Mockup of our My Courses page that we used to guide us](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png))
 * [Allow for uploading multiple syllabus files](https://github.com/csc301-winter-2017/project-team-11/issues/32) 
 * [Expand calendar objects to have end dates, locations, and other useful attributes](https://github.com/csc301-winter-2017/project-team-11/issues/28)
 * [Expand file upload so that it creates a JSON file with all the user's courses](https://github.com/csc301-winter-2017/project-team-11/issues/27) 
@@ -49,8 +49,8 @@
 ## Meeting Highlights
 
 * We should be thinking about creating a presentable final product. We need to ensure that our frontend and backend works elegantly with each other and that out website is intuitive to use. Thus, we want to change the start up page of our website and reformat some of the layout to ensure our website is easier to use.
-* There are still many unmet goals that we need to complete in the next week. The two biggest goals are to [implement a “grade calculator” feature](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/MyCoursesAddGradeButton.png) that will [tell the student their prospective grade in the course](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/AddGradeForm.png) and a “suggested start time” feature that will suggest to the student when they should start an assignment. We have set out a two-tiered approach to achieving the start time algorithm:
-  * [Our primary goal is to have suggestions on when to start an assignment directly correlated with the weight of the given assignment.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/ReccomendedStartTimeGoal1.png) 
-  * [Our secondary goal is to implement these suggestions on external factors such as overalapping assignments, holidays, etc.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/ReccomendedStartTimeGoal2.png)
-
+* There are still many unmet goals that we need to complete in the next week. The two biggest goals are a “grade calculator” feature that will tell the student their prospective grade in the course and a “suggested start time” feature that will suggest to the student when they should start an assignment. We have set out a two-tiered approach to achieving this.
+  * [Our primary goal is to have suggestions on when to start an assignment directly correlated with the weight of the given assignment.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/ReccomendedStartTimeGoal1.png) 
+  * [Our secondary goal is to implement these suggestions on extrenal factors such as overalapping assignments, holidays, etc.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/ReccomendedStartTimeGoal12.png)
+  *  [We may also wish to integrate it into our new tile view](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/ReccomendedStartTimeTlleView.png)
 
