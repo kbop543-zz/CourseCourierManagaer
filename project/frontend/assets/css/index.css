@@ -93,10 +93,9 @@ footer {
 }
 
 #mark{
+    width: 25%;
     list-style-type: none;
 	font-size: 24px;
-	color: #66A5AD;
-	background: #07575B;
 	padding: 10 px;
 	border: 2px solid;
     border-radius: 25px;
