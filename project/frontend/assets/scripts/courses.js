@@ -99,7 +99,6 @@ function loadCourses () {
   				      "Description: " + allMarkables[j][5] + "</li><li>" +
   				      "Weight: " + allMarkables[j][2] + "</li><li>" +
   				      "Due Date: " + markdate + "</li></ul>");
-            }
         }
 
         //ICS FILE YO
