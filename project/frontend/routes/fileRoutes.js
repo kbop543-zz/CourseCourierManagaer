@@ -3,6 +3,10 @@
 var User = require('../models/user');
 
 var fs = require('fs');
+
+var dateFormat = require('dateformat');
+
+
 var courseObj;
 
 fs.readFile('courses.json', 'utf-8', function(err, data) {
@@ -56,13 +60,40 @@ function read(file, cb) {
    && j<courseData2.length 
    && k<courseData2.length 
    && l<courseData2.length; i+=4,j+=4,k+=4,l+=4){
+
+    //var now = courseData2[l];
+
+//console.log(now);
+
+    //dateFormat(now, "yyyy-­mm-­dd  HH:MM:ss")
+
+     var dateTime = courseData2[l].split(" ");
+     var date = dateTime[0].split("/");
+     console.log(date);
+     /*console.log(date[1]);
+     console.log(date[2]);
+     if(date[1][0] == '-'){
+      date[1] = date[1]+date[2];
+      console.log(date[1]);*/
+     //}
+     //var time = dateTime[1].split(":");
+     //console.log(dateTime);
+     //console.log(date);
+     //console.log(time);
+
+     var milliseconds = "00";
+
     markables.push({
       "name": courseData2[i],
       "description": courseData2[j],
       "weight": courseData2[k],
       "dueDate": courseData2[l]
+      //new Date(date[0], date[1],date[2])
 
     })
+
+    console.log(new Date(date[0], date[1],date[2]));
+    
 
     
   }

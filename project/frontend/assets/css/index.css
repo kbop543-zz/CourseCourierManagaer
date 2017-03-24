@@ -35,12 +35,12 @@ html {
     margin-bottom: 50px;
 }
 
-img{
+/*img{
     margin-bottom: 0;
     max-height: 50px;
     max-width: 100%;
     opacity: 0.6;
-}
+}*/
 nav ul,footer ul{
     list-style-type: none;
     margin: 0;
