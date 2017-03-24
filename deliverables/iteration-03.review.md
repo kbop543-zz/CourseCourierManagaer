@@ -24,7 +24,7 @@
 
 List any process-related changes you are planning to make (if there are any)
 
-* We will have our first planning meeting on Friday, March 24th. In previous iterations, including this one, progress was stalled by having our planning meeting too late in the process. This change will clarify which team members are doing what earlier eliminating confusion and allowing us to get to work earlier.
+* We will have our first planning meeting on Friday, March 24th at 5 pm. In previous iterations, including this one, progress was stalled by having our planning meeting too late in the process. This change will clarify which team members are doing what earlier eliminating confusion and allowing us to get to work earlier.
 * We are making a commitment to use Trello to organize our tasks. We realized how productive it was in this iteration because it allows us to assign tasks to groups of people easily and break down these tasks in a way that git issues doesn’t allow. 
 * Formally schedule meeting times between subgroups who are working on similar parts of the project. Previously we divided groups up for assignments but work was being done on similar parts at the same time or people did not know what the others were doing. This will allow us to determine issues early on that prevent us from completing the subtask. Also, we can quickly figure out what parts of the project members are comfortable with, given the time until the planning meeting.
 
