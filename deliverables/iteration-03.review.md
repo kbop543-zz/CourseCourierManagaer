@@ -40,15 +40,15 @@
 
 #### Goals and/or tasks that were planned but not met/completed:
 
-* Work on converting a PDF (of a fixed format) to a text file so you can regex the text file. When we tried to parse the text in the PDF, the website kept crashing so we will try to get it working in the last iteration.
- * Create backend Java objects to demonstrate backend functionality of the application. We decided to move our backend to javascript, so these Java objects were no longer needed. This allowed for easier communication between frontend and backend, eliminating need to call Java methods from frontend code.
-* We wanted to add a functionality for a user to be able to manually add course tasks if their syllabus wasn’t in the format specified. However, we didn’t have enough time to add this feature for this iteration.
-* Expand calendar file generation to include Google Calendar. We tried to import a calendar file generator library that Google Calendar will recognize. While the library worked in a java main method, we ran into problems when we tried to use the imported library in the backend java server.
+* Convert a PDF (of a fixed format) to a text file so you can regex the text file. This task was not because when we tried to parse the text in the PDF, the website kept crashing. We will try to get this working in the last iteration.
+* Create backend Java objects to demonstrate backend functionality of the application. This task did not get completed because we decided to move our backend to javascript, so these Java objects were no longer needed. This allowed for easier communication between the frontend and the backend, eliminating the need to call Java methods from the frontend code.
+* Add functionality for the user to be able to manually add course tasks if their syllabus wasn’t in the format specified. We didn’t have enough time to add this feature for this iteration.
+* Expand calendar file generation to be imported by Google Calendar. We tried to import a calendar file generator library that Google Calendar recognizes. While the library worked in a java main method, we ran into problems when we tried to use the imported library in the backend java server.
 * Create different user roles. This was a stretch goal and was not a high priority for this product. We are not implementing this feature in order to work on other features adequately. 
 
 ## Meeting Highlights
 
-* We should be thinking about a presentable final product. Ensuring our frontend and backend works elegantly with each other and that the user has a pleasant experience with what we have created.
-* There are still many unmet goals that we need to complete in the next week. The biggest two are a “grade calculator” feature that will tell the student their prospective grade in the course and a “suggested start time” feature that will suggest to the student when they should start an assignment.
+* We should be thinking about creating a presentable final product. We need to ensure that our frontend and backend works elegantly with each other and that the user has a pleasant experience.
+* There are still many unmet goals that we need to complete in the next week. The two biggest goals are a “grade calculator” feature that will tell the student their prospective grade in the course and a “suggested start time” feature that will suggest to the student when they should start an assignment.
 
 
