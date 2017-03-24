@@ -101,7 +101,7 @@ Due
 
 A1  
 
-Individual Assignment  
+Indivudal Assignment  
 
 3%  
 
@@ -109,7 +109,7 @@ Individual Assignment  
 
 A2  
 
-Individual Assignment  
+Indivudal Assignment  
 
 7%  
 
@@ -125,7 +125,7 @@ Deliverable  1  
 
 A3  
 
-Individual Assignment  
+Indivudal Assignment  
 
 10%  
 
@@ -133,7 +133,7 @@ Individual Assignment  
 
 A4
 
-Individual Assignment
+Indivudal Assignment
 
 10%
 
