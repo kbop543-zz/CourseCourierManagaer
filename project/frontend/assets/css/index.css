@@ -19,8 +19,8 @@ html {
    margin-bottom: 100px;
    clear: both;
 }
-#signUp {
-    width: 100%;
+#signUpForm {
+    width: 220px;
     padding: 15px;
     font-size: 12px;
     display: inline-block;
@@ -35,7 +35,7 @@ html {
     margin-bottom: 50px;
 }
 
-#hat{
+img{
     margin-bottom: 0;
     max-height: 50px;
     max-width: 100%;
@@ -79,10 +79,9 @@ input[type=text] {
 }
 footer {
     background: #07575B;
-    padding: 14px 16px;
+    padding: 0px 0px;
     bottom: 0;
     text-align: center;
-    height: 70px;
 }
 
 #signUp{
@@ -90,22 +89,112 @@ footer {
 }
 
 #courselist{
-	color: #003B46;
+    color: #003B46;
 }
 
-#mark{
+#courselist2{
+    color: #003B46;
+}
+
+#mark1{
     list-style-type: none;
-	font-size: 24px;
-	color: #66A5AD;
-	background: #07575B;
-	padding: 10 px;
-	border: 2px solid;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #0066cc;
+    padding: 10 px;
+    border: 2px solid;
     border-radius: 25px;
 }
 
-#signUpButton{
-        width: 100%;
-    }
+#mark2{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #ff3300;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark3{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #33cc33;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark4{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #ff3399;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark5{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #996633;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark6{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #9933ff;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark7{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #999966;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark8{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #009999;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark9{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #cccc00;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark10{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #339966;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
 
 /*
 Responsive UI stuff to be added
@@ -152,7 +241,7 @@ Responsive UI stuff to be added
         width: 100%;
     }
     #signUpButton{
-        width: 50%;
+        width: 25%;
     }
 
 
