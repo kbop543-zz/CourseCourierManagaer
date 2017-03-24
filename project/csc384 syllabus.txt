@@ -1,0 +1,93 @@
+CSC384 – Introduction to Artificial Intelligence, Winter 2017 
+Course Information
+
+General Information
+Professor: Sheila McIlraith
+Office: Pratt 398D
+Office Hour: TBD
+Phone: 416-946-8484
+Email: csc384prof@cs.toronto.edu
+
+Emailing: Questions and discussion should occur on Piazza. Issues of a personal nature should be
+directed to the instructor via email or at an office hour. Please put [384] in the subject header.
+Course Web Page: http://www.cdf.toronto.edu/~csc384h/winter/
+Piazza Instance: https://piazza.com/utoronto.ca/winter2017/csc384
+MarkUs Instance: https://markus.teach.cs.toronto.edu/csc384-2017-01
+
+L0101/L2001
+L0201/L2201
+L5101/L2501
+Lectures
+MWF12 (SS 2117)
+M2 (BA 1130), 
+W2 (MC 102), 
+F2 (SS 2118)
+T6-9 (BA 1130))
+Discussion Board
+https://piazza.com/class/ixksnbq26yo7na	
+
+Textbooks
+Recommended textbook (not required):
+• Stuart Russell and Peter Norvig, Artificial Intelligence: A Modern Approach, 3rd edition, Prentice Hall, 2009
+• 2 copies on 24 hr reserved in the Engineering & Computer Science Library.
+• Lecture notes cover much of the course material.
+• If you’re buying a book for long-term use, buy the 3rd edition, but the 2nd edition will be an adequate
+resource if you can access one more affordably.
+Other Recommended books:
+• Computational Intelligence: A Logical Approach. Poole, Mackworth & Goebel, 1998.
+• Artificial Intelligence Foundations of Computational Agents, Poole & Mackworth, 2010. Text and more available
+online: http://artint.info/. 
+
+Tentative Course Grading Scheme
+
+Description
+
+Weight
+
+Due
+
+Assignment1
+
+Sokoban
+
+10% 
+
+2017-01-20 20:00:00
+
+Assignment2 
+
+CSPs
+
+10% 
+
+2017-03-15 20:00:00
+
+Test 
+
+15%
+
+2017-03-08 20:00:00
+
+Assignment 3
+
+Bayes Nets
+
+10% 
+
+2017-03-15 20:00:00
+
+Project 
+
+Pac-man
+
+15% 
+
+2017-04-05 20:00:00
+
+Final Exam 
+
+Cumulative
+
+40% 
+
+2017-04-18 20:00:00

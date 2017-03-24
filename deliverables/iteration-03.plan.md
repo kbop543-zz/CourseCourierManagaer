@@ -18,21 +18,20 @@
 
 * User Session Maintainers: Kyra will set up the database for users and use the express session api to maintain user sessions. Each user will have their course task calendar/table associated with their email.
 * Front End Designers: Jeremy will primarily work on the html and css part of the project. He will format how the website should look when a user signs in.
-* Text File Parse Manager: Filip, Hari, Taha will work on how the text file should be parsed to organize the course tasks for each course.
-* Calendar Manager: John will work on outputing the calendar files given a json file.
+* Text File Parse Manager: Kyra,Hari, Taha will work on how the text file should be parsed to organize the course tasks for each course.
+* Calendar Manager: John and Filip will work on outputing the calendar files given a json file.
 
 
 #### Events
-
- * We will continue to host meetings online via Slack and Google Hangouts 
- * Online on Mondays at 8 pm during tutorial and Thursdays at 5 pm
- * In addition, we will have online meetings on the weekend for the backend and frontend groups
+ 
+ * We will have a meeting with some people being online on Monday,March 20 at 8 pm during the tutorial to discuss how everyone's progress has went over the weekend.
+ * We will have a review meeting March 24,Thursday at 5 pm to discuss how our video should be formatted and discuss what ended up being done for this iteration and what we have left to do.
 
 #### Artifacts
 
 * Github issues will be our main method of showing progress and how we assigned roles for this iteration        
 * Maintain Slack Chat logs to show discussion between members during this iteration.
-* Diagram showing entities and responsibilities to illustrate the main structures of our application.
+* We will incorporate Trello into our workflow.
 
 #### Git / GitHub workflow
 
@@ -60,7 +59,6 @@
 
 #### Artifacts
 
-List/describe the artifacts you will produce in order to present your project idea.
 * A video displaying the functional frontend of the website from the user’s perspective
 * Entity/Relationship diagrams and SPN data-flow models to show the structures and workflow of our application. 
 * Mockups for the UI to show our process of how we tackled design difficulties.
