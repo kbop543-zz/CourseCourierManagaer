@@ -19,8 +19,8 @@ html {
    margin-bottom: 100px;
    clear: both;
 }
-#signUpForm {
-    width: 220px;
+#signUp {
+    width: 100%;
     padding: 15px;
     font-size: 12px;
     display: inline-block;
@@ -103,6 +103,10 @@ footer {
     border-radius: 25px;
 }
 
+#signUpButton{
+        width: 100%;
+    }
+
 /*
 Responsive UI stuff to be added
 */
@@ -148,7 +152,7 @@ Responsive UI stuff to be added
         width: 100%;
     }
     #signUpButton{
-        width: 25%;
+        width: 50%;
     }
 
 
