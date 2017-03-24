@@ -39,22 +39,55 @@ Other Recommended books:
 online: http://artint.info/. 
 
 Tentative Course Grading Scheme
-Item Topic Weighting Tentative Date Out Tentative Due Date
+
+Description
+
+Weight
+
+Due
+
 Assignment1
+
+Sokoban
+
 10% 
+
 2017-01-20 20:00:00
+
 Assignment2 
+
+CSPs
+
 10% 
+
 2017-03-15 20:00:00
+
 Test 
+
 15%
+
 2017-03-08 20:00:00
+
 Assignment 3
+
+Bayes Nets
+
 10% 
+
 2017-03-15 20:00:00
+
 Project 
+
+Pac-man
+
 15% 
+
 2017-04-05 20:00:00
+
 Final Exam 
+
+Cumulative
+
 40% 
+
 2017-04-18 20:00:00
