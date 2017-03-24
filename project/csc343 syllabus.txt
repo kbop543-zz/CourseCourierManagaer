@@ -23,18 +23,48 @@ Engineering students: If you don't have the course prerequisites listed in your 
 Course Marking Scheme:
 Component
 
+Description
+
+Weight
+
+Due
+
 A1
+
+Individual assignment
+
 10%
+
 2017-02-08 20:00:00
+
 A2
+
+Individual assignment
+
 10%
+
 2017-03-15 20:00:00
+
 A3
+
+Individual assignment
+
 10%
+
 2017-04-05 20:00:00
+
+Test
+
 Midterm
+
 15%
+
 2017-02-15 12:00:00
-exam
+
+Test
+
+Exam
+
 45%
+
 2017-03-15 20:00:00
