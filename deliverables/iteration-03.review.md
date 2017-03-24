@@ -33,11 +33,11 @@ List any process-related changes you are planning to make (if there are any)
 
 #### Goals and/or tasks that were met/completed:
 
-* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4)([An example Mockup of our My Courses page](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png))
-* [Allow for multiple file upload](https://github.com/csc301-winter-2017/project-team-11/issues/32) 
-* [Expand calendar objects to have end dates and locations and other useful attributes](https://github.com/csc301-winter-2017/project-team-11/issues/28)
-* [Expand file upload so that it creates a JSON with all your classes](https://github.com/csc301-winter-2017/project-team-11/issues/27) 
-* [Reliably connect backed to front end](https://github.com/csc301-winter-2017/project-team-11/issues/26) 
+* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) ([An example Mockup of our My Courses page](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png))
+* [Allow for uploading multiple syllabus files](https://github.com/csc301-winter-2017/project-team-11/issues/32) 
+* [Expand calendar objects to have end dates, locations, and other useful attributes](https://github.com/csc301-winter-2017/project-team-11/issues/28)
+* [Expand file upload so that it creates a JSON file with all the user's courses](https://github.com/csc301-winter-2017/project-team-11/issues/27) 
+* [Reliably connect the backend to the frontend](https://github.com/csc301-winter-2017/project-team-11/issues/26) 
 * [Support calendar file generation for multiple courses](https://trello.com/b/vn6knkIB/make-calendar-download-link-work-for-more-than-two-courses) 
 * [Fix some formatting CSS issues](https://trello.com/b/noVtyHlu/fix-stying) 
 
