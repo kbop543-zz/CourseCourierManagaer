@@ -1,4 +1,5 @@
-CSC384 – Introduction to Artificial Intelligence, Winter 2017 
+CSC384 (Winter 2017)
+Introduction to Artificial Intelligence
 Course Information
 
 General Information
@@ -63,6 +64,8 @@ CSPs
 2017-03-15 20:00:00
 
 Test 
+
+Midterm
 
 15%
 
