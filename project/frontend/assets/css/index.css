@@ -79,7 +79,7 @@ input[type=text] {
 }
 footer {
     background: #07575B;
-    padding: 14px 16px;
+    padding: 0px 0px;
     bottom: 0;
     text-align: center;
 }
@@ -92,12 +92,107 @@ footer {
 	color: #003B46;
 }
 
-#mark{
-    width: 25%;
+#courselist2{
+    color: #003B46;
+}
+
+#mark1{
     list-style-type: none;
-	font-size: 24px;
-	padding: 10 px;
-	border: 2px solid;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #0066cc;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark2{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #ff3300;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark3{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark4{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark5{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark6{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark7{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark8{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark9{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#mark10{
+    list-style-type: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    background: #07575B;
+    padding: 10 px;
+    border: 2px solid;
     border-radius: 25px;
 }
 
