@@ -1,6 +1,4 @@
-CSC373 (Winter 2017) 
-Algorithm Design, Analysis & Complexity
-
+CSC373: Algorithm Design, Analysis & Complexity, Winter 2017
 Instructor: Denis Pankratov, email: denisp@cs.toronto.edu
 Website: http://www.cs.toronto.edu/~denisp/csc373/index.html
 Lectures: L0101, Mon., Fri., 11am-noon, Ramsay Wright, RW 110
@@ -79,56 +77,21 @@ The course website is considered a required reading for this course. Assignments
 important dates, and other announcements will be posted on the website throughout this course.
 You are responsible for checking the website regularly.
 
-Description
-
-Weight
-
-Due
-
 A1
-
-Individual Assignment
-
 5%
-
 2017-02-08 20:00:00
-
 A2
-
-Individual Assignment
-
 10%
-
 2017-03-15 20:00:00
-
 A3
-
-Individual Assignment
-
 15%
-
 2017-04-05 20:00:00
-
-Test
-
 Midterm1
-
 15%
-
 2017-02-15 12:00:00
-
-Test
-
 Midterm2
-
 15%
-
 2017-03-15 12:00:00
-
-Final
-
 Exam
-
 45%
-
 2017-03-15 20:00:00
