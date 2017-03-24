@@ -9,13 +9,13 @@
 
 #### Decisions that turned out well
 
-* Using Trello was a decision that turned out well because it gave us a better perspective on the high-level tasks that we still needed to complete. This helped us because we were able to assign high-level tasks to specific individuals who could then break the task up into smaller tasks. Now, our team uses git issues for low-level tasks and Trello for high-level ones. [Our trello is here](https://trello.com/coursecourier)
+* Using Trello was a decision that turned out well because it gave us a better perspective on the high-level tasks that we still needed to complete. This helped us because we were able to assign high-level tasks to specific individuals who could then break the task up into smaller tasks. Now, our team uses git issues for low-level tasks and Trello for high-level ones. [Our trello is here.](https://trello.com/coursecourier)
 
 * The decision to respond to directed messages within 6 hours of being posted in Slack worked well, and really improved communication between group members. This allowed us to quickly determine what issues other members were facing during development. We could quickly share responsibilities with other group members who had more experience developing certain parts of the project.
 
 #### Decisions that did not turn out as well as we hoped
 
-* Originally, we used independent Java servlets to parse the uploaded syllabus file into a calendar object. We began looking into solutions so that data and and user information could be cross referenced within the backend. This over-complicated the design of the app and left some teammates doubtful of the direction that it was going. Instead, we parsed the syllabus file on the frontend with javascript. This simplified the app design because we didn’t have to pass the calendar object from a java backend to the frontend.[Original issue here](https://github.com/csc301-winter-2017/project-team-11/issues/26)
+* Originally, we used independent Java servlets to parse the uploaded syllabus file into a calendar object. We began looking into solutions so that data and and user information could be cross referenced within the backend. This over-complicated the design of the app and left some teammates doubtful of the direction that it was going. Instead, we parsed the syllabus file on the frontend with javascript. This simplified the app design because we didn’t have to pass the calendar object from a java backend to the frontend. [The original git issue is here.](https://github.com/csc301-winter-2017/project-team-11/issues/26)
 
 * It was difficult to have everyone consistently commit code changes every three days. Many group members had commitments to other classes, especially over the weekend, that prevented us to contribute as frequently as wished. This resulted in us not getting some features we wanted implemented for this iteration and also resulted in some group members doing way more work than others in order to complete other features. 
 
