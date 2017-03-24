@@ -1,0 +1,31 @@
+CSC324H1S (Winter 2017)
+Principles of Programming
+Course Information Sheet
+
+Instructor: Gary Baumgartner.
+Email: gfb@cs.toronto.edu.
+Office: BA 4232.
+
+Discussion Board
+https://piazza.com/class/ixksnbq26yo7na	
+Office hours
+Thursdays 1:10–3:00.
+
+A1
+10%
+2017-02-08 20:00:00
+A2
+10%
+2017-03-15 20:00:00
+A3
+10%
+2017-04-05 20:00:00
+A4
+10%
+2017-04-05 20:00:00
+Midterm
+15%
+2017-02-15 12:00:00
+exam
+45%
+2017-03-15 20:00:00

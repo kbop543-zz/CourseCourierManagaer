@@ -60,7 +60,6 @@
 
 #### Artifacts
 
-List/describe the artifacts you will produce in order to present your project idea.
 * A video displaying the functional frontend of the website from the user’s perspective
 * Entity/Relationship diagrams and SPN data-flow models to show the structures and workflow of our application. 
 * Mockups for the UI to show our process of how we tackled design difficulties.
