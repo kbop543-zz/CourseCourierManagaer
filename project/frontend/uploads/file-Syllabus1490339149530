@@ -1,0 +1,97 @@
+CSC373: Algorithm Design, Analysis & Complexity, Winter 2017
+Instructor: Denis Pankratov, email: denisp@cs.toronto.edu
+Website: http://www.cs.toronto.edu/~denisp/csc373/index.html
+Lectures: L0101, Mon., Fri., 11am-noon, Ramsay Wright, RW 110
+L0101, Wed, 11am-noon, Koffler House, KP 108
+L0201, Mon., 3pm-4pm, Lash Miller, LM 162
+L0201, Wed.,Fri., 3pm-4pm, Lash Miller, LM 161
+Tutorials: Mon., 4pm-5pm. Start on Jan 16, 2017.
+Rooms and allocations: TBA.
+
+Office Hours: Wed., 4:30pm-5:30pm, Sandford Fleming, SF2304D,
+or by appointment
+Course Description (from the Calendar)
+Standard algorithm design techniques: divide-and-conquer, greedy strategies, dynamic programming,
+linear programming, randomization, network flows, approximation algorithms. Brief introduction
+to NP-completeness: polynomial time reductions, examples of various NP-complete
+problems, self-reducibility. Additional topics may include approximation and randomized algorithms.
+Students will be expected to show good design principles and adequate skills at reasoning
+about the correctness and complexity of algorithms.
+Texts
+
+Required: T. H. Cormen; C. E. Leiserson; R. L. Rivest; C. Stein
+Introduction to Algorithms, 3rd Edition, 2009.
+Available online from the University of Toronto library.
+Not required: S. Dasgupta; C. H. Papadimitriou; U. Vazirani
+Algorithms, 2006.
+Not required: J. Kleinberg; E. Tardos, Algorithm Design, 2005
+
+Grading Scheme
+Assignments: 3 worth 5% each
+Term tests: 2 worth 20% each
+Final (3 hours): worth 45%
+See the course website for dates and deadlines. Term tests will be held during tutorial slots.
+The 20% rule: you will receive 20% of the points for any (sub)problem for which you write
+“I do not know how to answer this question.” You will receive 10% if you leave a question blank.
+If instead you submit irrelevant or erroneous answers you will receive 0 points. You may receive
+partial credit for the work that is clearly “on the right track.”1 The 20% rule applies to all term
+work: assignments, term tests, and even the final.
+Assignment Policy
+Assignments will be submitted electronically on MarkUs (instructions will follow later). Late
+assignments will not be accepted.
+1The wording and the idea is due to Allan Borodin.
+1 of 2
+
+Collaboration Policy and Academic Integrity
+You are allowed to discuss assignment questions with other students. You are allowed to consult
+additional materials, e.g., books, papers, websites. Nonetheless, the writeup of your solutions
+should be your own and should be done in isolation from other students and resources. In addition,
+you must clearly identify the names of students you collaborated with (if any) and provide a clear
+description of additional materials you consulted (if any).
+The following rule of thumb might help you ensure that you are writing down your own
+understanding of a solution: (1) do not take notes during discussions with other students, (2)
+after solving a question, take a one-hour break before writing down the solution, (3) while writing
+down the solution do not consult any materials.
+Copying or allowing other students to copy solutions is a serious academic offense and will be reported.
+You might find the Arts and Science website on academic honesty (and references therein)
+helpful: http://www.artsci.utoronto.ca/newstudents/transition/academic/plagiarism.
+
+Email Policy
+I read email regularly, but I do NOT promise to reply to all emails. In particular, if your question
+is of general interest, I will not respond to it via email. Instead, I will address your question during
+the following lecture, so that everyone can benefit. Similarly, if your question requires a technical
+answer it is better to ask it during a lecture, or a tutorial, or office hours.
+
+Bulletin Board
+The course bulletin board can be found at https://bb-2017-01.teach.cs.toronto.edu/c/
+csc373. This bulletin board will NOT be monitored by the instructor or TAs. Course announcements
+will be made either during lectures or on the course website.
+Accessibility
+Students with diverse learning styles and needs are welcome in this course. In particular, if
+you have a disability/health consideration that may require accommodations, please feel free to
+approach me and/or Accessibility Services at 416-978-8060; http://accessibility.utoronto.
+ca/.
+
+Important Resource
+The course website is considered a required reading for this course. Assignments, deadlines,
+important dates, and other announcements will be posted on the website throughout this course.
+You are responsible for checking the website regularly.
+
+A1
+5%
+2017-02-08 20:00:00
+A2
+10%
+2017-03-15 20:00:00
+A3
+15%
+2017-04-05 20:00:00
+Midterm1
+15%
+2017-02-15 12:00:00
+Midterm2
+15%
+2017-03-15 12:00:00
+Exam
+45%
+2017-03-15 20:00:00
