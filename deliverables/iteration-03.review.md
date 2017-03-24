@@ -33,7 +33,8 @@ List any process-related changes you are planning to make (if there are any)
 
 #### Goals and/or tasks that were met/completed:
 
-* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png
+* [Display course info sorted by due date](https://github.com/csc301-winter-2017/project-team-11/issues/4) 
+![An example Mockup of our My Courses page](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/My%20Courses%20(1).png)
 * [Allow for multiple file upload](https://github.com/csc301-winter-2017/project-team-11/issues/32) 
 * [Expand calendar objects to have end dates and locations and other useful attributes](https://github.com/csc301-winter-2017/project-team-11/issues/28)
 * [Expand file upload so that it creates a JSON with all your classes](https://github.com/csc301-winter-2017/project-team-11/issues/27) 
