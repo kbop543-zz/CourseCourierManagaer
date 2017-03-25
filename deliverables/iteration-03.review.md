@@ -52,5 +52,5 @@
 * There are still many unmet goals that we need to complete in the next week. The two biggest goals are a “grade calculator” feature that will tell the student their prospective grade in the course and a “suggested start time” feature that will suggest to the student when they should start an assignment. We have set out a two-tiered approach to achieving this.
   * [Our primary goal is to have suggestions on when to start an assignment directly correlated with the weight of the given assignment.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/ReccomendedStartTimeGoal1.png) 
   * [Our secondary goal is to implement these suggestions on extrenal factors such as overalapping assignments, holidays, etc.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/ReccomendedStartTimeGoal12.png)
-
+  *  [We may also wish to integrate it into our new, and more user oriented tile view.](https://github.com/csc301-winter-2017/project-team-11/blob/master/deliverables/mockup%20artifacts/iteration%203/ReccomendedStartTimeTlleView.png)
 
