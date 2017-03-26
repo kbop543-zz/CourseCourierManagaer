@@ -1,5 +1,5 @@
 /*  Simply calls backend and prints out the data it recieves now */
-function loadCourses () { 
+function loadCourses () {
 
     $.ajax({
         type: "POST",
@@ -8,7 +8,7 @@ function loadCourses () {
     })
 
     .done(function( data ) {
-        $("main").empty();
+        // $("main").empty();
 
         var allMarkables = [];
         var allCourses = [];
@@ -100,7 +100,7 @@ function loadCourses () {
                 if (allMarkables[j][0] == allCourses[i][0]) {
                     icolor = i + 1;
                 }
-            }       
+            }
 
             //icolor = 1;
 
@@ -109,23 +109,19 @@ function loadCourses () {
                 "Name: " + allMarkables[j][1] + "</li><li>" +
                 "Description: " + allMarkables[j][5] + "</li><li>" +
                 "Weight: " + allMarkables[j][2] + "</li><li>" +
-                "Due Date: " + markdate + "</li></ul>");
+                "Due Date: " + markdate + "</li><li>"+
+                "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
         }
 
-        //ICS FILE YO
-        console.log("jsonCalendar", data)
-
         $.ajax({
-            type: 'GET',
-            url: "http://localhost:8080/calendarFrontend",
-            dataType: 'application/json',
+            type: 'POST',
+            url: "http://localhost:8080/frontendCalendar",
+            contentType: "application/json; charset=UTF-8",
             data: JSON.stringify(data)
         })
-
-        .done(function( calendarFromBackend ){
-            console.log("this is the cal", JSON.stringify(calendarFromBackend));
+        .done(function(){
+          console.log("SUCCESSFULLY UPLOADED THE JSON, CAN NOW DOWNLOAD A CAL FILE IF YOU CLICK THE BUTTON");
         });
-
     });
 
 }
@@ -137,6 +133,15 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+
+function getReccomendedStartDate(weight, dueDate) {
+    var shouldStartDaysEarly = Math.floor(weight.replace("%", "")/2);
+    var parts = dueDate.substr(0,dueDate.indexOf(' ')).match(/(\d+)/g);
+    var date = new Date(parts[0], parts[1]-1,parts[2]);
+    date.setDate(date.getDate() - shouldStartDaysEarly);
+    return date.toLocaleDateString();
 }
 
 $(document).ready(function(){
