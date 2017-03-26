@@ -1,10 +1,10 @@
 package servlet;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -27,32 +27,12 @@ public class FrontendCalendarServlet extends HttpServlet
 
 	private final CalendarFileStringGeneratorFrontend calendarFileGenerator = new CalendarFileStringGeneratorFrontend();
 
+	private FrontendCalendar calendarFromJson;
 
 	@Override
 	protected void doGet( final HttpServletRequest req, final HttpServletResponse resp ) throws ServletException, IOException
 	{
-
-		System.out.println( "______________________________________" );
-		final Enumeration params = req.getParameterNames();
-		while( params.hasMoreElements() )
-		{
-			final String paramName = (String)params.nextElement();
-			System.out.println( paramName );
-			System.out.println( "Parameter Name - " + paramName + ", Value - " + req.getParameter( paramName ) );
-		}
-		System.out.println( "______________________________________" );
-		final String jsonData = req.getParameter( "data" );
-		System.out.println( jsonData );
-		System.out.println( "______________________________________" );
-
-		final FrontendCalendar calendarFromJson = objectMapper.readValue( jsonData, FrontendCalendar.class );
-
-		// Get a string representation of events
-		//		final String calendarString = calendarFileGenerator.generateStringFromCalendar( uploadedCourses ); when reading locally uploaded files
-
 		final String calendarString = calendarFileGenerator.generateStringFromCalendar( calendarFromJson );
-
-
 
 		final ServletOutputStream out = resp.getOutputStream();
 		final String fileName = "Assignments.ics";
@@ -74,5 +54,38 @@ public class FrontendCalendarServlet extends HttpServlet
 		out.close();
 		System.out.println( "File downloaded at client successfully" );
 	}
+
+	@Override
+	protected void doPost( final HttpServletRequest req, final HttpServletResponse resp ) throws ServletException, IOException
+	{
+		final StringBuffer jb = new StringBuffer();
+		String line = null;
+		try
+		{
+			final BufferedReader reader = req.getReader();
+			while( ( line = reader.readLine() ) != null )
+			{
+				jb.append( line );
+			}
+		}
+		catch( final Exception e )
+		{
+			System.out.println( "POST: Failed to read request body" );
+		}
+
+		try
+		{
+			calendarFromJson = objectMapper.readValue( jb.toString(), FrontendCalendar.class );
+		}
+		catch( final Exception e )
+		{
+			System.out.println( "POST: Failed to parse JSON: " + jb.toString() );
+		}
+		System.out.println( "______________________________________" );
+		System.out.println( "POST: Successfully parsed calendar! " + calendarFromJson.getCourses().get( 0 ).getCourseCode() );
+		System.out.println( "______________________________________" );
+
+	}
+
 
 }
