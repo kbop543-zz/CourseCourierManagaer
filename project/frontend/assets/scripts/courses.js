@@ -5,9 +5,7 @@ function loadCourses () {
         type: "POST",
         dataType: 'json',
         url: "/parsePdf"
-    })
-
-    .done(function( data ) {
+    }).done(function( data ) {
         // $("main").empty();
 
         var allMarkables = [];
@@ -122,6 +120,8 @@ function loadCourses () {
         .done(function(){
           console.log("SUCCESSFULLY UPLOADED THE JSON, CAN NOW DOWNLOAD A CAL FILE IF YOU CLICK THE BUTTON");
         });
+    }).fail(function(jqXHR,textStatus){
+        alert(textStatus);
     });
 
 }

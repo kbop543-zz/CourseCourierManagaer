@@ -16,7 +16,7 @@ fs.readFile('courses.json', 'utf-8', function(err, data) {
 });
 
 /*helper function to split text file line by line and read*/
-function read(file, cb) {
+function read(req,file, cb) {
   var filePath = './uploads/'+file;
 
 
@@ -43,17 +43,13 @@ function read(file, cb) {
 
   }
 
+
   courseData2 = courseData.split("\n");
 
   //filter out empty strings that are there as a result of spaces between lines
   courseData2 = courseData2.filter(function(element){
     return element !== "";
   })
-
-
-
-
-  
 
   for(i=0, j=1, k = 2, l=3;
    i< courseData2.length 
@@ -67,9 +63,9 @@ function read(file, cb) {
 
     //dateFormat(now, "yyyy-­mm-­dd  HH:MM:ss")
 
-     var dateTime = courseData2[l].split(" ");
-     var date = dateTime[0].split("/");
-     console.log(date);
+     //var dateTime = courseData2[l].split(" ");
+     //var date = dateTime[0].split("/");
+     //console.log(date);
      /*console.log(date[1]);
      console.log(date[2]);
      if(date[1][0] == '-'){
@@ -81,7 +77,7 @@ function read(file, cb) {
      //console.log(date);
      //console.log(time);
 
-     var milliseconds = "00";
+     //var milliseconds = "00";
 
     markables.push({
       "name": courseData2[i],
@@ -92,7 +88,7 @@ function read(file, cb) {
 
     })
 
-    console.log(new Date(date[0], date[1],date[2]));
+    //console.log(new Date(date[0], date[1],date[2]));
     
 
     
@@ -104,16 +100,37 @@ function read(file, cb) {
       "markables": markables
     });
 
-  var temp = {"courses" : everything}
-  courseObj.courses.push(temp.courses[0]);
-  var json = JSON.stringify(courseObj);
+    var temp = {"courses" : everything}
+    courseObj.courses.push(temp.courses[0]);
+    var json = JSON.stringify(courseObj);
 
-
-  /*fs.writeFile('courses.json', json, 'utf8',function(err) {
-    if(err) throw err;
-  });*/
-
-  cb(courseObj);
+    if(req.session.username != null){
+    User.findOne({'username': req.session.username}, function(err, username){
+      if(username.courseObj != null){
+        console.log(username.courseObj);
+        for(let i = 0; i< username.courseObj.courses.length; i++){
+          let course = username.courseObj.courses[i];
+          if(course == temp.courses[0].courseCode){
+            var flag = 1;
+            break;
+          }
+        }
+        if(flag != 1){
+          username.courseObj.courses.push(temp.courses[0]);
+          cb(username.courseObj);
+        }else{
+          cb(flag);
+        }
+      }else{
+        username.courseObj = json;
+        cb(username.courseObj);
+      }
+      username.save(function(err) {
+        if (err) throw err;
+      })
+  })
+  }
+  
   fs.unlinkSync(filePath);
 })
 }
@@ -122,6 +139,7 @@ function read(file, cb) {
 exports.parsePdf = function(req, res) {
     console.log('parsePdf');
     var finalObj;
+    var flag;
 
     fs.readdir('./uploads', function(err, filenames) {
 
@@ -130,22 +148,26 @@ exports.parsePdf = function(req, res) {
       return;
     }
     filenames.forEach(function(filename) {
-      read(filename, function(data) {
+      read(req,filename, function(data) {
+        if(data == 1){
+          flag = 1;
+        }
         
       });
   })
-   /* //delete the file(s) after we are done with them
-    filenames.forEach(function(filename) {
-      fs.unlinkSync('./uploads/' + filename);
-    });*/
-    
-    
 
 })
-    
-    res.send(courseObj);
+
+    if(flag == 1){
+      res.status(500).send("Error: one of the syllabuses you uploaded already exist.");
+    }else{
+      if(req.session.username != null){
+        User.findOne({'username': req.session.username}, function(err, username){
+          res.send(username.courseObj);
+        });
+      }else{
+        res.send(courseObj);
+      }
+    }
 
 }
-
-
-
