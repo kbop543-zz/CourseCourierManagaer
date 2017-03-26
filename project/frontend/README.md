@@ -25,6 +25,7 @@ https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 -type 'mkdir uploads' in terminal
 
 -type  **mongod --dbpath=$PWD/data** in terminal ((DO NOT cd INTO DATA))
+
 -open another terminal and cd into project/frontend folder and type  **nodemon server.js**
 
 *Note:*
