@@ -22,7 +22,7 @@ public class CalendarFileStringGeneratorFrontend
 			final String startDateAndTime,
 			final String description )
 	{
-		final String hour = startDateAndTime.substring( 9, 11 );
+		final String hour = startDateAndTime.substring( 9, 11 ).replaceAll( "\\s+", "" );
 		final int duration = 1;
 		final int hourInt = Integer.parseInt( hour.trim() );
 		final int newHourInt = hourInt + duration;
