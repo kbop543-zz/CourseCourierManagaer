@@ -17,7 +17,6 @@ How to run project((NEW with database stuff))
 *(For Mac Only):*
 >Follow the mongoDB installation instructions here
 http://treehouse.github.io/installation-guides/mac/mongo-mac.html
-
 *(For Windows Only):*
 >Follow the mongoDB installation instructions here
 https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
@@ -25,11 +24,14 @@ https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 -type 'mkdir data' in terminal
 -type 'mkdir uploads' in terminal
 
+
+
 -type 'mongod --dbpath=$PWD/data' in terminal ((DO NOT cd INTO DATA))
 
--open another terminal and cd into project folder
+-open another terminal and cd into project/frontend folder and type 'nodemon server.js'
 
--type 'nodemon server.js' in the terminal
+
+
 
 *Note:*
 >If typing 'nodemon server.js' returns and error like Error: Cannot find module 'express-validator', try running 'npm install' again
