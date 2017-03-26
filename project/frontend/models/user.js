@@ -21,6 +21,9 @@ var userSchema = new Schema(
         },
         email: {
             type: String, required: true
+        },
+        courseObj : {
+            type: Object, required: false
         }        
     },
     {

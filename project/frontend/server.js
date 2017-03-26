@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-    res.sendfile('views/index.html');
+    res.sendfile('views/login.html');
 });
 
 app.post('/uploadSyllabus',function(req,res){
