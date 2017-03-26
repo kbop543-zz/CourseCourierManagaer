@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import backend.CalendarFileStringGeneratorFrontend;
 import objects.FrontendCalendar;
 
-@WebServlet( name = "CalendarServlet", urlPatterns = { "/frontendCalendar" } )
+@WebServlet( name = "FrontendCalendarServlet", urlPatterns = { "/frontendCalendar" } )
 public class FrontendCalendarServlet extends HttpServlet
 {
 	private static final long serialVersionUID = -1114470433997469171L;
