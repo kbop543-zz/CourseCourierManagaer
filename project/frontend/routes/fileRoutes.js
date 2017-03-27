@@ -97,7 +97,7 @@ function read(req,file, cb) {
         if(flag != 1){
           
           usernameCourses.courses.push(temp.courses[0]);
-          username.courseObj = usernameCourses;
+          username.courseObj = JSON.stringify(usernameCourses);
           cb(username.courseObj);
         }else{
           cb(flag);
@@ -110,6 +110,7 @@ function read(req,file, cb) {
       username.save(function(err) {
         if (err) throw err;
       })
+      console.log(username);
       
   })
   }
