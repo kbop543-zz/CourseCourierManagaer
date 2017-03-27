@@ -36,12 +36,13 @@ function loadCourses () {
             for (let m in mark) {
                 markable = [course.courseCode, mark[m].name, mark[m].weight, mark[m].dueDate, mark[m].dueDate, mark[m].description];
                 allMarkables.push(markable);
+                console.log(allMarkables);
             }
         }
 
         allMarkables.sort(
             function(a,b) {
-                console.log(a[3]);
+                /*console.log(a[3]);
                 console.log(b[3]);
                 var dateA = a[3].split(" ");
                 var dateB = b[3].split(" ");
@@ -52,10 +53,18 @@ function loadCourses () {
                 console.log(firstDate);
                 console.log(secondDate);
                 console.log(new Date(firstDate[0], firstDate[1],firstDate[2]));
-                console.log(new Date(secondDate[0], secondDate[1],secondDate[2]));
+                console.log(new Date(secondDate[0], secondDate[1],secondDate[2]));*/
+
+                var parts1 = a[3].substr(0,a[3].indexOf(' ')).match(/(\d+)/g);
+                console.log(a[3] + "<- original|broken up: " + parts1);
+                var date1 = new Date(parts1[0], parts1[1]-1,parts1[2]);
+  
+                var parts2 = b[3].substr(0,b[3].indexOf(' ')).match(/(\d+)/g);
+                console.log(b[3] + "<- original|broken up: " + parts2);
+                var date2 = new Date(parts2[0], parts2[1]-1,parts2[2]);
 
 
-              return firstDate[2] - secondDate[2];
+              return date1 - date2;
             }
         )
 
