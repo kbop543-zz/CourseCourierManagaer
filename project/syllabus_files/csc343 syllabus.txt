@@ -1,0 +1,140 @@
+CSC343H1S (Winter 2017) 
+Introduction to Databases
+Course Information Sheet 
+Introduction to software development methodologies with an emphasis on agile development methods
+appropriate for rapidly-moving projects. Basic software development infrastructure; requirements
+elicitation and tracking; prototyping; basic project management; basic UML; introduction to software
+architecture; design patterns; testing.
+ 
+ 
+
+L0101 
+
+L0201, L2001 
+
+Lectures 
+
+MW 11 am - noon 
+(GB220) 
+
+T 4-6 pm  
+(GB119) 
+
+Tutorials 
+
+F 11 am - noon  
+(GB303, GB304, GB405) 
+
+T 6-7 pm 
+(BA1230, BA2145, BA2155) 
+
+Discussion 
+board 
+
+piazza.com/utoronto.ca/ 
+piazza.com/utoronto.ca/ 
+winter2017/csc318l0101mw  winter2017/csc318l0201t 
+
+ 
+General information:
+Instructor: Joey Freund joey@cs.toronto.edu
+Lectures: Tuesday 12 - 2 p.m. in BA 1200
+Tutorials: Thursday 1 - 2 p.m. in BA 1200
+Office hours: BA5244 time TBD
+ 
+Contact policy: Questions about the material should be posted to the Piazza discussion board 
+or brought to ofﬁce hours, not emailed to the instructor. When emailing with administrative or 
+personal issues, please begin your subject line with “[CSC318]”, followed by a meaningful 
+phrase, e.g., “[CSC318]: I have a conﬂict with the next test”. Please include your full name, your 
+section and student number in the body of the email. Please allow up to 72 hours for a reply. 
+ 
+Resources: Lecture slides, additional readings, announcements and assignments will all be 
+posted to Blackboard. It is your responsibility to check Blackboard regularly for incidental 
+communication and updates. 
+ 
+Academic Offenses: All of the work you submit must be done by you (individually or within 
+your group), and your work must not be submitted by someone else. Plagiarism is academic 
+fraud and is taken very seriously. Please read the Rules and Regulations from the U of T 
+Calendar (especially the Code of Behaviour on Academic Matters): 
+http://www.artsandscience.utoronto.ca/ofr/calendar/rules.htm 
+ 
+You should also review this document regarding plagiarism in the context of CS: 
+http://www.cs.toronto.edu/~fpitt/documents/plagiarism.html 
+ 
+
+Please don’t cheat. It is unpleasant for everyone involved, including us. Here are a couple of 
+general guidelines to help you avoid plagiarism: 
+● Never look at another student’s work, on paper or on the computer screen. 
+● Never show another student your work. This applies to all drafts of a solution and to 
+incomplete solutions. 
+
+ 
+Evaluation 
+●
+●
+●
+●
+●
+
+(47%) Phases of a group project in which you will research a problem space, ascertain 
+user needs, design and create a prototype. You will work in groups of 5. 
+(30%) Assignments: individual solutions to speciﬁc, constrained problems. 
+(14%) Tutorials: 50-minute guided exercises that allow you to practice important skills. 
+Earn marks through attendance and earnest participation. 
+(9%) Blog entries: biweekly meaningful participation in a design  
+(+3%) Bonus mark attained by attending 3 TUX talks this term. 
+
+ 
+All submissions are due by 11:00 pm on the due date. 
+Unless otherwise speciﬁed, that date is the Monday of each week. 
+
+ 
+ 
+
+ 
+
+Description
+
+Weight
+
+Due
+
+A1  
+
+Individual Assignment  
+
+10%  
+
+2017-­02-­08  20:00:00  
+
+A2  
+
+Individual Assignment  
+
+10%  
+
+2017-­03-15  20:00:00  
+
+A3  
+
+Individual Assignment
+
+10%  
+
+2017-­02-­06  22:00:00  
+
+Midterm
+
+Test
+
+20%
+
+2017-­03-­01  12:00:00  
+
+Exam
+
+Test
+
+30%
+
+2017-­04-­25  12:00:00  

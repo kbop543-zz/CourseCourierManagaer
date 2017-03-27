@@ -90,6 +90,10 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+app.get('/addMarkable', function(req, res) {
+    res.sendfile('views/addMarkable.html');
+});
+
 
 // Routes files
 var users = require('./routes/userRoutes.js');
