@@ -5,12 +5,21 @@ function loadCourses () {
         type: "POST",
         dataType: 'json',
         url: "/parsePdf"
-    }).done(function( data ) {
+    })
+    .done(function( data ) {
         // $("main").empty();
 
         var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
+        console.log(data);
+        //console.log(IsJsonString(""+data));
+
+
+        if(data == "repeated"){
+            alert("One of the course syllabuses you have entered is already uploaded.");
+            return;
+        }
 
         var obj = JSON.parse(JSON.stringify(data));
         console.log("this is the obj" + obj);
@@ -120,9 +129,11 @@ function loadCourses () {
         .done(function(){
           console.log("SUCCESSFULLY UPLOADED THE JSON, CAN NOW DOWNLOAD A CAL FILE IF YOU CLICK THE BUTTON");
         });
-    }).fail(function(jqXHR,textStatus){
-        alert(textStatus);
-    });
+    }).fail(function(response){
+        alert(response.responseText);
+        });
+    
+
 
 }
 

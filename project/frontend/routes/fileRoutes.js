@@ -8,6 +8,7 @@ var dateFormat = require('dateformat');
 
 
 var courseObj;
+var flag = 0;
 
 fs.readFile('courses.json', 'utf-8', function(err, data) {
     if(err) throw err;
@@ -24,6 +25,7 @@ function read(req,file, cb) {
   var markables =[];
   var courseData2;
   var courseData;
+  
 
   let i,j,k,l;
 
@@ -57,27 +59,6 @@ function read(req,file, cb) {
    && k<courseData2.length 
    && l<courseData2.length; i+=4,j+=4,k+=4,l+=4){
 
-    //var now = courseData2[l];
-
-//console.log(now);
-
-    //dateFormat(now, "yyyy-­mm-­dd  HH:MM:ss")
-
-     //var dateTime = courseData2[l].split(" ");
-     //var date = dateTime[0].split("/");
-     //console.log(date);
-     /*console.log(date[1]);
-     console.log(date[2]);
-     if(date[1][0] == '-'){
-      date[1] = date[1]+date[2];
-      console.log(date[1]);*/
-     //}
-     //var time = dateTime[1].split(":");
-     //console.log(dateTime);
-     //console.log(date);
-     //console.log(time);
-
-     //var milliseconds = "00";
 
     markables.push({
       "name": courseData2[i],
@@ -87,10 +68,6 @@ function read(req,file, cb) {
       //new Date(date[0], date[1],date[2])
 
     })
-
-    //console.log(new Date(date[0], date[1],date[2]));
-    
-
     
   }
 
@@ -107,16 +84,20 @@ function read(req,file, cb) {
     if(req.session.username != null){
     User.findOne({'username': req.session.username}, function(err, username){
       if(username.courseObj != null){
-        console.log(username.courseObj);
-        for(let i = 0; i< username.courseObj.courses.length; i++){
-          let course = username.courseObj.courses[i];
+        var usernameCourses = JSON.parse(username.courseObj);
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+          let course = usernameCourses.courses[i].courseCode;
           if(course == temp.courses[0].courseCode){
-            var flag = 1;
+            flag = 1;
             break;
+          }else{
+            flag = 0;
           }
         }
         if(flag != 1){
-          username.courseObj.courses.push(temp.courses[0]);
+          
+          usernameCourses.courses.push(temp.courses[0]);
+          username.courseObj = usernameCourses;
           cb(username.courseObj);
         }else{
           cb(flag);
@@ -124,10 +105,12 @@ function read(req,file, cb) {
       }else{
         username.courseObj = json;
         cb(username.courseObj);
+        flag = 0;
       }
       username.save(function(err) {
         if (err) throw err;
       })
+      
   })
   }
   
@@ -139,8 +122,6 @@ function read(req,file, cb) {
 exports.parsePdf = function(req, res) {
     console.log('parsePdf');
     var finalObj;
-    var flag;
-
     fs.readdir('./uploads', function(err, filenames) {
 
     if (err) {
@@ -149,24 +130,29 @@ exports.parsePdf = function(req, res) {
     }
     filenames.forEach(function(filename) {
       read(req,filename, function(data) {
-        if(data == 1){
-          flag = 1;
-        }
+        
         
       });
   })
 
 })
+    fs.readdir('./uploads', function(err, files) {
+    if (err) {
+       throw err;
+    } else {
+       if (!files.length) {
+           flag=0;
+       }
+    }
+});
 
     if(flag == 1){
-      res.status(500).send("Error: one of the syllabuses you uploaded already exist.");
+      res.status(500).send("Error: duplicate syllabus course");
     }else{
       if(req.session.username != null){
         User.findOne({'username': req.session.username}, function(err, username){
           res.send(username.courseObj);
         });
-      }else{
-        res.send(courseObj);
       }
     }
 
