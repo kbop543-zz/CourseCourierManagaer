@@ -22,6 +22,7 @@ http://treehouse.github.io/installation-guides/mac/mongo-mac.html
 https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 
 -type 'mkdir data' in terminal
+
 -type 'mkdir uploads' in terminal
 
 
