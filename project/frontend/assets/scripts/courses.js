@@ -1,3 +1,44 @@
+function addMarkable (courseName) {
+    // $('.addCourseButton').click(function() {
+        console.log(courseName);
+
+        //window.location.replace('/addMarkable');
+        $("main").empty();
+
+        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
+
+        // // var courseName = $(this).attr("id");
+
+        $("h2#addMarkable").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here 
+        $("h2#addMarkable").append('<form id="addMarkableForm">' +
+            '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder ="Weight" name="weight">' +
+            '<br>' +
+            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+
+
+        //serialize form
+        //ajax post thing to server file thing 
+        //make sure to put name of function and name of post call in server.js
+        //in fileRoutes have an add markable or whatever u wanna call it function that 
+        //will grab data from the serialized form that u sent ..you can grab it via
+        //req.body.<name of form element here>
+        //get username by req.session.username to get the courseobj and append to it
+
+    // }
+}
+
+
+
 /*  Simply calls backend and prints out the data it recieves now */
 function loadCourses () {
 
@@ -86,11 +127,11 @@ function loadCourses () {
             //  allCourses[course][0] + '</li><li>' +
             //  allCourses[course][1] + '</li><li>'
             //  )
-
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
-                allCourses[course][1] + '</li><li>'
-            )
+                allCourses[course][1] + '</li><li>' + 
+                '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
+                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
 
             icolor += 1;
         }
