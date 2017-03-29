@@ -57,11 +57,6 @@ function loadCourses () {
         //console.log(IsJsonString(""+data));
 
 
-        if(data == "repeated"){
-            alert("One of the course syllabuses you have entered is already uploaded.");
-            return;
-        }
-
         var obj = JSON.parse(JSON.stringify(data));
         console.log("this is the obj" + obj);
 
@@ -77,7 +72,7 @@ function loadCourses () {
             for (let m in mark) {
                 markable = [course.courseCode, mark[m].name, mark[m].weight, mark[m].dueDate, mark[m].dueDate, mark[m].description];
                 allMarkables.push(markable);
-                console.log(allMarkables);
+                //console.log(allMarkables);
             }
         }
 
@@ -97,11 +92,11 @@ function loadCourses () {
                 console.log(new Date(secondDate[0], secondDate[1],secondDate[2]));*/
 
                 var parts1 = a[3].substr(0,a[3].indexOf(' ')).match(/(\d+)/g);
-                console.log(a[3] + "<- original|broken up: " + parts1);
+                //console.log(a[3] + "<- original|broken up: " + parts1);
                 var date1 = new Date(parts1[0], parts1[1]-1,parts1[2]);
   
                 var parts2 = b[3].substr(0,b[3].indexOf(' ')).match(/(\d+)/g);
-                console.log(b[3] + "<- original|broken up: " + parts2);
+                //console.log(b[3] + "<- original|broken up: " + parts2);
                 var date2 = new Date(parts2[0], parts2[1]-1,parts2[2]);
 
 
@@ -172,7 +167,9 @@ function loadCourses () {
                 "Due Date: " + markdate + "</li><li>"+
                 "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
         }
-		}
+    }
+    
+		
 
         $.ajax({
             type: 'POST',

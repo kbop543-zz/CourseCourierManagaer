@@ -4,19 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 var session = require('express-session');
-/*multer reads files*/
-var multer  =   require('multer');
-/*set directory where the uploaded file must go*/
-var storage =   multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-Syllabus' + Date.now());
-  }
-});
-/*upload handles input called 'file'*/
-var upload = multer({ storage : storage}).array('file',6);
+
 
 var app = express();
 
@@ -44,27 +32,28 @@ app.get('/', function(req, res) {
     res.sendfile('views/login.html');
 });
 
-app.post('/uploadSyllabus',function(req,res){
+/*app.post('/uploadSyllabus',function(req,res){
     upload(req,res,function(err) {
         if(err) {
             return res.end("Error uploading file.");
         }
         res.sendfile('views/courses.html');
     });
-});
+});*/
 
 // Main page.
 app.get('/index', function(req, res) {
-    res.sendfile('views/index.html');
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    } else {
+        res.sendfile('views/index.html');
+    }
 });
 
 app.get('/login', function(req, res) {
     if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     } else {
-        usersDb.findOne({
-            username: req.session.username
-        });
         res.sendfile('views/index.html');
     }
 });
@@ -73,15 +62,17 @@ app.get('/profile', function(req, res) {
     if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     } else {
-        usersDb.findOne({
-            username: req.session.username
-        });
         res.sendfile('views/profile.html');
     }
 });
 
 app.get('/courses', function(req, res) {
-    res.sendfile('views/courses.html');
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    }else {
+        res.sendfile('views/courses.html');
+    }
+
 });
 
 // Redirect to login and reset session on log out
@@ -91,7 +82,11 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/addMarkable', function(req, res) {
-    res.sendfile('views/addMarkable.html');
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    } else {
+        res.sendfile('views/addMarkable.html');
+    }
 });
 
 
@@ -110,7 +105,7 @@ app.get('/getOneUser', users.getOneUser);
 
 //file routes
 app.post('/parsePdf',file.parsePdf);
-
+app.post('/uploadSyllabus',file.uploadSyllabus);
 
 
 // Start the server
