@@ -9,40 +9,30 @@
 
 <body>
 
-<header>
+<header id ="loginpage">
     <a href="#main" id="home">
     <img src="assets/img/hat.ico">
     </a>
     <h1 id = "logo">Courier Course Manager</h1>
-</header>
-<nav>
-    <ul id = "menu">
-            <li><a href="/index#main" id="upload">Upload Course File</a></li>
-            <li><a href="/courses" id="courses">My Courses</a></li>
-            <li><a href="/profile" id="profile">My Profile</a></li>
-            <li><a href="/login" id="login">Login</a></li>
-            <li><a href="/index#main" id="about">About</a></li>
-            <li><a href="/logout" id="logout">Logout</a></li>
-    </ul>
-</nav>
+</header> 
 <main>
-
+<article id="loginpage">
 <form id='loginForm'>
 <input type="text" placeholder ="Username" name="username">
 <br>
 <input type="text" placeholder ="Password" name="password">
 <br>
+<br>
 <input type="submit" value="Log In">
 <input type="reset" value="Reset">
 <br>
 </form>
+<p>Don't have an account?</p>
+<input type="button"  id="signUpButton" value="Sign Up"/>
 
-<div class='center' id='signupFormStr' style='display: flex';>
-<p>Don't have an account?
-<br>
-<input type="button"  id="signUpButton" value="Sign Up" />
-</div>
+<!-- <div class='center' id='signupFormStr' style='display: flex';>
 
+</div> -->
 <br>
 <br>
 <form id='signUp'>
@@ -58,13 +48,13 @@
 <br>
 <input type="text" placeholder ="Email" name="email">
 <br>
+<br>
 <input type="submit" value="Sign Up" >
 <input type="reset" value="Reset">
 <br>
 </form>
-</p>
 <br>
-
+</article>
 
 
 </main>
