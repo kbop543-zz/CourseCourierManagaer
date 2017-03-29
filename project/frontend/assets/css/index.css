@@ -35,6 +35,7 @@ html {
     margin-bottom: 50px;
 }
 
+
 /*img{
     margin-bottom: 0;
     max-height: 50px;
@@ -83,9 +84,12 @@ footer {
     bottom: 0;
     text-align: center;
 }
-
+signUpButton{
+    width: 50%;
+}
 #signUp{
     display: none;
+	text-align: center;
 }
 
 #courselist{
@@ -195,7 +199,9 @@ footer {
     border: 2px solid;
     border-radius: 25px;
 }
-
+#loginpage{
+	text-align:center;
+}
 /*
 Responsive UI stuff to be added
 */
