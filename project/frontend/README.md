@@ -17,18 +17,28 @@ How to run project((NEW with database stuff))
 *(For Mac Only):*
 >Follow the mongoDB installation instructions here
 http://treehouse.github.io/installation-guides/mac/mongo-mac.html
-
 *(For Windows Only):*
 >Follow the mongoDB installation instructions here
 https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 
 -type 'mkdir data' in terminal
 
--type 'mongod --dbpath=$PWD/data' in terminal ((DO NOT cd INTO DATA))
+-type 'mkdir uploads' in terminal
 
--open another terminal and cd into project folder
 
--type 'nodemon server.js' in the terminal
+***
+
+-type  **mongod --dbpath=$PWD/data** in terminal ((DO NOT cd INTO DATA))
+
+*Note:*
+>If typing the above command returns and error like Invalid command: an/incomplete/path/of/your/current/directory, double check that none of the directories in your working directories have spaces in their names. Sometimes it works better to type **mongod --dbpath=data** instead.
+
+>If typing the above command return and error like exception in initAndListen: 98 Unable to lock file: data/mongod.lock, double check that you don't have mongo process running currently by typing in terminal **ps aux | grep mongo**, finding the process id of your mongo process, and type **kill pid** with the process id you found to kill that mongo process.
+
+-open another terminal and cd into project/frontend folder and type  **nodemon server.js**
+
+***
+
 
 *Note:*
 >If typing 'nodemon server.js' returns and error like Error: Cannot find module 'express-validator', try running 'npm install' again

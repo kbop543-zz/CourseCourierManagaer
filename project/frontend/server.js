@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-    res.sendfile('views/index.html');
+    res.sendfile('views/login.html');
 });
 
 app.post('/uploadSyllabus',function(req,res){
@@ -88,6 +88,10 @@ app.get('/courses', function(req, res) {
 app.get('/logout', function(req, res) {
     req.session.username = undefined;
     res.redirect('/');
+});
+
+app.get('/addMarkable', function(req, res) {
+    res.sendfile('views/addMarkable.html');
 });
 
 
