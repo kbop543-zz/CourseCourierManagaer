@@ -61,10 +61,31 @@ nav a,footer a{
     padding: 14px 16px;
     text-decoration: none;
 }
-
+#addmarkable, #downloadcalendar{
+    color: #66A5AD;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#addmarkable:hover,#downloadcalendar:hover {
+    color: #07575B;
+    background: #66A5AD;
+}
 nav a:hover,footer a:hover {
     color: #07575B;
     background: #66A5AD;
+}
+input[type=button],input[type=submit], input[type=reset]{
+	 color: #66A5AD;
+	 border: 2px solid;
+	 border-color: #C4DFE6;
+	 border-radius: 25px;
+ }
+input[type=button]:hover,input[type=submit]:hover, input[type=reset]:hover{
+	 color: #66A5AD;
+	 border: 2px solid;
+	 border-color: #66A5AD;
+	 border-radius: 25px;
 }
 input{
     padding: 14px 16px;
@@ -77,6 +98,9 @@ input[type=file] {
 input[type=text] {
     width: 100%;
     box-sizing: border-box;
+	border: 2px solid;
+	border-color: #66A5AD;
+	border-radius: 25px;
 }
 footer {
     background: #07575B;
@@ -84,9 +108,7 @@ footer {
     bottom: 0;
     text-align: center;
 }
-signUpButton{
-    width: 50%;
-}
+
 #signUp{
     display: none;
 	text-align: center;
