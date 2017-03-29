@@ -160,7 +160,7 @@ function loadCourses () {
             }
 
             //icolor = 1;
-			var parts =allMarkables[j][3].substr(0,markdate.indexOf(' ')).match(/(\d+)/g);
+			var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
    			 var date = new Date(parts[0], parts[1]-1,parts[2]);
 			var todate = new Date();
 			if(date>todate){
