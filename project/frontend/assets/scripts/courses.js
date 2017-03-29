@@ -111,7 +111,7 @@ function loadCourses () {
             //}
 
             icolor = 1;
-
+			
             for (let i = 0; i < allCourses.length; i++) {
                 if (allMarkables[j][0] == allCourses[i][0]) {
                     icolor = i + 1;
@@ -119,7 +119,10 @@ function loadCourses () {
             }
 
             //icolor = 1;
-
+			var parts =allMarkables[j][3].substr(0,markdate.indexOf(' ')).match(/(\d+)/g);
+   			 var date = new Date(parts[0], parts[1]-1,parts[2]);
+			var todate = new Date();
+			if(date>todate){
             $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
                 "Course: " + allMarkables[j][0] + "</li><li>" +
                 "Name: " + allMarkables[j][1] + "</li><li>" +
@@ -128,6 +131,7 @@ function loadCourses () {
                 "Due Date: " + markdate + "</li><li>"+
                 "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
         }
+		}
 
         $.ajax({
             type: 'POST',
