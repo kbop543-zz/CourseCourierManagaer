@@ -26,13 +26,13 @@ function addMarkable (courseName) {
 
 
 
-        //serialize form
-        //ajax post thing to server file thing 
-        //make sure to put name of function and name of post call in server.js
-        //in fileRoutes have an add markable or whatever u wanna call it function that 
-        //will grab data from the serialized form that u sent ..you can grab it via
-        //req.body.<name of form element here>
-        //get username by req.session.username to get the courseobj and append to it
+        // serialize form
+        // ajax post thing to server file thing 
+        // make sure to put name of function and name of post call in server.js
+        // in fileRoutes have an add markable or whatever u wanna call it function that 
+        // will grab data from the serialized form that u sent ..you can grab it via
+        // req.body.<name of form element here>
+        // get username by req.session.username to get the courseobj and append to it
 
     // }
 }
