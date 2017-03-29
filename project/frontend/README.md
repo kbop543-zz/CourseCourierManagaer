@@ -33,7 +33,7 @@ https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/
 *Note:*
 >If typing the above command returns and error like Invalid command: an/incomplete/path/of/your/current/directory, double check that none of the directories in your working directories have spaces in their names. Sometimes it works better to type **mongod --dbpath=data** instead.
 
->If typing the above command return and error like exception in initAndListen: 98 Unable to lock file: data/mongod.lock, double check that you don't have mongo process running currently by typing in terminal **ps aux | grep mongo**, finding the process id of your mongo process, and type **kill pid** with process id you foudn to kill that mongo process.
+>If typing the above command return and error like exception in initAndListen: 98 Unable to lock file: data/mongod.lock, double check that you don't have mongo process running currently by typing in terminal **ps aux | grep mongo**, finding the process id of your mongo process, and type **kill pid** with the process id you found to kill that mongo process.
 
 -open another terminal and cd into project/frontend folder and type  **nodemon server.js**
 
