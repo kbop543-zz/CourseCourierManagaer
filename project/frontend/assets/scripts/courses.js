@@ -15,6 +15,8 @@ function addMarkable (courseName) {
         $("h2#addMarkable").append('<form id="addMarkableForm">' +
             '<input type="text" placeholder ="Markable name" name="markableName">' +
             '<br>' +
+            '<input type="text" placeholder ="Description" name="description">' +
+            '<br>' +
             '<input type="text" placeholder ="Weight" name="weight">' +
             '<br>' +
             '<input type="text" placeholder ="Due Date" name="dueDate">' +
