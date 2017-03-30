@@ -198,7 +198,7 @@ exports.parsePdf = function(req, res) {
     var empty_array = [];
       let reset_courses = {"courses" : empty_array}
       courseObj = reset_courses;
-      console.log(courseObj);
+      // console.log(courseObj);
 
     if(flag || duplicate_flag){
       console.log(flag);
@@ -207,9 +207,59 @@ exports.parsePdf = function(req, res) {
     }else{
       if(req.session.username != null){
         User.findOne({'username': req.session.username}, function(err, username){
+          // console.log(username.courseObj);
           res.send(username.courseObj);
         });
       }
     }
+}
 
+/* Add Markable */
+exports.addMarkable = function(req, res) {
+    console.log('addMarkable');
+    // res.status(500).send("Just testing poop");
+    // var empty_array = [];
+    // let reset_courses = {"courses" : empty_array}
+    // courseObj = reset_courses;
+
+    if(req.session.username != null){
+      User.findOne({'username': req.session.username}, function(err, username){
+        // console.log(username.courseObj);
+        var tmpUser = new User();
+        tmpUser.username = username.username;
+        tmpUser.password = username.password;
+        tmpUser.confirmedPassword = username.confirmedPassword;
+        tmpUser.firstName = username.firstName;
+        tmpUser.lastName = username.lastName;
+        tmpUser.email = username.email;        
+        tmpUser.courseObj = "Who needs Courses?";   
+        
+        // var curCourse = 
+        
+        // JSON.parse(JSON.stringify(username.courseObj), (key, value) => {
+        //   console.log(key); // log the current property name, the last is "".
+        //   });
+        // console.log(curCourse);
+        // var userCourse = JSON.parse(JSON.stringify(username.courseObj));
+        // console.log(userCourse);
+        tmpUser.save(function(err, tmpUser) {
+          if (err) {
+            throw err;
+          } else {
+            console.log(tmpUser);
+            res.send('Success');
+          }
+        });
+        // res.send(username.courseObj);
+      });
+    }
+   // if(req.session.username != null){
+   //    console.log(req.session);
+
+   //    TypeError: Cannot create property 'courseObj' on string 'j'
+   //    User.findOne({'username': 'j'}, function(err, username){
+   //      console.log(req.session.username.courseObj);
+   //      res.send(req.session.username.courseObj = "Test");
+   //    });
+   //  } 
 }

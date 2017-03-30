@@ -1,14 +1,7 @@
 function addMarkable (courseName) {
-    // $('.addCourseButton').click(function() {
         console.log(courseName);
-
-        //window.location.replace('/addMarkable');
         $("main").empty();
-
         $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
-
-        // // var courseName = $(this).attr("id");
-
         $("h2#addMarkable").append('<ul><li>' + courseName);
 
         //append form to h2#courselist here 
@@ -26,27 +19,23 @@ function addMarkable (courseName) {
             '<br>' +
             '</form>');
 
-        // pretty sure this is for the onclick method of the confirm button
         $('#addMarkable').submit(function(event) {
             console.log("submitting");
             event.preventDefault();
-            // Get the data from form
+            // serialize form
             let formData = $('#addMarkable').serialize();
-            // Send post AJAX to create account
+            // ajax post thing to server file thing 
             $.post('/addMarkable', formData, function(data) {
                 alert('Markable added');
-                // // Reset form
-                // $('#addMarkable').each(function() {
-                //     this.reset();
-                //     $('#addMarkable').slideToggle('slow');
-                // });
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
             });
+
+            // return false;
         });
 
-        // serialize form
-        // ajax post thing to server file thing 
-        // make sure to put name of function and name of post call in server.js
-        // in fileRoutes have an add markable or whatever u wanna call it function that 
         // will grab data from the serialized form that u sent ..you can grab it via
         // req.body.<name of form element here>
         // get username by req.session.username to get the courseobj and append to it
