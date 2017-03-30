@@ -6,6 +6,23 @@ var fs = require('fs');
 
 var dateFormat = require('dateformat');
 
+/*multer reads files*/
+var multer  =   require('multer');
+
+/*set directory where the uploaded file must go*/
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-Syllabus' + Date.now());
+  }
+});
+
+/*upload handles input called 'file'*/
+var upload = multer({ storage : storage}).array('file',12);
+
+
 
 var courseObj;
 var flag = 0;
@@ -13,8 +30,19 @@ var flag = 0;
 fs.readFile('courses.json', 'utf-8', function(err, data) {
     if(err) throw err;
     courseObj = JSON.parse(data);
+    console.log(courseObj);
     
 });
+
+exports.uploadSyllabus = function(req, res){
+  upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.sendfile('views/courses.html');
+    });
+
+}
 
 /*helper function to split text file line by line and read*/
 function read(req,file, cb) {
@@ -65,7 +93,6 @@ function read(req,file, cb) {
       "description": courseData2[j],
       "weight": courseData2[k],
       "dueDate": courseData2[l]
-      //new Date(date[0], date[1],date[2])
 
     })
     
@@ -76,18 +103,26 @@ function read(req,file, cb) {
       "courseName": courseName,
       "markables": markables
     });
+  console.log("just read this from the file" + courseCode);
 
     var temp = {"courses" : everything}
     courseObj.courses.push(temp.courses[0]);
+    //console.log(courseObj);
     var json = JSON.stringify(courseObj);
+    //console.log(json);
 
     if(req.session.username != null){
     User.findOne({'username': req.session.username}, function(err, username){
+      //if courseObj has something in it, traverse it and see if the course we are trying to have 
+      //already there
       if(username.courseObj != null){
         var usernameCourses = JSON.parse(username.courseObj);
         for(let i = 0; i< usernameCourses.courses.length; i++){
+
           let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
           if(course == temp.courses[0].courseCode){
+            console.log(course + "is a duplicate");
             flag = 1;
             break;
           }else{
@@ -101,16 +136,20 @@ function read(req,file, cb) {
           cb(username.courseObj);
         }else{
           cb(flag);
+          return;
         }
       }else{
         username.courseObj = json;
         cb(username.courseObj);
+        courseObj.courses
         flag = 0;
       }
       username.save(function(err) {
         if (err) throw err;
       })
-      console.log(username);
+      //console.log(username);
+      
+
       
   })
   }
@@ -121,40 +160,56 @@ function read(req,file, cb) {
 
 //parse pdf and upload the parsed file to console 
 exports.parsePdf = function(req, res) {
-  console.log('parsePdf');
-  var finalObj;
-  fs.readdir('./uploads', function(err, filenames) {
+    console.log('parsePdf');
+    var finalObj;
+    var count = 0;
+    var duplicate_flag = 0;
+    fs.readdir('./uploads', function(err, filenames) {
+
+      console.log(filenames);
+
     if (err) {
       throw err;
       return;
     }
-  filenames.forEach(function(filename) {
-    read(req,filename, function(data) {
-    });
-  })  
-
+    filenames.forEach(function(filename) {
+      count++;
+       console.log("count is "+count);
+      read(req,filename, function(data) {
+        if(data == 1){
+          duplicate_flag = 1;
+        }
+        
+        
+      });
   })
-  fs.readdir('./uploads', function(err, files) {
+
+})
+    fs.readdir('./uploads', function(err, files) {
     if (err) {
-      throw err;
+       throw err;
     } else {
-      if (!files.length) {
-        flag=0;
+       if (!files.length) {
+           flag=0;
+       }
+    }
+});
+
+    var empty_array = [];
+      let reset_courses = {"courses" : empty_array}
+      courseObj = reset_courses;
+      console.log(courseObj);
+
+    if(flag || duplicate_flag){
+      console.log(flag);
+      console.log(duplicate_flag);
+      res.status(500).send("Error: duplicate syllabus course");
+    }else{
+      if(req.session.username != null){
+        User.findOne({'username': req.session.username}, function(err, username){
+          res.send(username.courseObj);
+        });
       }
     }
-  });
 
-  if(flag == 1){
-    res.status(500).send("Error: duplicate syllabus course");
-  } else {
-    if(req.session.username != null){
-      User.findOne({'username': req.session.username}, function(err, username){
-        res.send(username.courseObj);
-      });
-    }
-  }
-}
-
-exports.addMarkable = function() {
-  console.log('addMarkable');
 }
