@@ -105,7 +105,7 @@ app.get('/getOneUser', users.getOneUser);
 
 //file routes
 app.post('/parsePdf',file.parsePdf);
-app.post('/addMarkable',file.addMarkable);
+// app.post('/addMarkable',file.addMarkable);
 app.post('/uploadSyllabus',file.uploadSyllabus);
 
 
