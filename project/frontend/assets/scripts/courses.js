@@ -24,7 +24,22 @@ function addMarkable (courseName) {
             '<br>' +
             '</form>');
 
-
+        // pretty sure this is for the onclick method of the confirm button
+        $('#addMarkable').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // Get the data from form
+            let formData = $('#addMarkable').serialize();
+            // Send post AJAX to create account
+            $.post('/addMarkable', formData, function(data) {
+                alert('Markable added');
+                // // Reset form
+                // $('#addMarkable').each(function() {
+                //     this.reset();
+                //     $('#addMarkable').slideToggle('slow');
+                // });
+            });
+        });
 
         // serialize form
         // ajax post thing to server file thing 

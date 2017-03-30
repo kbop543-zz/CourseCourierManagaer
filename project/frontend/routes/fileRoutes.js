@@ -121,40 +121,40 @@ function read(req,file, cb) {
 
 //parse pdf and upload the parsed file to console 
 exports.parsePdf = function(req, res) {
-    console.log('parsePdf');
-    var finalObj;
-    fs.readdir('./uploads', function(err, filenames) {
-
+  console.log('parsePdf');
+  var finalObj;
+  fs.readdir('./uploads', function(err, filenames) {
     if (err) {
       throw err;
       return;
     }
-    filenames.forEach(function(filename) {
-      read(req,filename, function(data) {
-        
-        
-      });
+  filenames.forEach(function(filename) {
+    read(req,filename, function(data) {
+    });
+  })  
+
   })
-
-})
-    fs.readdir('./uploads', function(err, files) {
+  fs.readdir('./uploads', function(err, files) {
     if (err) {
-       throw err;
+      throw err;
     } else {
-       if (!files.length) {
-           flag=0;
-       }
-    }
-});
-
-    if(flag == 1){
-      res.status(500).send("Error: duplicate syllabus course");
-    }else{
-      if(req.session.username != null){
-        User.findOne({'username': req.session.username}, function(err, username){
-          res.send(username.courseObj);
-        });
+      if (!files.length) {
+        flag=0;
       }
     }
+  });
 
+  if(flag == 1){
+    res.status(500).send("Error: duplicate syllabus course");
+  } else {
+    if(req.session.username != null){
+      User.findOne({'username': req.session.username}, function(err, username){
+        res.send(username.courseObj);
+      });
+    }
+  }
+}
+
+exports.addMarkable = function() {
+  console.log('addMarkable');
 }
