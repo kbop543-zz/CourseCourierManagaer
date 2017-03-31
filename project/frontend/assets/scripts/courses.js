@@ -149,9 +149,8 @@ function loadCourses () {
                 ' ' + allMarkables[j][4].split(' ')[0].split('-')[2] + ', '
                 + allMarkables[j][4].split(' ')[0].split('-')[0];
             } else {*/
-                markdate = allMarkables[j][4];
+            markdate = allMarkables[j][4];
             //}
-
             icolor = 1;
 
             for (let i = 0; i < allCourses.length; i++) {
@@ -160,19 +159,19 @@ function loadCourses () {
                 }
             }
 
-            //icolor = 1;
-			var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
-   			 var date = new Date(parts[0], parts[1]-1,parts[2]);
-			var todate = new Date();
-			if(date>todate){
-            $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
-                "Course: " + allMarkables[j][0] + "</li><li>" +
-                "Name: " + allMarkables[j][1] + "</li><li>" +
-                "Description: " + allMarkables[j][5] + "</li><li>" +
-                "Weight: " + allMarkables[j][2] + "</li><li>" +
-                "Due Date: " + markdate + "</li><li>"+
-                "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
-        }
+        		var parts =allMarkables[j][3].match(/(\d+)/g);
+         		var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
+        		var todayDate = new Date();
+
+        		if( markableDate > todayDate){
+                  $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
+                      "Course: " + allMarkables[j][0] + "</li><li>" +
+                      "Name: " + allMarkables[j][1] + "</li><li>" +
+                      "Description: " + allMarkables[j][5] + "</li><li>" +
+                      "Weight: " + allMarkables[j][2] + "</li><li>" +
+                      "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 18) + "</li><li>"+
+                      "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate) +"</li></ul>");
+              }
     }
 
         $.ajax({
@@ -207,7 +206,8 @@ function getReccomendedStartDate(weight, dueDate) {
     var date = new Date(parts[0], parts[1]-1,parts[2]);
     date.setDate(date.getDate() - shouldStartDaysEarly);
 
-    return date.toLocaleDateString();
+    var stringDate = date.toString();
+    return stringDate.substr(0, stringDate.length - 23);
 
 }
 
