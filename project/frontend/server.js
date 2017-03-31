@@ -75,6 +75,15 @@ app.get('/courses', function(req, res) {
 
 });
 
+app.get('/myMarks', function(req, res) {
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    }else {
+        res.sendfile('views/myMarks.html');
+    }
+
+});
+
 // Redirect to login and reset session on log out
 app.get('/logout', function(req, res) {
     req.session.username = undefined;
