@@ -1,3 +1,54 @@
+function addMarkable (courseName) {
+        console.log(courseName);
+        $("main").empty();
+        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
+        $("h2#addMarkable").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addMarkable").append('<form id="addMarkableForm">' +
+            '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder ="Description" name="description">' +
+            '<br>' +
+            '<input type="text" placeholder ="Weight" name="weight">' +
+            '<br>' +
+            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        $('#addMarkable').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addMarkable').serialize();
+            // ajax post thing to server file thing
+            $.post('/addMarkable', formData, function(data) {
+                alert('Markable added');
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+
+            // return false;
+        });
+
+        // serialize form
+        // ajax post thing to server file thing
+        // make sure to put name of function and name of post call in server.js
+        // in fileRoutes have an add markable or whatever u wanna call it function that
+        // will grab data from the serialized form that u sent ..you can grab it via
+        // req.body.<name of form element here>
+        // get username by req.session.username to get the courseobj and append to it
+
+    // }
+}
+
+
+
 /*  Simply calls backend and prints out the data it recieves now */
 function loadCourses () {
 
@@ -7,26 +58,17 @@ function loadCourses () {
         url: "/parsePdf"
     })
     .done(function( data ) {
-        // $("main").empty();
 
         var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
-        console.log(data);
-        //console.log(IsJsonString(""+data));
-
-
-        if(data == "repeated"){
-            alert("One of the course syllabuses you have entered is already uploaded.");
-            return;
-        }
 
         var obj = JSON.parse(JSON.stringify(data));
-        console.log("this is the obj" + obj);
+        console.log("this is the obj", obj);
 
         for(let i = 0; i< obj.courses.length; i++){
             var course = obj.courses[i];
-            console.log("this is the course" +course);
+            console.log("this is the course", course);
 
             allCourses.push([course.courseCode, course.courseName]);
             allCoursesColour.push([course.courseCode]);
@@ -36,7 +78,7 @@ function loadCourses () {
             for (let m in mark) {
                 markable = [course.courseCode, mark[m].name, mark[m].weight, mark[m].dueDate, mark[m].dueDate, mark[m].description];
                 allMarkables.push(markable);
-                console.log(allMarkables);
+                //console.log(allMarkables);
             }
         }
 
@@ -56,11 +98,11 @@ function loadCourses () {
                 console.log(new Date(secondDate[0], secondDate[1],secondDate[2]));*/
 
                 var parts1 = a[3].substr(0,a[3].indexOf(' ')).match(/(\d+)/g);
-                console.log(a[3] + "<- original|broken up: " + parts1);
+                //console.log(a[3] + "<- original|broken up: " + parts1);
                 var date1 = new Date(parts1[0], parts1[1]-1,parts1[2]);
-  
+
                 var parts2 = b[3].substr(0,b[3].indexOf(' ')).match(/(\d+)/g);
-                console.log(b[3] + "<- original|broken up: " + parts2);
+                //console.log(b[3] + "<- original|broken up: " + parts2);
                 var date2 = new Date(parts2[0], parts2[1]-1,parts2[2]);
 
 
@@ -86,11 +128,11 @@ function loadCourses () {
             //  allCourses[course][0] + '</li><li>' +
             //  allCourses[course][1] + '</li><li>'
             //  )
-
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
-                allCourses[course][1] + '</li><li>'
-            )
+                allCourses[course][1] + '</li><li>' +
+                '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
+                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
 
             icolor += 1;
         }
@@ -119,7 +161,10 @@ function loadCourses () {
             }
 
             //icolor = 1;
-
+			var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
+   			 var date = new Date(parts[0], parts[1]-1,parts[2]);
+			var todate = new Date();
+			if(date>todate){
             $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
                 "Course: " + allMarkables[j][0] + "</li><li>" +
                 "Name: " + allMarkables[j][1] + "</li><li>" +
@@ -128,6 +173,7 @@ function loadCourses () {
                 "Due Date: " + markdate + "</li><li>"+
                 "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
         }
+    }
 
         $.ajax({
             type: 'POST',
@@ -141,9 +187,6 @@ function loadCourses () {
     }).fail(function(response){
         alert(response.responseText);
         });
-    
-
-
 }
 
 function getRandomColor() {
@@ -157,19 +200,23 @@ function getRandomColor() {
 
 
 function getReccomendedStartDate(weight, dueDate) {
-    var shouldStartDaysEarly = Math.floor(weight.replace("%", "")/2);
+
+    var shouldStartDaysEarly = Math.floor(weight.replace("%", "") / 2);
+
     var parts = dueDate.substr(0,dueDate.indexOf(' ')).match(/(\d+)/g);
     var date = new Date(parts[0], parts[1]-1,parts[2]);
     date.setDate(date.getDate() - shouldStartDaysEarly);
+
     return date.toLocaleDateString();
+
 }
 
 $(document).ready(function(){
 
-    $('a#profile').show();
     $('#courses').show();
+    $('a#profile').show();
+    $('a#myMarks').show();
     $('#logout').show();
 
     loadCourses();
-
 })

@@ -6,6 +6,7 @@ function signupSetup (){
 
         $('a#login').hide();
         $('a#courses').show();
+        $('a#myMarks').show();
         $('a#profile').show();
         $('#logout').show();
 
@@ -39,9 +40,13 @@ function signupSetup (){
 }*/
 
 $(document).ready(function(){
-	    $('a#courses').hide();
-        $('a#profile').hide();
-        $('#logout').hide();
+
+    $('a#courses').hide();
+    $('a#myMarks').hide();
+    $('a#profile').hide();
+    $('#logout').hide();
+		$('#info').hide();
+
     $('#upload').click(function () {
         $('#uploadPdf').show();
         $('#info').hide();
