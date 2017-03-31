@@ -1,3 +1,53 @@
+function addMarkable (courseName) {
+        console.log(courseName);
+        $("main").empty();
+        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
+        $("h2#addMarkable").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addMarkable").append('<form id="addMarkableForm">' +
+            '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder ="Description" name="description">' +
+            '<br>' +
+            '<input type="text" placeholder ="Weight" name="weight">' +
+            '<br>' +
+            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        $('#addMarkable').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addMarkable').serialize();
+            // ajax post thing to server file thing
+            $.post('/addMarkable', formData, function(data) {
+                alert('Markable added');
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+
+            // return false;
+        });
+
+        // serialize form
+        // ajax post thing to server file thing
+        // make sure to put name of function and name of post call in server.js
+        // in fileRoutes have an add markable or whatever u wanna call it function that
+        // will grab data from the serialized form that u sent ..you can grab it via
+        // req.body.<name of form element here>
+        // get username by req.session.username to get the courseobj and append to it
+
+    // }
+}
+
+
 
 /*  Calls backend and prints out Current Courses, as well as past markables */
 function loadMyMarks () {
@@ -66,36 +116,36 @@ function loadMyMarks () {
                 'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
 
             icolor += 1;
-        }
-
-        $("main").append('<h2 id = "courselist2"> Past Evaluations </h2>');
-
-        for (let j in allMarkables) {
-
-            var markdate;
-            markdate = allMarkables[j][4];
-            icolor = 1;
-
-            for (let i = 0; i < allCourses.length; i++) {
-                if (allMarkables[j][0] == allCourses[i][0]) {
-                    icolor = i + 1;
-                }
             }
 
-			var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
-   		var date = new Date(parts[0], parts[1]-1,parts[2]);
-			var todate = new Date();
+            $("main").append('<h2 id = "courselist2"> Past Evaluations </h2>');
 
-			if( date < todate ){
-            $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
-                "Course: " + allMarkables[j][0] + "</li><li>" +
-                "Name: " + allMarkables[j][1] + "</li><li>" +
-                "Description: " + allMarkables[j][5] + "</li><li>" +
-                "Weight: " + allMarkables[j][2] + "</li><li>" +
-                "Due Date: " + markdate + "</li><li>"+
-                '<input type="button" value="Input Grade"/>' + "</li></ul>");
-        }
-      }
+            for (let j in allMarkables) {
+
+                var markdate;
+                markdate = allMarkables[j][4];
+                icolor = 1;
+
+                for (let i = 0; i < allCourses.length; i++) {
+                    if (allMarkables[j][0] == allCourses[i][0]) {
+                        icolor = i + 1;
+                    }
+                }
+
+            var parts =allMarkables[j][3].match(/(\d+)/g);
+            var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
+      			var todate = new Date();
+
+      			if( markableDate < todate ){
+                  $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
+                      "Course: " + allMarkables[j][0] + "</li><li>" +
+                      "Name: " + allMarkables[j][1] + "</li><li>" +
+                      "Description: " + allMarkables[j][5] + "</li><li>" +
+                      "Weight: " + allMarkables[j][2] + "</li><li>" +
+                      "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 23) + "</li><li>"+
+                      '<input type="button" value="Input Grade"/>' + "</li></ul>");
+              }
+          }
     }).fail(function(response){
           alert(response.responseText);
         });
