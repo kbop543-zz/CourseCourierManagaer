@@ -24,7 +24,8 @@ function signupSetup (){
 
 $(document).ready(function(){
 
-	$('#courses').hide();
+	  $('#courses').hide();
+    $('#myMarks').show();
     $('#profile').hide();
     $('#logout').hide();
     signupSetup();

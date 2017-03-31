@@ -1,19 +1,14 @@
 function addMarkable (courseName) {
-    // $('.addCourseButton').click(function() {
         console.log(courseName);
-
-        //window.location.replace('/addMarkable');
         $("main").empty();
-
         $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
-
-        // // var courseName = $(this).attr("id");
-
         $("h2#addMarkable").append('<ul><li>' + courseName);
 
-        //append form to h2#courselist here 
+        //append form to h2#courselist here
         $("h2#addMarkable").append('<form id="addMarkableForm">' +
             '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder ="Description" name="description">' +
             '<br>' +
             '<input type="text" placeholder ="Weight" name="weight">' +
             '<br>' +
@@ -24,27 +19,27 @@ function addMarkable (courseName) {
             '<br>' +
             '</form>');
 
-        // pretty sure this is for the onclick method of the confirm button
         $('#addMarkable').submit(function(event) {
             console.log("submitting");
             event.preventDefault();
-            // Get the data from form
+            // serialize form
             let formData = $('#addMarkable').serialize();
-            // Send post AJAX to create account
+            // ajax post thing to server file thing
             $.post('/addMarkable', formData, function(data) {
                 alert('Markable added');
-                // // Reset form
-                // $('#addMarkable').each(function() {
-                //     this.reset();
-                //     $('#addMarkable').slideToggle('slow');
-                // });
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
             });
+
+            // return false;
         });
 
         // serialize form
-        // ajax post thing to server file thing 
+        // ajax post thing to server file thing
         // make sure to put name of function and name of post call in server.js
-        // in fileRoutes have an add markable or whatever u wanna call it function that 
+        // in fileRoutes have an add markable or whatever u wanna call it function that
         // will grab data from the serialized form that u sent ..you can grab it via
         // req.body.<name of form element here>
         // get username by req.session.username to get the courseobj and append to it
@@ -63,21 +58,17 @@ function loadCourses () {
         url: "/parsePdf"
     })
     .done(function( data ) {
-        // $("main").empty();
 
         var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
-        console.log(data);
-        //console.log(IsJsonString(""+data));
-
 
         var obj = JSON.parse(JSON.stringify(data));
-        console.log("this is the obj" + obj);
+        console.log("this is the obj", obj);
 
         for(let i = 0; i< obj.courses.length; i++){
             var course = obj.courses[i];
-            console.log("this is the course" +course);
+            console.log("this is the course", course);
 
             allCourses.push([course.courseCode, course.courseName]);
             allCoursesColour.push([course.courseCode]);
@@ -109,7 +100,7 @@ function loadCourses () {
                 var parts1 = a[3].substr(0,a[3].indexOf(' ')).match(/(\d+)/g);
                 //console.log(a[3] + "<- original|broken up: " + parts1);
                 var date1 = new Date(parts1[0], parts1[1]-1,parts1[2]);
-  
+
                 var parts2 = b[3].substr(0,b[3].indexOf(' ')).match(/(\d+)/g);
                 //console.log(b[3] + "<- original|broken up: " + parts2);
                 var date2 = new Date(parts2[0], parts2[1]-1,parts2[2]);
@@ -139,7 +130,7 @@ function loadCourses () {
             //  )
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
-                allCourses[course][1] + '</li><li>' + 
+                allCourses[course][1] + '</li><li>' +
                 '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
                 'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
 
@@ -162,7 +153,7 @@ function loadCourses () {
             //}
 
             icolor = 1;
-			
+
             for (let i = 0; i < allCourses.length; i++) {
                 if (allMarkables[j][0] == allCourses[i][0]) {
                     icolor = i + 1;
@@ -183,8 +174,6 @@ function loadCourses () {
                 "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li></ul>");
         }
     }
-    
-		
 
         $.ajax({
             type: 'POST',
@@ -198,9 +187,6 @@ function loadCourses () {
     }).fail(function(response){
         alert(response.responseText);
         });
-    
-
-
 }
 
 function getRandomColor() {
@@ -214,19 +200,23 @@ function getRandomColor() {
 
 
 function getReccomendedStartDate(weight, dueDate) {
-    var shouldStartDaysEarly = Math.floor(weight.replace("%", "")/2);
+
+    var shouldStartDaysEarly = Math.floor(weight.replace("%", "") / 2);
+
     var parts = dueDate.substr(0,dueDate.indexOf(' ')).match(/(\d+)/g);
     var date = new Date(parts[0], parts[1]-1,parts[2]);
     date.setDate(date.getDate() - shouldStartDaysEarly);
+
     return date.toLocaleDateString();
+
 }
 
 $(document).ready(function(){
 
-    $('a#profile').show();
     $('#courses').show();
+    $('a#profile').show();
+    $('a#myMarks').show();
     $('#logout').show();
 
     loadCourses();
-
 })
