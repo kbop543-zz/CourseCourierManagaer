@@ -161,9 +161,6 @@ function loadCourses () {
 
         		var parts =allMarkables[j][3].match(/(\d+)/g);
          		var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
-
-            console.log(markableDate)
-
         		var todayDate = new Date();
 
         		if( markableDate > todayDate){
