@@ -48,12 +48,63 @@ function showPrevMarkables(){
                 "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li>"
                 +
                 '<input id="'+allMarkables[j][0]+'" class="addGradeButton" type="button" value="Add a Grade" '+
-                'onClick="addGrade(\'' + allMarkables[j][0] + '\');" /></ul>');
+                'onClick="addGrade(\'' + allMarkables[j][0]+ ',' + allMarkables[j][1] + ',' +allMarkables[j][2] + '\')" /></ul>');
              }
          }
 
          showPrevFlag = true;
      }
+
+function addGrade (courseThings){
+
+        var courseThingsSplitted = courseThings.split(",");
+        var courseName = courseThingsSplitted[0];
+        var markableName = courseThingsSplitted[1];
+        var markableWeight = courseThingsSplitted[2];
+
+        console.log(courseName + ',' +markableName + ',' +markableWeight);
+        $("main").empty();
+        $("main").append('<h2 id = "addGrade"> Add a grade to course '+courseName +
+        'for the markable ' + markableName
+        + 'which is worth '+markableWeight + '</h2>');
+        //$("h2#addGrade").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addGrade").append('<form id="addGradeForm">' +
+            '<input type="text" placeholder ="Markable grade" name="markableGrade">' +
+            '<br>' + 
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        /*$('#addGradeForm').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addGradeForm').serialize();
+            // ajax post thing to server file thing
+            $.post('/addMarkableGrade', formData, function(data) {
+                alert('Markable grade added');
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+
+            // return false;
+        });*/
+
+        // serialize form
+        // ajax post thing to server file thing
+        // make sure to put name of function and name of post call in server.js
+        // in fileRoutes have an add markable or whatever u wanna call it function that
+        // will grab data from the serialized form that u sent ..you can grab it via
+        // req.body.<name of form element here>
+        // get username by req.session.username to get the courseobj and append to it
+
+    // }
+}
 
 function addMarkable (courseName) {
         console.log(courseName);
