@@ -106,21 +106,23 @@ function addGrade (courseThings){
     // }
 }
 
+/* Add markable */
 function addMarkable (courseName) {
         console.log(courseName);
         $("main").empty();
         $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
         $("h2#addMarkable").append('<ul><li>' + courseName);
 
-        //append form to h2#courselist here
+        //append form to h2#courselist here 
         $("h2#addMarkable").append('<form id="addMarkableForm">' +
-            '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<input type="text" value='+ courseName + ' name="courseName">' + 
+            '<input type="text" placeholder="Markable name" name="markableName">' +
             '<br>' +
-            '<input type="text" placeholder ="Description" name="description">' +
+            '<input type="text" placeholder="Description" name="description">' +
             '<br>' +
-            '<input type="text" placeholder ="Weight" name="weight">' +
+            '<input type="text" placeholder="Weight" name="weight">' +
             '<br>' +
-            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+            '<input type="text" placeholder="Due Date" name="dueDate">' +
             '<br>' +
             '<input type="submit" value="Confirm">' +
             '<input type="reset" value="Reset">' +
@@ -131,8 +133,9 @@ function addMarkable (courseName) {
             console.log("submitting");
             event.preventDefault();
             // serialize form
-            let formData = $('#addMarkable').serialize();
-            // ajax post thing to server file thing
+            let formData = $('#addMarkableForm').serialize();
+            // ajax post thing to server file thing 
+            console.log(formData);
             $.post('/addMarkable', formData, function(data) {
                 alert('Markable added');
                 window.location.replace('/courses');
@@ -140,19 +143,7 @@ function addMarkable (courseName) {
             .fail(function(response) {
                 alert(response.responseText);
             });
-
-            // return false;
         });
-
-        // serialize form
-        // ajax post thing to server file thing
-        // make sure to put name of function and name of post call in server.js
-        // in fileRoutes have an add markable or whatever u wanna call it function that
-        // will grab data from the serialized form that u sent ..you can grab it via
-        // req.body.<name of form element here>
-        // get username by req.session.username to get the courseobj and append to it
-
-    // }
 }
 
 
