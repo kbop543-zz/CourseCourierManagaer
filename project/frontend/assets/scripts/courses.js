@@ -1,3 +1,60 @@
+var allMarkables = [];
+var showPrevFlag = false;
+
+function showPrevMarkables(){
+    //console.log(allMarkables);
+
+    if(showPrevFlag){
+        var displaySetting = $(".prevCards").css('display');
+        console.log(displaySetting);
+
+        if(displaySetting == 'block'){
+            $(".prevCards").hide();
+            $("#showPrevMarkButton").prop('value', 'Show Previous Markables');
+            return;
+            
+        }else{
+            $(".prevCards").remove();
+            //$(".prevCards").show();
+            $("#showPrevMarkButton").prop('value','Hide Previous Markables');
+            //$(".prevCards").empty();
+        }
+    }else{
+        $("#showPrevMarkButton").prop('value','Hide Previous Markables');
+    }
+
+
+    var i = 0;
+
+    icolor = 1;
+
+    $("#showPrev").append('<h2 Previous Evaluations </h2>');
+    $(".prevCards").show();
+
+    for (var j in allMarkables) {
+            var markdate = allMarkables[j][4];
+            icolor = i + 1;
+       //icolor = 1;
+            var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
+             var date = new Date(parts[0], parts[1]-1,parts[2]);
+            var todate = new Date();
+            if(date<todate){
+                 $("#showPrev").append('<ul class=prevCards id="mark' + icolor + '"><li>' +
+                "Course: " + allMarkables[j][0] + "</li><li>" +
+                "Name: " + allMarkables[j][1] + "</li><li>" +
+                "Description: " + allMarkables[j][5] + "</li><li>" +
+                "Weight: " + allMarkables[j][2] + "</li><li>" +
+                "Due Date: " + markdate + "</li><li>"+
+                "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li>"
+                +
+                '<input id="'+allMarkables[j][0]+'" class="addGradeButton" type="button" value="Add a Grade" '+
+                'onClick="addGrade(\'' + allMarkables[j][0] + '\');" /></ul>');
+             }
+         }
+
+         showPrevFlag = true;
+     }
+
 function addMarkable (courseName) {
         console.log(courseName);
         $("main").empty();
@@ -59,16 +116,16 @@ function loadCourses () {
     })
     .done(function( data ) {
 
-        var allMarkables = [];
+        //var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
 
         var obj = JSON.parse(JSON.stringify(data));
-        console.log("this is the obj", obj);
+        //console.log("this is the obj", obj);
 
         for(let i = 0; i< obj.courses.length; i++){
             var course = obj.courses[i];
-            console.log("this is the course", course);
+            //console.log("this is the course", course);
 
             allCourses.push([course.courseCode, course.courseName]);
             allCoursesColour.push([course.courseCode]);
@@ -136,6 +193,9 @@ function loadCourses () {
 
             icolor += 1;
         }
+
+        $("main").append('<div id="showPrev"> <input id="showPrevMarkButton"'+
+            'type="button" value="Show Previous Markables"  onClick="showPrevMarkables()" </div>');
 
         $("main").append('<h2 id = "courselist2"> Upcoming Evaluations </h2>');
 
