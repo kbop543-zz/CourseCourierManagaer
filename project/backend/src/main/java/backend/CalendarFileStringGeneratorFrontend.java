@@ -27,11 +27,11 @@ public class CalendarFileStringGeneratorFrontend
 		final int hourInt = Integer.parseInt( hour.trim() );
 		final int newHourInt = hourInt + duration;
 		final String newDateString = Integer.toString( newHourInt );
-		final String endDateAndTime = startDateAndTime.substring( 0, startDateAndTime.indexOf( " " ) ).replaceAll( " ", "" ) + "T" + startDateAndTime
-			.substring( startDateAndTime.lastIndexOf( "0" ) - 5, startDateAndTime.length() )
+		final String endDateAndTime = startDateAndTime.substring( 0, startDateAndTime.indexOf( " " ) ).replaceAll( " ", "" ).replaceAll( "/", "" ) + "T" + startDateAndTime
+			.substring( startDateAndTime.lastIndexOf( "0" ) - 5, startDateAndTime.length() - 1 )
 			.trim();
 
-		final String startDateCleaned = startDateAndTime.trim().replaceAll( "  ", "T" ).replaceAll( " ", "T" );
+		final String startDateCleaned = startDateAndTime.trim().replaceAll( "  ", "T" ).replaceAll( " ", "T" ).replaceAll( "/", "" );
 
 		//		String location = location == null ? "BA 1200" : location;
 		final String location = "";
