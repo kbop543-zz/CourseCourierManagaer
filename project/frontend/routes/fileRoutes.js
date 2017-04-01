@@ -92,7 +92,8 @@ function read(req,file, cb) {
       "name": courseData2[i],
       "description": courseData2[j],
       "weight": courseData2[k],
-      "dueDate": courseData2[l]
+      "dueDate": courseData2[l],
+      "grade": null
 
     })
     
@@ -101,7 +102,8 @@ function read(req,file, cb) {
   everything.push({
       "courseCode": courseCode,
       "courseName": courseName,
-      "markables": markables
+      "markables": markables,
+      "grade": null
     });
   console.log("just read this from the file" + courseCode);
 
@@ -262,4 +264,38 @@ exports.addMarkable = function(req, res) {
    //      res.send(req.session.username.courseObj = "Test");
    //    });
    //  } 
+}
+
+exports.addMarkableGrade = function(req, res){
+  console.log("Adding a grade to a markable.");
+
+  if(req.session.username != null){
+    User.findOne({'username': req.session.username}, function(err, username){
+      //if courseObj has something in it, traverse it and see if the course we are trying to have 
+      //already there
+      
+        var usernameCourses = JSON.parse(username.courseObj);
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            console.log(course);
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+              let markableName = usernameCourses.courses[i].markables[j].name;
+              if(markableName == req.query.markableName){
+                console.log(markableName);
+                usernameCourses.courses[i].markables[j].grade =req.body.markableGrade;
+                username.courseObj = usernameCourses;
+                break;
+                //use this to calculate overall course grade: http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
+              }
+            }
+            break;
+          }
+        }
+        res.send(username.courseObj);
+      })
+  }
 }

@@ -24,6 +24,9 @@ var userSchema = new Schema(
         },
         courseObj : {
             type: Object, required: false
+        },
+        gpa : {
+            type: Number, required: false
         }        
     },
     {

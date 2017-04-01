@@ -78,22 +78,23 @@ function addGrade (courseThings){
             '<br>' +
             '</form>');
 
-        /*$('#addGradeForm').submit(function(event) {
+        $('#addGradeForm').submit(function(event) {
             console.log("submitting");
             event.preventDefault();
             // serialize form
             let formData = $('#addGradeForm').serialize();
             // ajax post thing to server file thing
-            $.post('/addMarkableGrade', formData, function(data) {
+            $.post('/addMarkableGrade?courseName='+courseName+'&markableName='
+                +markableName+'&markableWeight='+markableWeight, formData, function(data) {
                 alert('Markable grade added');
-                window.location.replace('/courses');
+                window.location.replace('/myMarks');
             })
             .fail(function(response) {
                 alert(response.responseText);
             });
 
-            // return false;
-        });*/
+            return false;
+        });
 
         // serialize form
         // ajax post thing to server file thing

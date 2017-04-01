@@ -32,14 +32,6 @@ app.get('/', function(req, res) {
     res.sendfile('views/login.html');
 });
 
-/*app.post('/uploadSyllabus',function(req,res){
-    upload(req,res,function(err) {
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.sendfile('views/courses.html');
-    });
-});*/
 
 // Main page.
 app.get('/index', function(req, res) {
@@ -84,18 +76,19 @@ app.get('/myMarks', function(req, res) {
 
 });
 
-// Redirect to login and reset session on log out
-app.get('/logout', function(req, res) {
-    req.session.username = undefined;
-    res.redirect('/');
-});
-
 app.get('/addMarkable', function(req, res) {
     if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     } else {
         res.sendfile('views/addMarkable.html');
     }
+});
+
+
+// Redirect to login and reset session on log out
+app.get('/logout', function(req, res) {
+    req.session.username = undefined;
+    res.redirect('/');
 });
 
 
@@ -115,7 +108,9 @@ app.get('/getOneUser', users.getOneUser);
 //file routes
 app.post('/parsePdf',file.parsePdf);
 app.post('/addMarkable',file.addMarkable);
+app.post('/addMarkableGrade',file.addMarkableGrade);
 app.post('/uploadSyllabus',file.uploadSyllabus);
+
 
 
 // Start the server
