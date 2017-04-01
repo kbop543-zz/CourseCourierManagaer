@@ -12,7 +12,7 @@ function showPrevMarkables(){
             $(".prevCards").hide();
             $("#showPrevMarkButton").prop('value', 'Show Previous Markables');
             return;
-            
+
         }else{
             $(".prevCards").remove();
             //$(".prevCards").show();
@@ -72,7 +72,7 @@ function addGrade (courseThings){
         //append form to h2#courselist here
         $("h2#addGrade").append('<form id="addGradeForm">' +
             '<input type="text" placeholder ="Markable grade" name="markableGrade">' +
-            '<br>' + 
+            '<br>' +
             '<input type="submit" value="Confirm">' +
             '<input type="reset" value="Reset">' +
             '<br>' +
@@ -114,9 +114,9 @@ function addMarkable (courseName) {
         $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
         $("h2#addMarkable").append('<ul><li>' + courseName);
 
-        //append form to h2#courselist here 
+        //append form to h2#courselist here
         $("h2#addMarkable").append('<form id="addMarkableForm">' +
-            '<input type="text" value='+ courseName + ' name="courseName">' + 
+            '<input type="text" value='+ courseName + ' name="courseName">' +
             '<input type="text" placeholder="Markable name" name="markableName">' +
             '<br>' +
             '<input type="text" placeholder="Description" name="description">' +
@@ -135,7 +135,7 @@ function addMarkable (courseName) {
             event.preventDefault();
             // serialize form
             let formData = $('#addMarkableForm').serialize();
-            // ajax post thing to server file thing 
+            // ajax post thing to server file thing
             console.log(formData);
             $.post('/addMarkable', formData, function(data) {
                 alert('Markable added');
@@ -215,6 +215,9 @@ function loadCourses () {
 
             allCoursesColour[course].push(courseColour);
         }
+
+
+        // Maybe take this out/ refactor is to that we dont show this on both the My Marks page AND Dashboard Page
 
         $("main").append('<h2 id = "courselist"> Courses You Are Taking </h2>');
 
