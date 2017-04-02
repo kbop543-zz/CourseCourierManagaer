@@ -1,39 +1,99 @@
-function addMarkable (courseName) {
-        console.log(courseName);
+var allMarkables = [];
+var showPrevFlag = false;
+
+function showPrevMarkables(){
+    //console.log(allMarkables);
+
+    if(showPrevFlag){
+        var displaySetting = $(".prevCards").css('display');
+        console.log(displaySetting);
+
+        if(displaySetting == 'block'){
+            $(".prevCards").hide();
+            $("#showPrevMarkButton").prop('value', 'Show Previous Markables');
+            return;
+
+        }else{
+            $(".prevCards").remove();
+            //$(".prevCards").show();
+            $("#showPrevMarkButton").prop('value','Hide Previous Markables');
+            //$(".prevCards").empty();
+        }
+    }else{
+        $("#showPrevMarkButton").prop('value','Hide Previous Markables');
+    }
+
+
+    var i = 0;
+
+    icolor = 1;
+
+    $("#showPrev").append('<h2 Previous Evaluations </h2>');
+    $(".prevCards").show();
+
+    for (var j in allMarkables) {
+            var markdate = allMarkables[j][4];
+            icolor = i + 1;
+       //icolor = 1;
+            var parts =allMarkables[j][3].substr(0,allMarkables[j][3].indexOf(' ')).match(/(\d+)/g);
+             var date = new Date(parts[0], parts[1]-1,parts[2]);
+            var todate = new Date();
+            if(date<todate){
+                 $("#showPrev").append('<ul class=prevCards id="mark' + icolor + '"><li>' +
+                "Course: " + allMarkables[j][0] + "</li><li>" +
+                "Name: " + allMarkables[j][1] + "</li><li>" +
+                "Description: " + allMarkables[j][5] + "</li><li>" +
+                "Weight: " + allMarkables[j][2] + "</li><li>" +
+                "Due Date: " + markdate + "</li><li>"+
+                "Recommended Start Date: " + getReccomendedStartDate(allMarkables[j][2],markdate)+"</li>"
+                +
+                '<input id="'+allMarkables[j][0]+'" class="addGradeButton" type="button" value="Add a Grade" '+
+                'onClick="addGrade(\'' + allMarkables[j][0]+ ',' + allMarkables[j][1] + ',' +allMarkables[j][2] + '\')" /></ul>');
+             }
+         }
+
+         showPrevFlag = true;
+     }
+
+function addGrade (courseThings){
+
+        var courseThingsSplitted = courseThings.split(",");
+        var courseName = courseThingsSplitted[0];
+        var markableName = courseThingsSplitted[1];
+        var markableWeight = courseThingsSplitted[2];
+
+        console.log(courseName + ',' +markableName + ',' +markableWeight);
         $("main").empty();
-        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
-        $("h2#addMarkable").append('<ul><li>' + courseName);
+        $("main").append('<h2 id = "addGrade"> Add a grade to course '+courseName +
+        'for the markable ' + markableName
+        + 'which is worth '+markableWeight + '</h2>');
+        //$("h2#addGrade").append('<ul><li>' + courseName);
 
         //append form to h2#courselist here
-        $("h2#addMarkable").append('<form id="addMarkableForm">' +
-            '<input type="text" placeholder ="Markable name" name="markableName">' +
-            '<br>' +
-            '<input type="text" placeholder ="Description" name="description">' +
-            '<br>' +
-            '<input type="text" placeholder ="Weight" name="weight">' +
-            '<br>' +
-            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+        $("h2#addGrade").append('<form id="addGradeForm">' +
+            '<input type="text" placeholder ="Markable grade" name="markableGrade">' +
             '<br>' +
             '<input type="submit" value="Confirm">' +
             '<input type="reset" value="Reset">' +
             '<br>' +
             '</form>');
 
-        $('#addMarkable').submit(function(event) {
+        $('#addGradeForm').submit(function(event) {
             console.log("submitting");
             event.preventDefault();
             // serialize form
-            let formData = $('#addMarkable').serialize();
+            let formData = $('#addGradeForm').serialize();
             // ajax post thing to server file thing
-            $.post('/addMarkable', formData, function(data) {
-                alert('Markable added');
-                window.location.replace('/courses');
+            $.post('/addMarkableGrade?courseName='+courseName+'&markableName='
+                +markableName+'&markableWeight='+markableWeight, formData, function(data) {
+                alert('Markable grade added');
+                window.location.replace('/myMarks');
             })
             .fail(function(response) {
                 alert(response.responseText);
             });
 
-            // return false;
+            return false;
         });
 
         // serialize form
@@ -45,6 +105,46 @@ function addMarkable (courseName) {
         // get username by req.session.username to get the courseobj and append to it
 
     // }
+}
+
+/* Add markable */
+function addMarkable (courseName) {
+        console.log(courseName);
+        $("main").empty();
+        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
+        $("h2#addMarkable").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addMarkable").append('<form id="addMarkableForm">' +
+            '<input type="text" value='+ courseName + ' name="courseName">' +
+            '<input type="text" placeholder="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder="Description" name="description">' +
+            '<br>' +
+            '<input type="text" placeholder="Weight" name="weight">' +
+            '<br>' +
+            '<input type="text" placeholder="Due Date" name="dueDate">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        $('#addMarkable').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addMarkableForm').serialize();
+            // ajax post thing to server file thing
+            console.log(formData);
+            $.post('/addMarkable', formData, function(data) {
+                alert('Markable added');
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+        });
 }
 
 
@@ -59,16 +159,16 @@ function loadCourses () {
     })
     .done(function( data ) {
 
-        var allMarkables = [];
+        //var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
 
         var obj = JSON.parse(JSON.stringify(data));
-        console.log("this is the obj", obj);
+        //console.log("this is the obj", obj);
 
         for(let i = 0; i< obj.courses.length; i++){
             var course = obj.courses[i];
-            console.log("this is the course", course);
+            //console.log("this is the course", course);
 
             allCourses.push([course.courseCode, course.courseName]);
             allCoursesColour.push([course.courseCode]);
@@ -116,6 +216,9 @@ function loadCourses () {
             allCoursesColour[course].push(courseColour);
         }
 
+
+        // Maybe take this out/ refactor is to that we dont show this on both the My Marks page AND Dashboard Page
+
         $("main").append('<h2 id = "courselist"> Courses You Are Taking </h2>');
 
         var icolor = 1;
@@ -136,6 +239,9 @@ function loadCourses () {
 
             icolor += 1;
         }
+
+        $("main").append('<div id="showPrev"> <input id="showPrevMarkButton"'+
+            'type="button" value="Show Previous Markables"  onClick="showPrevMarkables()" </div>');
 
         $("main").append('<h2 id = "courselist2"> Upcoming Evaluations </h2>');
 

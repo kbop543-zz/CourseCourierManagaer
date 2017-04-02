@@ -92,7 +92,8 @@ function read(req,file, cb) {
       "name": courseData2[i],
       "description": courseData2[j],
       "weight": courseData2[k],
-      "dueDate": courseData2[l]
+      "dueDate": courseData2[l],
+      "grade": null
 
     })
     
@@ -101,7 +102,8 @@ function read(req,file, cb) {
   everything.push({
       "courseCode": courseCode,
       "courseName": courseName,
-      "markables": markables
+      "markables": markables,
+      "grade": null
     });
   console.log("just read this from the file" + courseCode);
 
@@ -217,49 +219,67 @@ exports.parsePdf = function(req, res) {
 /* Add Markable */
 exports.addMarkable = function(req, res) {
     console.log('addMarkable');
-    // res.status(500).send("Just testing poop");
-    // var empty_array = [];
-    // let reset_courses = {"courses" : empty_array}
-    // courseObj = reset_courses;
-
     if(req.session.username != null){
       User.findOne({'username': req.session.username}, function(err, username){
-        // console.log(username.courseObj);
-        var tmpUser = new User();
-        tmpUser.username = username.username;
-        tmpUser.password = username.password;
-        tmpUser.confirmedPassword = username.confirmedPassword;
-        tmpUser.firstName = username.firstName;
-        tmpUser.lastName = username.lastName;
-        tmpUser.email = username.email;        
-        tmpUser.courseObj = "Who needs Courses?";   
-        
-        // var curCourse = 
-        
-        // JSON.parse(JSON.stringify(username.courseObj), (key, value) => {
-        //   console.log(key); // log the current property name, the last is "".
-        //   });
-        // console.log(curCourse);
-        // var userCourse = JSON.parse(JSON.stringify(username.courseObj));
-        // console.log(userCourse);
-        tmpUser.save(function(err, tmpUser) {
-          if (err) {
-            throw err;
-          } else {
-            console.log(tmpUser);
-            res.send('Success');
+        var calendarObj = JSON.parse(username.courseObj);
+        // console.log(req.body);
+        var markableName = req.body.markableName;
+        var description = req.body.description;
+        var weight = req.body.weight;
+        var dueDate = req.body.dueDate;
+        var courseName = req.body.courseName;
+        console.log("courseName is:")
+        console.log(courseName);
+        var index = null;
+        var i = null;
+        for (i = 0; i < calendarObj.courses.length; i++) { 
+          if (calendarObj.courses[i].courseCode.search(courseName) != -1) {
+            index = i;
           }
-        });
-        // res.send(username.courseObj);
+        }
+        var courseFromForm = calendarObj.courses[index];
+        courseFromForm.markables.push({'name': markableName, 'description': description, 
+          'weight': weight, 'dueDate': dueDate});
+        calendarObj.courses[index] = courseFromForm;
+        username.courseObj = JSON.stringify(calendarObj);
+        username.save(function(err) {
+          if (err) throw err;
+        })
+        res.send(username.courseObj);
       });
     }
-   // if(req.session.username != null){
-   //    console.log(req.session);
+}
 
-   //    TypeError: Cannot create property 'courseObj' on string 'j'
-   //    User.findOne({'username': 'j'}, function(err, username){
-   //      console.log(req.session.username.courseObj);
-   //      res.send(req.session.username.courseObj = "Test");
-   //    });
-   //  } 
+exports.addMarkableGrade = function(req, res){
+  console.log("Adding a grade to a markable.");
+
+  if(req.session.username != null){
+    User.findOne({'username': req.session.username}, function(err, username){
+      //if courseObj has something in it, traverse it and see if the course we are trying to have 
+      //already there
+      
+        var usernameCourses = JSON.parse(username.courseObj);
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            console.log(course);
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+              let markableName = usernameCourses.courses[i].markables[j].name;
+              if(markableName == req.query.markableName){
+                console.log(markableName);
+                usernameCourses.courses[i].markables[j].grade =req.body.markableGrade;
+                username.courseObj = usernameCourses;
+                break;
+                //use this to calculate overall course grade: http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
+              }
+            }
+            break;
+          }
+        }
+        res.send(username.courseObj);
+      })
+  }
 }

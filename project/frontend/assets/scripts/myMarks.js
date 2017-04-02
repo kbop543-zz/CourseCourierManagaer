@@ -32,22 +32,9 @@ function addMarkable (courseName) {
             .fail(function(response) {
                 alert(response.responseText);
             });
-
-            // return false;
+          // return false;
         });
-
-        // serialize form
-        // ajax post thing to server file thing
-        // make sure to put name of function and name of post call in server.js
-        // in fileRoutes have an add markable or whatever u wanna call it function that
-        // will grab data from the serialized form that u sent ..you can grab it via
-        // req.body.<name of form element here>
-        // get username by req.session.username to get the courseobj and append to it
-
-    // }
 }
-
-
 
 /*  Calls backend and prints out Current Courses, as well as past markables */
 function loadMyMarks () {
@@ -82,7 +69,6 @@ function loadMyMarks () {
                 allMarkables.push(markable);
             }
         }
-
         allMarkables.sort(
             function(a,b) {
 
@@ -111,43 +97,43 @@ function loadMyMarks () {
 
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
-                allCourses[course][1] + '</li><li>' +
+                allCourses[course][1] + '</li><li style="float: right;padding-right: 35px;" >' +
+                'GRADE METADATA HERE??? </li><li>'+
                 '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
                 'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
 
             icolor += 1;
             }
-
             $("main").append('<h2 id = "courselist2"> Past Evaluations </h2>');
 
-            for (let j in allMarkables) {
+              for (let j in allMarkables) {
 
-                var markdate;
-                markdate = allMarkables[j][4];
-                icolor = 1;
+                  var markdate;
+                  markdate = allMarkables[j][4];
+                  icolor = 1;
 
-                for (let i = 0; i < allCourses.length; i++) {
-                    if (allMarkables[j][0] == allCourses[i][0]) {
-                        icolor = i + 1;
-                    }
+                  for (let i = 0; i < allCourses.length; i++) {
+                      if (allMarkables[j][0] == allCourses[i][0]) {
+                          icolor = i + 1;
+                      }
+                  }
+
+              var parts =allMarkables[j][3].match(/(\d+)/g);
+              var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
+              var todate = new Date();
+
+              if( markableDate < todate ){
+                    $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
+                        "Course: " + allMarkables[j][0] + "</li><li>" +
+                        "Name: " + allMarkables[j][1] + "</li><li>" +
+                        "Description: " + allMarkables[j][5] + "</li><li>" +
+                        "Weight: " + allMarkables[j][2] + "</li><li>" +
+                        "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 23) + "</li><li>"+
+                        '<input type="button" value="Input Grade"/>' + "</li></ul>");
                 }
-
-            var parts =allMarkables[j][3].match(/(\d+)/g);
-            var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
-      			var todate = new Date();
-
-      			if( markableDate < todate ){
-                  $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
-                      "Course: " + allMarkables[j][0] + "</li><li>" +
-                      "Name: " + allMarkables[j][1] + "</li><li>" +
-                      "Description: " + allMarkables[j][5] + "</li><li>" +
-                      "Weight: " + allMarkables[j][2] + "</li><li>" +
-                      "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 23) + "</li><li>"+
-                      '<input type="button" value="Input Grade"/>' + "</li></ul>");
-              }
-          }
-    }).fail(function(response){
-          alert(response.responseText);
+            }
+      }).fail(function(response){
+            alert(response.responseText);
         });
 }
 
@@ -160,14 +146,14 @@ function getRandomColor() {
     return color;
 }
 
-
 $(document).ready(function(){
 
     $('a#profile').show();
     $('#courses').show();
     $('#myMarks').show();
     $('#logout').show();
-
     loadMyMarks();
+
+    //display marks by courses
 
 })
