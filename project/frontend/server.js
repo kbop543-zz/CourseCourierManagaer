@@ -67,11 +67,11 @@ app.get('/courses', function(req, res) {
 
 });
 
-app.get('/myMarks', function(req, res) {
+app.get('/management', function(req, res) {
     if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     }else {
-        res.sendfile('views/myMarks.html');
+        res.sendfile('views/management.html');
     }
 
 });

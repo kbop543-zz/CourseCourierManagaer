@@ -1,5 +1,5 @@
-var allMarkables = [];
-var showPrevFlag = false;
+
+/*var showPrevFlag = false;
 
 function showPrevMarkables(){
     //console.log(allMarkables);
@@ -53,9 +53,9 @@ function showPrevMarkables(){
          }
 
          showPrevFlag = true;
-     }
+     }*/
 
-function addGrade (courseThings){
+/*function addGrade (courseThings){
 
         var courseThingsSplitted = courseThings.split(",");
         var courseName = courseThingsSplitted[0];
@@ -94,7 +94,7 @@ function addGrade (courseThings){
             });
 
             return false;
-        });
+        });*/
 
         // serialize form
         // ajax post thing to server file thing
@@ -105,9 +105,9 @@ function addGrade (courseThings){
         // get username by req.session.username to get the courseobj and append to it
 
     // }
-}
+//}
 
-/* Add markable */
+/* Add markable *//*
 function addMarkable (courseName) {
         console.log(courseName);
         $("main").empty();
@@ -145,7 +145,7 @@ function addMarkable (courseName) {
                 alert(response.responseText);
             });
         });
-}
+}*/
 
 
 
@@ -159,12 +159,12 @@ function loadCourses () {
     })
     .done(function( data ) {
 
-        //var allMarkables = [];
+        var allMarkables = [];
         var allCourses = [];
         var allCoursesColour = [];
 
         var obj = JSON.parse(JSON.stringify(data));
-        //console.log("this is the obj", obj);
+        console.log("this is the obj", obj);
 
         for(let i = 0; i< obj.courses.length; i++){
             var course = obj.courses[i];
@@ -184,18 +184,6 @@ function loadCourses () {
 
         allMarkables.sort(
             function(a,b) {
-                /*console.log(a[3]);
-                console.log(b[3]);
-                var dateA = a[3].split(" ");
-                var dateB = b[3].split(" ");
-                console.log(dateA);
-                console.log(dateB);
-                var firstDate = dateA[0].split("-");
-                var secondDate = dateB[0].split("-");
-                console.log(firstDate);
-                console.log(secondDate);
-                console.log(new Date(firstDate[0], firstDate[1],firstDate[2]));
-                console.log(new Date(secondDate[0], secondDate[1],secondDate[2]));*/
 
                 var parts1 = a[3].substr(0,a[3].indexOf(' ')).match(/(\d+)/g);
                 //console.log(a[3] + "<- original|broken up: " + parts1);
@@ -219,7 +207,7 @@ function loadCourses () {
 
         // Maybe take this out/ refactor is to that we dont show this on both the My Marks page AND Dashboard Page
 
-        $("main").append('<h2 id = "courselist"> Courses You Are Taking </h2>');
+        /*$("main").append('<h2 id = "courselist"> Courses You Are Taking </h2>');
 
         var icolor = 1;
 
@@ -241,22 +229,15 @@ function loadCourses () {
         }
 
         $("main").append('<div id="showPrev"> <input id="showPrevMarkButton"'+
-            'type="button" value="Show Previous Markables"  onClick="showPrevMarkables()" </div>');
+            'type="button" value="Show Previous Markables"  onClick="showPrevMarkables()" </div>');*/
 
         $("main").append('<h2 id = "courselist2"> Upcoming Evaluations </h2>');
 
         for (let j in allMarkables) {
             var markdate;
 
-            /*if (allMarkables[j][4] == null) {
-                markdate = null;
-            } else if (allMarkables[j][4].split(' ').length > 1) {
-                markdate = allMarkables[j][4].split(' ')[0].split('-')[1] +
-                ' ' + allMarkables[j][4].split(' ')[0].split('-')[2] + ', '
-                + allMarkables[j][4].split(' ')[0].split('-')[0];
-            } else {*/
             markdate = allMarkables[j][4];
-            //}
+            
             icolor = 1;
 
             for (let i = 0; i < allCourses.length; i++) {

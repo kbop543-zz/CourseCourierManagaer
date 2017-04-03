@@ -1,3 +1,45 @@
+function addGrade (courseThings){
+
+        var courseThingsSplitted = courseThings.split(",");
+        var courseName = courseThingsSplitted[0];
+        var markableName = courseThingsSplitted[1];
+        var markableWeight = courseThingsSplitted[2];
+
+        console.log(courseName + ',' +markableName + ',' +markableWeight);
+        $("main").empty();
+        $("main").append('<h2 id = "addGrade"> Add a grade to course '+courseName +
+        'for the markable ' + markableName
+        + 'which is worth '+markableWeight + '</h2>');
+        //$("h2#addGrade").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addGrade").append('<form id="addGradeForm">' +
+            '<input type="text" placeholder ="Markable grade" name="markableGrade">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        $('#addGradeForm').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addGradeForm').serialize();
+            // ajax post thing to server file thing
+            $.post('/addMarkableGrade?courseName='+courseName+'&markableName='
+                +markableName+'&markableWeight='+markableWeight, formData, function(data) {
+                alert('Markable grade added');
+                window.location.replace('/management');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+
+            return false;
+        });
+}
+
 function addMarkable (courseName) {
         console.log(courseName);
         $("main").empty();
@@ -36,7 +78,7 @@ function addMarkable (courseName) {
         });
 }
 
-/*  Calls backend and prints out Current Courses, as well as past markables */
+/*  prints markables that have passed */
 function loadMyMarks () {
 
     $.ajax({
@@ -59,13 +101,19 @@ function loadMyMarks () {
 
             console.log("this is the course", course);
 
-            allCourses.push([course.courseCode, course.courseName]);
+            if(course.grade == null){
+                allCourses.push([course.courseCode, course.courseName]);
+            }else{
+                allCourses.push([course.courseCode, course.courseName, course.grade]);
+            }
             allCoursesColour.push([course.courseCode]);
+
+            console.log(allCourses);
 
             var mark = course.markables;
 
             for (let m in mark) {
-                markable = [course.courseCode, mark[m].name, mark[m].weight, mark[m].dueDate, mark[m].dueDate, mark[m].description];
+                markable = [course.courseCode, mark[m].name, mark[m].weight, mark[m].dueDate, mark[m].grade, mark[m].description];
                 allMarkables.push(markable);
             }
         }
@@ -95,21 +143,31 @@ function loadMyMarks () {
 
             var colour = allCoursesColour[course][1];
 
+            if(allCourses[course][2] == null){
+                $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
+                allCourses[course][0] + '</li><li>' +
+                allCourses[course][1] + '</li><li style="float: right;padding-right: 35px;" >' 
+                +  '</li><li>'+
+                '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
+                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
+            }else{
+
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
                 allCourses[course][1] + '</li><li style="float: right;padding-right: 35px;" >' +
-                'GRADE METADATA HERE??? </li><li>'+
+                'Overall grade: ' + allCourses[course][2] +  '</li><li>'+
                 '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
                 'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
+        }
 
             icolor += 1;
             }
-            $("main").append('<h2 id = "courselist2"> Past Evaluations </h2>');
+            $("main").append('<h2 id = "courselist2"> Past Markables </h2>');
 
               for (let j in allMarkables) {
 
                   var markdate;
-                  markdate = allMarkables[j][4];
+                  markdate = allMarkables[j][3];
                   icolor = 1;
 
                   for (let i = 0; i < allCourses.length; i++) {
@@ -122,16 +180,35 @@ function loadMyMarks () {
               var markableDate = new Date(parts[0], parts[1]-1,parts[2], parts[3], parts[4], parts[5]);
               var todate = new Date();
 
-              if( markableDate < todate ){
+              if(allMarkables[j][4]){
+                if( markableDate < todate ){
                     $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
                         "Course: " + allMarkables[j][0] + "</li><li>" +
                         "Name: " + allMarkables[j][1] + "</li><li>" +
                         "Description: " + allMarkables[j][5] + "</li><li>" +
                         "Weight: " + allMarkables[j][2] + "</li><li>" +
                         "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 23) + "</li><li>"+
-                        '<input type="button" value="Input Grade"/>' + "</li></ul>");
+                        "Grade: "+ allMarkables[j][4] + "</li><li>"+
+                    '<input id="'+allMarkables[j][0]+'" class="addGradeButton" type="button" value="Change this grade" '+
+                    'onClick="addGrade(\'' + allMarkables[j][0]+ ',' + allMarkables[j][1] + ',' +allMarkables[j][2] + '\')" /></ul>');
+
+                }
+
+              }else{
+                if( markableDate < todate ){
+                    $("h2#courselist2").append('<ul id="mark' + icolor + '"><li>' +
+                        "Course: " + allMarkables[j][0] + "</li><li>" +
+                        "Name: " + allMarkables[j][1] + "</li><li>" +
+                        "Description: " + allMarkables[j][5] + "</li><li>" +
+                        "Weight: " + allMarkables[j][2] + "</li><li>" +
+                        "Due Date: " + markableDate.toString().substr(0, markableDate.toString().length - 23) + "</li><li>"+
+                    '<input id="'+allMarkables[j][0]+'" class="addGradeButton" type="button" value="Add a Grade" '+
+                    'onClick="addGrade(\'' + allMarkables[j][0]+ ',' + allMarkables[j][1] + ',' +allMarkables[j][2] + '\')" /></ul>');
+
                 }
             }
+        }
+            
       }).fail(function(response){
             alert(response.responseText);
         });

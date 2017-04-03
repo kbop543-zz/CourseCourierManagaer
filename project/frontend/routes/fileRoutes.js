@@ -271,15 +271,56 @@ exports.addMarkableGrade = function(req, res){
               if(markableName == req.query.markableName){
                 console.log(markableName);
                 usernameCourses.courses[i].markables[j].grade =req.body.markableGrade;
-                username.courseObj = usernameCourses;
                 break;
-                //use this to calculate overall course grade: http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
               }
             }
-            break;
           }
         }
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            var denominator = 0;
+            var numerator = 0;
+            
+            //calculate course grade using http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+              let markableGrade = usernameCourses.courses[i].markables[j].grade;
+            if(markableGrade != null){
+            //markableGrade = markableGrade.slice(0,-1);
+            console.log(markableGrade);
+              let markableWeight = usernameCourses.courses[i].markables[j].weight;
+               markableWeight = markableWeight.replace('%',"");
+              console.log('markable weight: ' + markableWeight);
+              //if there is a grade with the markable add its weight to the denominator
+              //and multiply grade and weight here
+              
+                denominator = parseFloat(denominator) + parseFloat(markableWeight);
+                console.log(denominator);
+                console.log('denominator: ' + denominator + 'for' + usernameCourses.courses[i].markables[j].name);
+                
+                //numerator here
+                numerator += parseFloat(markableGrade/100) * parseFloat(markableWeight);
+                console.log('numerator:' + numerator + 'for' + usernameCourses.courses[i].markables[j].name);
+                usernameCourses.courses[i].grade = numerator/parseFloat(denominator /100);
+                console.log(usernameCourses.courses[i].grade);
+                username.courseObj = JSON.stringify(usernameCourses);
+                //console.log(username.courseObj.courses[i].markables[j]);
+            }
+                
+              }
+            }
+            
+          }
+        
+        username.save(function(err) {
+        if (err) throw err;
+      })
+        //console.log(username.courseObj);
         res.send(username.courseObj);
       })
   }
 }
+
