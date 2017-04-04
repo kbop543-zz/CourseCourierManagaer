@@ -103,6 +103,7 @@ var usersDb = require('./models/user');
 //user routes
 app.post('/createAccount', users.signUp);
 app.post('/signIn', users.signIn);
+app.post('/modifyUser',users.modifyUser);
 app.get('/getOneUser', users.getOneUser);
 
 //file routes
