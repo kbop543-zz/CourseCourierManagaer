@@ -138,7 +138,53 @@ exports.getOneUser = function(req, res) {
     }
     });
 };
-
+exports.modifyUser = function(req,res){
+		// Find a user
+	console.log("this is called");
+        User.findOne({
+            'username': req.body.username
+        }, function(err, user) {
+            if (err) throw err;
+			console.log("no error");
+			console.log(req.body.username);
+            // If username is not in the databse then create the user
+            if (user == undefined){
+                // Return error if user not found
+                res.status(500).send('A user with that username does not exist');
+				
+            }else {
+                // modify user
+        		user.firstName = req.body.firstName;
+        		user.lastName = req.body.lastName;
+        		user.email = req.body.email;
+				console.log(req.body['grade'+0]+"    160");
+					var json_obj;
+					try{ json_obj= JSON.parse(user.courseObj);
+	 				  }catch(e){
+						json_obj = user.courseObj;	
+						}
+				if(json_obj!=null){
+        		for(var i in json_obj.courses){
+					if(isNaN(req.body['grade'+i])){
+					}
+					else{
+						json_obj.courses[i].grade = req.body['grade'+i] ;
+					}
+				}
+				user.courseObj = JSON.stringify(json_obj);
+				console.log(user.courseObj);
+				}
+				user.save(function(err, newUser) {
+                    if (err) {
+                        throw err;
+                    } else {
+                        res.send('Success');
+                    }
+                });
+				console.log("if it doesn't work than the modify method doesn't work");
+			}
+            } );	
+}
 
 
 
