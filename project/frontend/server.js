@@ -84,6 +84,14 @@ app.get('/addMarkable', function(req, res) {
     }
 });
 
+app.get('/about', function(req, res) {
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    } else {
+        res.sendfile('views/about.html');
+    }
+});
+
 
 // Redirect to login and reset session on log out
 app.get('/logout', function(req, res) {
