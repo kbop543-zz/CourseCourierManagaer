@@ -16,8 +16,10 @@ $(document).ready(function(){
                             "<br>from their instructors, they can manually input their grades, and Courier determines both " +
                             "<br>course grades, and the student's overall GPA. Finally, if a student wishes to incorportate " +
                             "<br>a calendar of their upcoming summatives, they can do so, by simply exporting their calendar " +
-                            "<br> as an ICS file. <br><br><br>" + "</div>");
-    $("main").append('<div id=profileHeading>Our Developers:</div>');
+                            "<br> as an ICS file. <br><br>" + "</div>");
+    $("main").append('<div id=profileBody>Syllabus files are uploaded as .txt files in the following format:<br><br>');
+    $("main").append('<img src="assets/img/templateForTextfile.png">');
+    $("main").append('<div id=profileHeading><br>Our Developers:</div>');
     $("main").append("<div id=profileBody> " + 
                             "<br> Kyra Stephen" +
                             "<br> Filip Fabiszak" +
