@@ -10,6 +10,8 @@ public class FrontendMarkableImpl implements FrontendMarkable
 
 	private final String weight;
 
+	private final String grade;
+
 	private final String dueDate;
 
 	private final String description;
@@ -18,12 +20,14 @@ public class FrontendMarkableImpl implements FrontendMarkable
 	public FrontendMarkableImpl(
 			@JsonProperty( "name" ) final String name,
 			@JsonProperty( "weight" ) final String weight,
+			@JsonProperty( "grade" ) final String grade,
 			@JsonProperty( "dueDate" ) final String dueDate,
 			@JsonProperty( "description" ) final String description )
 	{
-		this.name = Preconditions.checkNotNull( name, "Precondition: name is NULL in MarkableImpl#MarkableImpl" );;
-		this.weight = Preconditions.checkNotNull( weight, "Precondition: weight is NULL in MarkableImpl#MarkableImpl" );;
-		this.dueDate = Preconditions.checkNotNull( dueDate, "Precondition: dueDate is NULL in MarkableImpl#MarkableImpl" );;
+		this.name = Preconditions.checkNotNull( name, "Precondition: name is NULL in MarkableImpl#MarkableImpl" );
+		this.weight = Preconditions.checkNotNull( weight, "Precondition: weight is NULL in MarkableImpl#MarkableImpl" );
+		this.dueDate = Preconditions.checkNotNull( dueDate, "Precondition: dueDate is NULL in MarkableImpl#MarkableImpl" );
+		this.grade = grade;
 		this.description = description;
 	}
 
@@ -33,6 +37,10 @@ public class FrontendMarkableImpl implements FrontendMarkable
 		return name;
 	}
 
+	public String getGrade()
+	{
+		return grade;
+	}
 
 	public String getWeight()
 	{
@@ -69,7 +77,5 @@ public class FrontendMarkableImpl implements FrontendMarkable
 		}
 		return false;
 	}
-
-
 
 }
