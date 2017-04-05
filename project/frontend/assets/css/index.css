@@ -29,9 +29,24 @@ html {
     margin-bottom: 20px;
     font-size: 22px;
     display: inline-block;
-
-
 }*/
+
+#profileHeading {
+    font-size: 30px;
+    color: #000000;
+}
+
+#profileSubHeading {
+    font-size: 28px;
+    text-decoration: underline;
+    color: #000000;
+}
+
+#profileBody {
+    font-size: 26px;
+    color: #000000;
+}
+
 #signUpForm {
     width: 220px;
     padding: 15px;
@@ -89,18 +104,18 @@ nav a:hover,footer a:hover {
     background: #66A5AD;
 }
 input[type=button],input[type=submit], input[type=reset]{
-	 color: #66A5AD;
-	 border: 2px solid;
-	 border-color: #C4DFE6;
-	 border-radius: 25px;
+     color: #66A5AD;
+     border: 2px solid;
+     border-color: #C4DFE6;
+     border-radius: 25px;
    outline: none;
    
  }
 input[type=button]:hover,input[type=submit]:hover, input[type=reset]:hover{
-	 color: #66A5AD;
-	 border: 2px solid;
-	 border-color: #66A5AD;
-	 border-radius: 25px;
+     color: #66A5AD;
+     border: 2px solid;
+     border-color: #66A5AD;
+     border-radius: 25px;
      
 }
 input{
@@ -114,17 +129,17 @@ input[type=file] {
 input[type=text] {
   width: 100%;
   box-sizing: border-box;
-	border: 2px solid;
-	border-color: #66A5AD;
-	border-radius: 25px;
+    border: 2px solid;
+    border-color: #66A5AD;
+    border-radius: 25px;
   outline: none;
 }
 input[type=password] {
     width: 25%;
     box-sizing: border-box;
-	border: 2px solid;
-	border-color: #66A5AD;
-	border-radius: 25px;
+    border: 2px solid;
+    border-color: #66A5AD;
+    border-radius: 25px;
   outline: none;
 }
 footer {
@@ -136,7 +151,7 @@ footer {
 
 #signUp{
     display: none;
-	text-align: center;
+    text-align: center;
 }
 
 #courselist{
@@ -166,7 +181,7 @@ footer {
 
 }
 #mark1 input[type=button]{
-	color: #FFFFFF;
+    color: #FFFFFF;
     background: #068D9D;
     width: 25%;
 } 
@@ -297,7 +312,7 @@ footer {
     width: 25%;
 }
 #loginpage{
-	text-align:center;
+    text-align:center;
 }
 /*
 Responsive UI stuff to be added
