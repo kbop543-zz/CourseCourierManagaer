@@ -135,101 +135,132 @@ footer {
 #mark1{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #0066cc;
+    color: #70798C;
+    background: #F5F1ED;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark1 input[type=button]{
+	color: #70798C;
+    background: #F5F1ED;
+} 
 #mark2{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #ff3300;
+    color: #7F055F;
+    background: #E5A4CB;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark2 input[type=button]{
+    color: #7F055F;
+    background: #E5A4CB;
+}
 #mark3{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #33cc33;
+    color: #A78682;
+    background: #3D5467;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark3 input[type=button]{
+    color: #A78682;
+    background: #3D5467;
+}
 #mark4{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #ff3399;
+    color: #A7ADC6;
+    background: #5F4B66;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark4 input[type=button]{
+    color: #A7ADC6;
+    background: #5F4B66;
+}
 #mark5{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #996633;
+    color: #CEA07E;
+    background: #443742;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark5 input[type=button]{
+    color: #CEA07E;
+    background: #443742;
+}
 #mark6{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #9933ff;
+    color: #AFD2E9;
+    background: #9D96B8;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark6 input[type=button]{
+    color: #AFD2E9;
+    background: #9D96B8;
+}
 #mark7{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #999966;
+    color: #F0386B;
+    background: #6B2D5C;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark7 input[type=button]{
+    color: #F0386B;
+    background: #6B2D5C;
+}
 #mark8{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #009999;
+    color: #7353BA;
+    background: #2F195F;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark8 input[type=button]{
+    color: #7353BA;
+    background: #2F195F;
+}
 #mark9{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #cccc00;
+    color: #C9B1BD;
+    background: #B49594;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark9 input[type=button]{
+    color: #C9B1BD;
+    background: #B49594;
+}
 #mark10{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #339966;
+    color: #7F9172;
+    background: #567568;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
+}
+#mark10 input[type=button]{
+    color: #7F9172;
+    background: #567568;
 }
 #loginpage{
 	text-align:center;
