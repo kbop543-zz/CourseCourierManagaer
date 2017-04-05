@@ -10,7 +10,7 @@ function signupSetup (){
 		//console.log(data);
 		//dataCoursesParse(data);
         $("main").empty();
-        $("main").append("<div>"+'Welcome      '+"<form id='profileChange'><input type='text' name='firstName'  value="+data.firstName+"><input type='text' name='lastName'  value="+data.lastName+">" +
+        $("main").append("<div id=profileCard>"+'Welcome      '+"<form id='profileChange'><input type='text' name='firstName'  value="+data.firstName+"><input type='text' name='lastName'  value="+data.lastName+">" +
 						 "<br>"+'UserName :'+data.username +
 						 "<br>" +'Email :' +"<input type='text' name='email'  value="+data.email+">" +
 						 "<br>" +'Courses you are taking :' +	dataCoursesParse(data) +

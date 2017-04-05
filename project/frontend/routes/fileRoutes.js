@@ -39,7 +39,7 @@ exports.uploadSyllabus = function(req, res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.sendfile('views/courses.html');
+        res.sendfile('views/index.html');
     });
 
 }
@@ -210,7 +210,12 @@ exports.parsePdf = function(req, res) {
       if(req.session.username != null){
         User.findOne({'username': req.session.username}, function(err, username){
           // console.log(username.courseObj);
-          res.send(username.courseObj);
+          if(username.courseObj == null){
+            res.send("You haven't uploaded anything yet!");
+
+          }else{
+            res.send(username.courseObj);
+          }
         });
       }
     }
