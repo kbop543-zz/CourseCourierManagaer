@@ -154,10 +154,11 @@ exports.modifyUser = function(req,res){
 				
             }else {
                 // modify user
+
         		user.firstName = req.body.firstName;
         		user.lastName = req.body.lastName;
         		user.email = req.body.email;
-				console.log(req.body['grade'+0]+"    160");
+				/*console.log(req.body['grade'+0]+"    160");
 					var json_obj;
 					try{ json_obj= JSON.parse(user.courseObj);
 	 				  }catch(e){
@@ -172,7 +173,7 @@ exports.modifyUser = function(req,res){
 					}
 				}
 				user.courseObj = JSON.stringify(json_obj);
-				console.log(user.courseObj);
+				console.log(user.courseObj);*/
 				}
 				user.save(function(err, newUser) {
                     if (err) {
@@ -181,13 +182,7 @@ exports.modifyUser = function(req,res){
                         res.send('Success');
                     }
                 });
-				console.log("if it doesn't work than the modify method doesn't work");
-			}
-            } );	
-}
+            })
+        }
 
-
-
-
-
-
+             
