@@ -3,6 +3,9 @@ package backend;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import net.fortuna.ical4j.model.Date;
+import net.fortuna.ical4j.model.Dur;
+import net.fortuna.ical4j.model.component.VEvent;
 import objects.FrontendCalendar;
 import objects.FrontendCourse;
 import objects.FrontendMarkable;
@@ -32,14 +35,20 @@ public class CalendarFileStringGeneratorFrontend
 			.trim();
 
 		final String startDateCleaned = startDateAndTime.trim().replaceAll( "  ", "T" ).replaceAll( " ", "T" ).replaceAll( "/", "" );
-
-		//		String location = location == null ? "BA 1200" : location;
 		final String location = "";
 		final String exDateAndTime = startDateCleaned;
 		final String trigger = "-PT1H";
 		final String repeat = "4";
 		final String alarmDuration = "PT15M";
 		final String alarmDescription = summary;
+
+
+		final Date date = new Date();
+		final Dur dur = new Dur( 0, 1, 0, 0 );
+		final VEvent calEvent = new VEvent( date, dur, summary );
+
+
+
 		final String event = new StringBuilder()
 			.append( String.format( "BEGIN:VEVENT\n" ) )
 			.append( String.format( "SUMMARY:%s\n", summary ) )
@@ -56,6 +65,11 @@ public class CalendarFileStringGeneratorFrontend
 			.append( String.format( "END:VALARM\n" ) )
 			.append( String.format( "END:VEVENT\n" ) )
 			.toString();
+
+
+
+
+
 		return event;
 	}
 
