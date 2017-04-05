@@ -281,6 +281,7 @@ exports.addMarkableGrade = function(req, res){
             }
           }
         }
+
         for(let i = 0; i< usernameCourses.courses.length; i++){
 
           let course = usernameCourses.courses[i].courseCode;
@@ -292,6 +293,7 @@ exports.addMarkableGrade = function(req, res){
             //calculate course grade using http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
             for(let j = 0; j< usernameCourses.courses[i].markables.length;
               j++){
+
               let markableGrade = usernameCourses.courses[i].markables[j].grade;
             if(markableGrade != null){
             //markableGrade = markableGrade.slice(0,-1);
@@ -307,12 +309,17 @@ exports.addMarkableGrade = function(req, res){
                 console.log('denominator: ' + denominator + ' for ' + usernameCourses.courses[i].markables[j].name);
                 
                 //numerator here
-                var decimal = parseFloat(markableWeight)/100;
+                var totalDecimal = parseFloat(parseFloat(denominator)/100);
+                var decimal = parseFloat(parseFloat(markableWeight)/100)
+                console.log('decimal is '+ decimal);
+
                 numerator += markableGrade * decimal;
                 console.log('numerator:' + numerator + ' for ' + usernameCourses.courses[i].markables[j].name);
-                usernameCourses.courses[i].grade = (numerator /decimal).toFixed(2);
+                usernameCourses.courses[i].grade = (numerator /totalDecimal).toFixed(2);
                 console.log(usernameCourses.courses[i].grade);
+                console.log('___________________________')
                 username.courseObj = JSON.stringify(usernameCourses);
+
                 //console.log(username.courseObj.courses[i].markables[j]);
             }
                 
