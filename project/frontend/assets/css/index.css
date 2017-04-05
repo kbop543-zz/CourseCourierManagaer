@@ -80,6 +80,7 @@ input[type=button],input[type=submit], input[type=reset]{
 	 border: 2px solid;
 	 border-color: #C4DFE6;
 	 border-radius: 25px;
+   outline: none;
  }
 input[type=button]:hover,input[type=submit]:hover, input[type=reset]:hover{
 	 color: #66A5AD;
@@ -96,11 +97,20 @@ input[type=file] {
     box-sizing: border-box;
 }
 input[type=text] {
-    width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+	border: 2px solid;
+	border-color: #66A5AD;
+	border-radius: 25px;
+  outline: none;
+}
+input[type=password] {
+    width: 25%;
     box-sizing: border-box;
 	border: 2px solid;
 	border-color: #66A5AD;
 	border-radius: 25px;
+  outline: none;
 }
 footer {
     background: #07575B;

@@ -6,6 +6,23 @@ var fs = require('fs');
 
 var dateFormat = require('dateformat');
 
+/*multer reads files*/
+var multer  =   require('multer');
+
+/*set directory where the uploaded file must go*/
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-Syllabus' + Date.now());
+  }
+});
+
+/*upload handles input called 'file'*/
+var upload = multer({ storage : storage}).array('file',12);
+
+
 
 var courseObj;
 var flag = 0;
@@ -13,8 +30,19 @@ var flag = 0;
 fs.readFile('courses.json', 'utf-8', function(err, data) {
     if(err) throw err;
     courseObj = JSON.parse(data);
+    console.log(courseObj);
     
 });
+
+exports.uploadSyllabus = function(req, res){
+  upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.sendfile('views/courses.html');
+    });
+
+}
 
 /*helper function to split text file line by line and read*/
 function read(req,file, cb) {
@@ -64,8 +92,8 @@ function read(req,file, cb) {
       "name": courseData2[i],
       "description": courseData2[j],
       "weight": courseData2[k],
-      "dueDate": courseData2[l]
-      //new Date(date[0], date[1],date[2])
+      "dueDate": courseData2[l],
+      "grade": null
 
     })
     
@@ -74,20 +102,29 @@ function read(req,file, cb) {
   everything.push({
       "courseCode": courseCode,
       "courseName": courseName,
-      "markables": markables
+      "markables": markables,
+      "grade": null
     });
+  console.log("just read this from the file" + courseCode);
 
     var temp = {"courses" : everything}
     courseObj.courses.push(temp.courses[0]);
+    //console.log(courseObj);
     var json = JSON.stringify(courseObj);
+    //console.log(json);
 
     if(req.session.username != null){
     User.findOne({'username': req.session.username}, function(err, username){
+      //if courseObj has something in it, traverse it and see if the course we are trying to have 
+      //already there
       if(username.courseObj != null){
         var usernameCourses = JSON.parse(username.courseObj);
         for(let i = 0; i< usernameCourses.courses.length; i++){
+
           let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
           if(course == temp.courses[0].courseCode){
+            console.log(course + "is a duplicate");
             flag = 1;
             break;
           }else{
@@ -101,16 +138,20 @@ function read(req,file, cb) {
           cb(username.courseObj);
         }else{
           cb(flag);
+          return;
         }
       }else{
         username.courseObj = json;
         cb(username.courseObj);
+        courseObj.courses
         flag = 0;
       }
       username.save(function(err) {
         if (err) throw err;
       })
-      console.log(username);
+      //console.log(username);
+      
+
       
   })
   }
@@ -123,14 +164,23 @@ function read(req,file, cb) {
 exports.parsePdf = function(req, res) {
     console.log('parsePdf');
     var finalObj;
+    var count = 0;
+    var duplicate_flag = 0;
     fs.readdir('./uploads', function(err, filenames) {
+
+      console.log(filenames);
 
     if (err) {
       throw err;
       return;
     }
     filenames.forEach(function(filename) {
+      count++;
+       console.log("count is "+count);
       read(req,filename, function(data) {
+        if(data == 1){
+          duplicate_flag = 1;
+        }
         
         
       });
@@ -147,14 +197,130 @@ exports.parsePdf = function(req, res) {
     }
 });
 
-    if(flag == 1){
+    var empty_array = [];
+      let reset_courses = {"courses" : empty_array}
+      courseObj = reset_courses;
+      // console.log(courseObj);
+
+    if(flag || duplicate_flag){
+      console.log(flag);
+      console.log(duplicate_flag);
       res.status(500).send("Error: duplicate syllabus course");
     }else{
       if(req.session.username != null){
         User.findOne({'username': req.session.username}, function(err, username){
+          // console.log(username.courseObj);
           res.send(username.courseObj);
         });
       }
     }
-
 }
+
+/* Add Markable */
+exports.addMarkable = function(req, res) {
+    console.log('addMarkable');
+    if(req.session.username != null){
+      User.findOne({'username': req.session.username}, function(err, username){
+        var calendarObj = JSON.parse(username.courseObj);
+        // console.log(req.body);
+        var markableName = req.body.markableName;
+        var description = req.body.description;
+        var weight = req.body.weight;
+        var dueDate = req.body.dueDate;
+        var courseName = req.body.courseName;
+        console.log("courseName is:")
+        console.log(courseName);
+        var index = null;
+        var i = null;
+        for (i = 0; i < calendarObj.courses.length; i++) { 
+          if (calendarObj.courses[i].courseCode.search(courseName) != -1) {
+            index = i;
+          }
+        }
+        var courseFromForm = calendarObj.courses[index];
+        courseFromForm.markables.push({'name': markableName, 'description': description, 
+          'weight': weight, 'dueDate': dueDate});
+        calendarObj.courses[index] = courseFromForm;
+        username.courseObj = JSON.stringify(calendarObj);
+        username.save(function(err) {
+          if (err) throw err;
+        })
+        res.send(username.courseObj);
+      });
+    }
+}
+
+exports.addMarkableGrade = function(req, res){
+  console.log("Adding a grade to a markable.");
+
+  if(req.session.username != null){
+    User.findOne({'username': req.session.username}, function(err, username){
+      //if courseObj has something in it, traverse it and see if the course we are trying to have 
+      //already there
+      
+        var usernameCourses = JSON.parse(username.courseObj);
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            console.log(course);
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+              let markableName = usernameCourses.courses[i].markables[j].name;
+              if(markableName == req.query.markableName){
+                console.log(markableName);
+                usernameCourses.courses[i].markables[j].grade =req.body.markableGrade;
+                break;
+              }
+            }
+          }
+        }
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            var denominator = 0;
+            var numerator = 0;
+            
+            //calculate course grade using http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+              let markableGrade = usernameCourses.courses[i].markables[j].grade;
+            if(markableGrade != null){
+            //markableGrade = markableGrade.slice(0,-1);
+            console.log(markableGrade);
+              let markableWeight = usernameCourses.courses[i].markables[j].weight;
+               markableWeight = markableWeight.replace('%',"");
+              console.log('markable weight: ' + markableWeight);
+              //if there is a grade with the markable add its weight to the denominator
+              //and multiply grade and weight here
+              
+                denominator = parseFloat(denominator) + parseFloat(markableWeight);
+                console.log(denominator);
+                console.log('denominator: ' + denominator + 'for' + usernameCourses.courses[i].markables[j].name);
+                
+                //numerator here
+                numerator += parseFloat(markableGrade/100) * parseFloat(markableWeight);
+                console.log('numerator:' + numerator + 'for' + usernameCourses.courses[i].markables[j].name);
+                usernameCourses.courses[i].grade = numerator/parseFloat(denominator /100);
+                console.log(usernameCourses.courses[i].grade);
+                username.courseObj = JSON.stringify(usernameCourses);
+                //console.log(username.courseObj.courses[i].markables[j]);
+            }
+                
+              }
+            }
+            
+          }
+        
+        username.save(function(err) {
+        if (err) throw err;
+      })
+        //console.log(username.courseObj);
+        res.send(username.courseObj);
+      })
+  }
+}
+

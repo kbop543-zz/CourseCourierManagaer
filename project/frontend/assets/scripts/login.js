@@ -49,7 +49,7 @@ function signInSetup() {
         // Send post AJAX
         $.post('/signIn', formData, function(data) {
             window.location.replace('/profile');
-            
+
 
         })
 
@@ -64,7 +64,9 @@ function signInSetup() {
 
 /* Set up the page */
 $(document).ready(function() {
-	$('#courses').hide();
+
+    $('#courses').hide();
+    $('#myMarks').hide();
     $('#profile').hide();
     $('#logout').hide();
     signupSetup();
