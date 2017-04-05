@@ -23,6 +23,13 @@ public interface FrontendCourse
 	public String getCourseDescription();
 
 	/**
+	 * Gets the grade of the class
+	 * @return the grade of the class
+	 */
+	@JsonProperty( "grade" )
+	public float getGrade();
+
+	/**
 	 * Gets the markables for the class
 	 * @return the markables of the class
 	 */

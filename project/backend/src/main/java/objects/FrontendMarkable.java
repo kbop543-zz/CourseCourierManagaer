@@ -20,6 +20,13 @@ public interface FrontendMarkable
 	 */
 	@JsonProperty( "weight" )
 	public String getWeight();
+	
+	/**
+	 * Gets grade of the markable
+	 * @return the grade of the markable
+	 */
+	@JsonProperty( "grade" )
+	public String getGrade();
 
 	/**
 	 * Gets the due date of the markable
