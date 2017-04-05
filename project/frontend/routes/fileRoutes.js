@@ -325,3 +325,34 @@ exports.addMarkableGrade = function(req, res){
   }
 }
 
+exports.delCourse = function(req, res){
+  console.log("Deleting a course.");
+
+  // Find the user first
+    User.findOne({
+        'username': req.session.username
+    }, function(err, username) {
+        if (err) throw err;
+
+        // If user found, remove the user and send success message
+        if (username != null) {
+
+
+          var calendarObj = JSON.parse(username.courseObj);
+          var index;
+        
+        for (var i = 0; i < calendarObj.courses.length; i++) { 
+          if (calendarObj.courses[i].courseCode.search(req.query.courseName) != -1) {
+            index = i;
+          }
+        }
+        calendarObj.courses.splice(index,1);
+        
+        username.courseObj = JSON.stringify(calendarObj);
+        username.save(function(err) {
+          if (err) throw err;
+        })
+      }
+        res.send(username.courseObj);
+      });
+    }

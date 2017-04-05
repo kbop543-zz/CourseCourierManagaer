@@ -111,6 +111,7 @@ app.post('/parsePdf',file.parsePdf);
 app.post('/addMarkable',file.addMarkable);
 app.post('/addMarkableGrade',file.addMarkableGrade);
 app.post('/uploadSyllabus',file.uploadSyllabus);
+app.delete('/delCourse',file.delCourse);
 
 
 

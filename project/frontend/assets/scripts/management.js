@@ -78,6 +78,25 @@ function addMarkable (courseName) {
         });
 }
 
+function delCourse(courseName){
+     // Send delete AJAX
+            $.ajax({
+                type: 'delete',
+                url: '/delCourse?courseName='+courseName,
+                success: function(data) {
+                    alert("Markable deleted.");
+                    location.reload();
+                },
+                error: function(response){
+                    alert(response.responseText);
+                }
+            });
+
+
+}
+
+
+
 /*  prints markables that have passed */
 function loadMyMarks () {
 
@@ -144,12 +163,16 @@ function loadMyMarks () {
             var colour = allCoursesColour[course][1];
 
             if(allCourses[course][2] == null){
+
                 $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
                 allCourses[course][0] + '</li><li>' +
                 allCourses[course][1] + '</li><li style="float: right;padding-right: 35px;" >' 
                 +  '</li><li>'+
                 '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
-                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
+                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\')"' 
+                +  '</li><li>'+
+                '<input class="delCourseButton" type="button" value="Delete this course" '+
+                'onClick="delCourse(\'' + allCourses[course][0].trim() + '\')"/>');
             }else{
 
             $("h2#courselist").append('<ul id="mark' + icolor + '"><li>' +
@@ -157,7 +180,10 @@ function loadMyMarks () {
                 allCourses[course][1] + '</li><li style="float: right;padding-right: 35px;" >' +
                 'Overall grade: ' + allCourses[course][2] +  '</li><li>'+
                 '<input id="'+allCourses[course][0].trim()+'" class="addCourseButton" type="button" value="Add a markable" '+
-                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\');" />');
+                'onClick="addMarkable(\'' + allCourses[course][0].trim() + '\')"' 
+                +  '</li><li>'+
+                '<input class="delCourseButton" type="button" value="Delete this course" '+
+                'onClick="delCourse(\'' + allCourses[course][0].trim() + '\');"/>');
         }
 
             icolor += 1;
