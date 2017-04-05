@@ -297,14 +297,15 @@ exports.addMarkableGrade = function(req, res){
               //if there is a grade with the markable add its weight to the denominator
               //and multiply grade and weight here
               
-                denominator = parseFloat(denominator) + parseFloat(markableWeight);
-                console.log(denominator);
-                console.log('denominator: ' + denominator + 'for' + usernameCourses.courses[i].markables[j].name);
+                denominator += parseFloat(markableWeight);
+                //console.log(denominator);
+                console.log('denominator: ' + denominator + ' for ' + usernameCourses.courses[i].markables[j].name);
                 
                 //numerator here
-                numerator += parseFloat(markableGrade/100) * parseFloat(markableWeight);
-                console.log('numerator:' + numerator + 'for' + usernameCourses.courses[i].markables[j].name);
-                usernameCourses.courses[i].grade = numerator/parseFloat(denominator /100);
+                var decimal = parseFloat(markableWeight)/100;
+                numerator += markableGrade * decimal;
+                console.log('numerator:' + numerator + ' for ' + usernameCourses.courses[i].markables[j].name);
+                usernameCourses.courses[i].grade = (numerator /decimal).toFixed(2);
                 console.log(usernameCourses.courses[i].grade);
                 username.courseObj = JSON.stringify(usernameCourses);
                 //console.log(username.courseObj.courses[i].markables[j]);

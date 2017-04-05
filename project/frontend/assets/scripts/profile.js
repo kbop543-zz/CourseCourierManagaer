@@ -29,7 +29,7 @@ function signupSetup (){
 
         // Get the data from form
         let formData = $('#profileChange').serialize();
-		formData+= "&username="+encodeURIComponent(data.username);
+		//formData+= "&username="+data.username);
 		console.log(formData);
 		$.post('/modifyUser',formData,function(data){
 			      alert('User modified');

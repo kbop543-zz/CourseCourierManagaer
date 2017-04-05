@@ -142,7 +142,7 @@ exports.modifyUser = function(req,res){
 		// Find a user
 	console.log("this is called");
         User.findOne({
-            'username': req.body.username
+            'username': req.session.username
         }, function(err, user) {
             if (err) throw err;
 			console.log("no error");

@@ -104,7 +104,7 @@ Group formation 
 
 1% 
 
-2017/­01/­16  16:00:00  
+2017/­02/­16  16:00:00  
 
 P2 
 
@@ -112,7 +112,7 @@ Problem space and literature review 
 
 4% 
 
-2017/­01/­23  16:00:00  
+2017/­02/­23  16:00:00  
 
 P3 
 
@@ -120,7 +120,7 @@ Research instruments script 
 
 4% 
 
-2017/­01/­30  16:00:00  
+2017/­02/­30  16:00:00  
 
 P4 
 
@@ -128,7 +128,7 @@ Revised research instruments script 
 
 2% 
 
-2017/­02/­06  16:00:00  
+2017/­03/­06  16:00:00  
 
 A1 
 
@@ -136,7 +136,7 @@ Harness new technology 
 
 10% 
 
-2017/02/15  16:00:00
+2017/03/15  16:00:00
 
 P5 
 
@@ -144,7 +144,7 @@ Research summary and interpretation 
 
 8% 
 
-2017/­02/­27  16:00:00  
+2017/­03/­27  16:00:00  
 
 A2 
 
@@ -152,7 +152,7 @@ Heuristic evaluation 
 
 10% 
 
-2017/02/27  16:00:00
+2017/03/27  16:00:00
 
 P6 
 
@@ -160,7 +160,7 @@ Brainstorm and representative sketch 
 
 4% 
 
-2017/­03/­05  16:00:00  
+2017/­04/­05  16:00:00  
 
 P7 
 
@@ -168,7 +168,7 @@ Prototype and usability testing script 
 
 4% 
 
-2017/­03/­15  16:00:00   
+2017/­04/­15  16:00:00   
 
 P8 
 
@@ -176,7 +176,7 @@ Updated prototype and testing results 
 
 8% 
 
-2017/­03/­27  16:00:00  
+2017/­04/­27  16:00:00  
 
 P9 
 
@@ -184,7 +184,7 @@ Final project presentation 
 
 4% 
 
-2017/­03/­30  16:00:00 
+2017/­04/­30  16:00:00 
 
 A3 
 
@@ -192,7 +192,7 @@ Skin a wireframe 
 
 10% 
 
-2017/04/22  16:00:00
+2017/05/22  16:00:00
 
 P10 
 
@@ -200,4 +200,4 @@ Write/up and project submission 
 
 8% 
 
-2017/­04/­05  16:00:00  
+2017/­05/­05  16:00:00  
