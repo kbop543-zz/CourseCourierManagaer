@@ -112,6 +112,7 @@ app.post('/addMarkable',file.addMarkable);
 app.post('/addMarkableGrade',file.addMarkableGrade);
 app.post('/uploadSyllabus',file.uploadSyllabus);
 app.delete('/delCourse',file.delCourse);
+app.delete('/deleteMarkable',file.deleteMarkable);
 
 
 

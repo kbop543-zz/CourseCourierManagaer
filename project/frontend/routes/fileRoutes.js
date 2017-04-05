@@ -360,4 +360,43 @@ exports.delCourse = function(req, res){
       }
         res.send(username.courseObj);
       });
-    }
+}
+
+exports.deleteMarkable = function(req, res){
+  console.log("Deleting a markable.");
+
+  // Find the user first
+    User.findOne({
+        'username': req.session.username
+    }, function(err, username) {
+        if (err) throw err;
+
+        // If user found, remove the user and send success message
+        if (username != null) {
+
+          var calendarObj = JSON.parse(username.courseObj);
+          var courseIndex;
+          var markableIndex;
+          
+          for (var i = 0; i < calendarObj.courses.length; i++) { 
+            var courseCode = calendarObj.courses[i].courseCode.trim();
+            if (courseCode === req.query.courseName) {
+              courseIndex = i;
+              for (var j = 0; j < calendarObj.courses[courseIndex].markables.length; j++) { 
+                if (calendarObj.courses[courseIndex].markables[j].name === 
+                  req.query.markableName) {
+                  markableIndex = j;
+                }
+              }
+            }
+          }
+          calendarObj.courses[courseIndex].markables.splice(markableIndex,1);
+          
+          username.courseObj = JSON.stringify(calendarObj);
+          username.save(function(err) {
+            if (err) throw err;
+          })
+      }
+        res.send(username.courseObj);
+      });
+}
