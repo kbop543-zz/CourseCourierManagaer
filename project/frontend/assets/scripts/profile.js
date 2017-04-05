@@ -52,9 +52,9 @@ function signupSetup (){
         $('#lastName').val(data.lastName);
         $('#email').val(data.email);*/
 
-        $('#changeGrade').submit(function(event){
+        /*$('#changeGrade').submit(function(event){
         	('.gpaValue').text(gradeCalculator);
-        })
+        })*/
 
 		$('#profileChange').submit(function(event) {
 		console.log("this is called prime");
@@ -96,18 +96,18 @@ function dataCoursesParse(data){
 	if(ajson_object != null){
 		var courses = ajson_object.courses;
 		console.log(courses);
-		var toReturn = "<form id='changeGrade'><br>"
+		var toReturn = "<br>"
 
 		for(var i in courses){
 			// console.log(courses[i].courseCode);
 			if(courses[i].grade == null){
-				toReturn += ' ' +courses[i].courseCode +"<input type='text' name='grade" +i+"'  value='Grade: Not available'><br>";
+				toReturn += ' ' +courses[i].courseCode +"Grade: Not available <br>";
 			}
 			else{
-				toReturn += ' ' +courses[i].courseCode +'      Grade: '+"<input type='text' name='grade" +i+"' value="+courses[i].grade+"><br>";
+				toReturn += ' ' +courses[i].courseCode +'      Grade: '+ courses[i].grade + "<br>";
 			}
 		}
-		toReturn +="<br><input type='submit' value='Test GPA output here'>" +"</form>";
+		//toReturn +="<br><input type='submit' value='Test GPA output here'>" +"</form>";
 	
 		return toReturn;
 	} else {
@@ -130,7 +130,7 @@ function gradeCalculator(data){
 		console.log(courses[i].grade)
 		if(courses[i].grade != null){
 			
-			toReturn += courses[i].grade;
+			toReturn += parseInt(courses[i].grade);
 			console.log(toReturn);
 			count++;
 		}
