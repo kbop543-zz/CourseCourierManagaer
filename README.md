@@ -47,8 +47,19 @@ Lessons learnt:
 
 ### Hari Sharma(sharmah5) -1000637643
 
-* developed java objects to outline structure of entities and their relationships.
-** Useful when 
+* Developed java objects to outline structure of entities and their relationships in application.
+* Helped sort markables by due date, regardless of course. Displayed courses user currently takes, and upcoming deadlines.
+* Colour coded deliverables based on course in "My Courses" page
+* Organized and presented user profile data in "My Profile" page. Created form for user to change profile data.
+* Implemented "About" page, corrected redirections to "About" page from other pages, made "About" page appear after login.
+
+Lessons learnt:
+* Learned how to use javascript, css, and HTML, and how to link .js, .css, and .html files together.
+* Learned how to run MongoDB, and basics of NodeJS.
+* Learned how to parse through a JSON file to create objects in javascript.
+* Learned basics of html/css formatting - learned how to use forms, different fonts, buttons
+* Learned how to run Heroku both locally and on the web
+* Learned the importance of GitHub workflow - branching/forking to enable faster development without code mishaps
 
 ### Jeremy Gralla(JeremyGralla) -998907946
 
@@ -66,6 +77,6 @@ Lessons learnt:
 
 * Made sure 'my courses' view only had courses after todays date
 * Contributed to regex parsing
-* Did profile view of user
-* Made it possible for a user to edit their own profile
+* Rough implementation of profile view of user
+* Backend to enable user profile editing
 
