@@ -23,8 +23,7 @@ Lessons learnt:
 * learned about how to split up tasks among group members in order to get certain things done. Example: the benefits of trello vs github issues
 
 ### John Axon(doovongeman) -996966902
-
-John : 
+ 
 * built the JSON to calendar file generator
 * built the calendar servlet with Filip so that it downloads the the calendar of markables for the user
 * implemented the add markable feature
