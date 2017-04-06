@@ -3,7 +3,7 @@ CSC301, Winter 2017, team project.
 
 ## Personal Contributions
 
-### Filip Fabiszak (filipfabiszak)
+### Filip Fabiszak(filipfabiszak) -1001641137
 
 Set up backend framework (Java) and defined Course object definitions. Also implemented recommended start date algorithm as well as assorted work on the exportable calendar file generation, ui routing, and assorted documentation.
 
@@ -45,3 +45,8 @@ Lessons learnt:
 * learned how to more effectively use javascript and css to create a website
 * learned how to present JSON objects in a sensible manner on the frontend
 * learned how to coordinate with other developers on a larger project
+
+### Taha Kusculu (kuculuib)
+
+Set up upcoming markable sorting, contributed to regex parsing.
+
