@@ -59,5 +59,8 @@ Lessons learnt:
 
 ### Taha Kusculu (kuculuib)
 
-made sure 'my courses' view only had courses after todays date, contributed to regex parsing, did profile view of user and made it possible for a user to edit their own profile
+* Made sure 'my courses' view only had courses after todays date
+* Contributed to regex parsing
+* Did profile view of user
+* Made it possible for a user to edit their own profile
 
