@@ -5,7 +5,18 @@ CSC301, Winter 2017, team project.
 
 ### Filip Fabiszak(filipfabiszak) -1001641137
 
-Set up backend framework (Java) and defined Course object definitions. Also implemented recommended start date algorithm as well as assorted work on the exportable calendar file generation, ui routing, and assorted documentation.
+* Set up backend framework using Apache Tomcat 
+* Defined Course object definitions that would be used across the platform
+* Implemented recommended start date algorithm
+* Exportable calendar file generation using all provided courses
+* Implemented Course Management page as well as assorted UI work
+* Kept documentation up to date for teammates references
+
+Lessons learnt: 
+* Became much more familiar with Heroku deployment of webapps
+* Discovered and implemented many new libraries to help with data manipulation including Jackson, iCal4J, Guava and more 
+* Learned some useful JQuery and Javascript methods and trick I haven't known before
+* Helping fellow developers with ideas, bugs, questions, even when not asked to was quite valuable  
 
 ### Kyra Stephen(kbop543) -1001782038
 
