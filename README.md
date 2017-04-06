@@ -45,6 +45,11 @@ Lessons learnt:
 * Learned how to build a calendar file
 * Learned how to coordinate with a group of developers
 
+### Hari Sharma(sharmah5) -1000637643
+
+* developed java objects to outline structure of entities and their relationships.
+** Useful when 
+
 ### Jeremy Gralla(JeremyGralla) -998907946
 
 * built the html frontend for the website
