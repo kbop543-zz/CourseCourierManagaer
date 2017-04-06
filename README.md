@@ -48,5 +48,5 @@ Lessons learnt:
 
 ### Taha Kusculu (kuculuib)
 
-Set up upcoming markable sorting, contributed to regex parsing.
+made sure 'my courses' view only had courses after todays date, contributed to regex parsing, did profile view of user and made it possible for a user to edit their own profile
 
