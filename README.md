@@ -77,6 +77,5 @@ Lessons learnt:
 
 * Made sure 'my courses' view only had courses after todays date
 * Contributed to regex parsing
-* Rough implementation of profile view of user
 * Backend to enable user profile editing
 
