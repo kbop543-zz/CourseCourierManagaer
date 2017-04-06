@@ -47,7 +47,7 @@ Lessons learnt:
 
 ### Hari Sharma(sharmah5) -1000637643
 
-* Developed java objects to outline structure of entities and their relationships in application.
+* Developed java objects to outline structure of entities and their relationships in application, when backend was developed in Java.
 * Helped sort markables by due date, regardless of course. Displayed courses user currently takes, and upcoming deadlines.
 * Colour coded deliverables based on course in "My Courses" page
 * Organized and presented user profile data in "My Profile" page. Created form for user to change profile data.
