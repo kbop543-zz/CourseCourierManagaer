@@ -7,7 +7,7 @@ CSC301, Winter 2017, team project.
 
 Set up backend framework (Java) and defined Course object definitions. Also implemented recommended start date algorithm as well as assorted work on the exportable calendar file generation, ui routing, and assorted documentation.
 
-###Kyra Stephen(kbop543) -1001782038
+### Kyra Stephen(kbop543) -1001782038
 
 -built the parse-syllabus-file algorithm and made it output json 
 -sorted the courses by due date once uploaded
