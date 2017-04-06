@@ -33,3 +33,15 @@ Lessons learnt:
 * Learned how to use javascript, how to make post and delete calls work, how to update a mongo database
 * Learned how to build a calendar file
 * Learned how to coordinate with a group of developers
+
+### Jeremy Gralla(JeremyGralla) -998907946
+
+* built the html frontend for the website
+* styled the entire frontend (with input from the rest of the group)
+* parsed JSON files in order to set up the course view on the website
+* assisted with styling other members' parts of the project
+
+Lessons learnt:
+* learned how to more effectively use javascript and css to create a website
+* learned how to present JSON objects in a sensible manner on the frontend
+* learned how to coordinate with other developers on a larger project
