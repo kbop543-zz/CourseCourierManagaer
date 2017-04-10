@@ -1,3 +1,41 @@
+function addMarkable (courseName) {
+        console.log(courseName);
+        $("main").empty();
+        $("main").append('<h2 id = "addMarkable"> Add a markable to a course </h2>');
+        $("h2#addMarkable").append('<ul><li>' + courseName);
+
+        //append form to h2#courselist here
+        $("h2#addMarkable").append('<form id="addMarkableForm">' +
+            '<input type="text" placeholder ="Markable name" name="markableName">' +
+            '<br>' +
+            '<input type="text" placeholder ="Description" name="description">' +
+            '<br>' +
+            '<input type="text" placeholder ="Weight" name="weight">' +
+            '<br>' +
+            '<input type="text" placeholder ="Due Date" name="dueDate">' +
+            '<br>' +
+            '<input type="submit" value="Confirm">' +
+            '<input type="reset" value="Reset">' +
+            '<br>' +
+            '</form>');
+
+        $('#addMarkable').submit(function(event) {
+            console.log("submitting");
+            event.preventDefault();
+            // serialize form
+            let formData = $('#addMarkable').serialize();
+            // ajax post thing to server file thing
+            $.post('/addMarkable', formData, function(data) {
+                alert('Markable added');
+                window.location.replace('/courses');
+            })
+            .fail(function(response) {
+                alert(response.responseText);
+            });
+          // return false;
+        });
+}
+
 function deleteMarkable(courseName, markableName){
      // Send delete AJAX
             $.ajax({
@@ -115,7 +153,7 @@ function loadCourses () {
           console.log("SUCCESSFULLY UPLOADED THE JSON, CAN NOW DOWNLOAD A CAL FILE IF YOU CLICK THE BUTTON");
         });
     }).fail(function(response){
-        alert(response.responseText);
+        //alert(response.responseText);
         });
 }
 

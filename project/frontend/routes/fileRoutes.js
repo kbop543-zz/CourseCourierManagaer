@@ -224,6 +224,7 @@ exports.parsePdf = function(req, res) {
 /* Add Markable */
 exports.addMarkable = function(req, res) {
     console.log('addMarkable');
+    console.log(req.body);
     if(req.session.username != null){
       User.findOne({'username': req.session.username}, function(err, username){
         var calendarObj = JSON.parse(username.courseObj);

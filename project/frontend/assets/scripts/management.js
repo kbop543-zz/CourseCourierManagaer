@@ -61,15 +61,15 @@ function addMarkable (courseName) {
             '<br>' +
             '</form>');
 
-        $('#addMarkable').submit(function(event) {
+        $('#addMarkableForm').submit(function(event) {
             console.log("submitting");
             event.preventDefault();
             // serialize form
-            let formData = $('#addMarkable').serialize();
+            let formData = $('#addMarkableForm').serialize();
             // ajax post thing to server file thing
             $.post('/addMarkable', formData, function(data) {
                 alert('Markable added');
-                window.location.replace('/courses');
+                window.location.replace('/management');
             })
             .fail(function(response) {
                 alert(response.responseText);
