@@ -39,7 +39,7 @@ exports.uploadSyllabus = function(req, res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.sendfile('views/courses.html');
+        res.sendfile('views/index.html');
     });
 
 }
@@ -210,7 +210,12 @@ exports.parsePdf = function(req, res) {
       if(req.session.username != null){
         User.findOne({'username': req.session.username}, function(err, username){
           // console.log(username.courseObj);
-          res.send(username.courseObj);
+          if(username.courseObj == null){
+            res.send("You haven't uploaded anything yet!");
+
+          }else{
+            res.send(username.courseObj);
+          }
         });
       }
     }
@@ -219,6 +224,7 @@ exports.parsePdf = function(req, res) {
 /* Add Markable */
 exports.addMarkable = function(req, res) {
     console.log('addMarkable');
+    console.log(req.body);
     if(req.session.username != null){
       User.findOne({'username': req.session.username}, function(err, username){
         var calendarObj = JSON.parse(username.courseObj);
@@ -271,15 +277,134 @@ exports.addMarkableGrade = function(req, res){
               if(markableName == req.query.markableName){
                 console.log(markableName);
                 usernameCourses.courses[i].markables[j].grade =req.body.markableGrade;
-                username.courseObj = usernameCourses;
                 break;
-                //use this to calculate overall course grade: http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
               }
             }
-            break;
           }
         }
+
+        for(let i = 0; i< usernameCourses.courses.length; i++){
+
+          let course = usernameCourses.courses[i].courseCode;
+          console.log("reading courses from schema" + course);
+          if(course == req.query.courseName){
+            var denominator = 0;
+            var numerator = 0;
+            
+            //calculate course grade using http://faculty.weber.edu/brandonkoford/Howtocalculateyourgrade.pdf
+            for(let j = 0; j< usernameCourses.courses[i].markables.length;
+              j++){
+
+              let markableGrade = usernameCourses.courses[i].markables[j].grade;
+            if(markableGrade != null){
+            //markableGrade = markableGrade.slice(0,-1);
+            console.log(markableGrade);
+              let markableWeight = usernameCourses.courses[i].markables[j].weight;
+               markableWeight = markableWeight.replace('%',"");
+              console.log('markable weight: ' + markableWeight);
+              //if there is a grade with the markable add its weight to the denominator
+              //and multiply grade and weight here
+              
+                denominator += parseFloat(markableWeight);
+                //console.log(denominator);
+                console.log('denominator: ' + denominator + ' for ' + usernameCourses.courses[i].markables[j].name);
+                
+                //numerator here
+                var totalDecimal = parseFloat(parseFloat(denominator)/100);
+                var decimal = parseFloat(parseFloat(markableWeight)/100)
+                console.log('decimal is '+ decimal);
+
+                numerator += markableGrade * decimal;
+                console.log('numerator:' + numerator + ' for ' + usernameCourses.courses[i].markables[j].name);
+                usernameCourses.courses[i].grade = (numerator /totalDecimal).toFixed(2);
+                console.log(usernameCourses.courses[i].grade);
+                console.log('___________________________')
+                username.courseObj = JSON.stringify(usernameCourses);
+
+                //console.log(username.courseObj.courses[i].markables[j]);
+            }
+                
+              }
+            }
+            
+          }
+        
+        username.save(function(err) {
+        if (err) throw err;
+      })
+        //console.log(username.courseObj);
         res.send(username.courseObj);
       })
   }
+}
+
+exports.delCourse = function(req, res){
+  console.log("Deleting a course.");
+
+  // Find the user first
+    User.findOne({
+        'username': req.session.username
+    }, function(err, username) {
+        if (err) throw err;
+
+        // If user found, remove the user and send success message
+        if (username != null) {
+
+
+          var calendarObj = JSON.parse(username.courseObj);
+          var index;
+        
+        for (var i = 0; i < calendarObj.courses.length; i++) { 
+          if (calendarObj.courses[i].courseCode.search(req.query.courseName) != -1) {
+            index = i;
+          }
+        }
+        calendarObj.courses.splice(index,1);
+        
+        username.courseObj = JSON.stringify(calendarObj);
+        username.save(function(err) {
+          if (err) throw err;
+        })
+      }
+        res.send(username.courseObj);
+      });
+}
+
+exports.deleteMarkable = function(req, res){
+  console.log("Deleting a markable.");
+
+  // Find the user first
+    User.findOne({
+        'username': req.session.username
+    }, function(err, username) {
+        if (err) throw err;
+
+        // If user found, remove the user and send success message
+        if (username != null) {
+
+          var calendarObj = JSON.parse(username.courseObj);
+          var courseIndex;
+          var markableIndex;
+          
+          for (var i = 0; i < calendarObj.courses.length; i++) { 
+            var courseCode = calendarObj.courses[i].courseCode.trim();
+            if (courseCode === req.query.courseName) {
+              courseIndex = i;
+              for (var j = 0; j < calendarObj.courses[courseIndex].markables.length; j++) { 
+                if (calendarObj.courses[courseIndex].markables[j].name === 
+                  req.query.markableName) {
+                  markableIndex = j;
+                }
+              }
+            }
+          }
+          calendarObj.courses[courseIndex].markables.splice(markableIndex,1);
+          
+          username.courseObj = JSON.stringify(calendarObj);
+          username.save(function(err) {
+            if (err) throw err;
+          })
+      }
+        res.send(username.courseObj);
+      });
 }

@@ -19,6 +19,34 @@ html {
    margin-bottom: 100px;
    clear: both;
 }
+
+/*#profileCard {
+     width: 565px;
+    min-height: 250px;
+    background: white;
+    padding: 25px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    display: inline-block;
+}*/
+
+#profileHeading {
+    font-size: 30px;
+    color: #000000;
+}
+
+#profileSubHeading {
+    font-size: 28px;
+    text-decoration: underline;
+    color: #000000;
+}
+
+#profileBody {
+    font-size: 26px;
+    color: #000000;
+}
+
 #signUpForm {
     width: 220px;
     padding: 15px;
@@ -76,17 +104,19 @@ nav a:hover,footer a:hover {
     background: #66A5AD;
 }
 input[type=button],input[type=submit], input[type=reset]{
-	 color: #66A5AD;
-	 border: 2px solid;
-	 border-color: #C4DFE6;
-	 border-radius: 25px;
+     color: #66A5AD;
+     border: 2px solid;
+     border-color: #C4DFE6;
+     border-radius: 25px;
    outline: none;
+   
  }
 input[type=button]:hover,input[type=submit]:hover, input[type=reset]:hover{
-	 color: #66A5AD;
-	 border: 2px solid;
-	 border-color: #66A5AD;
-	 border-radius: 25px;
+     color: #66A5AD;
+     border: 2px solid;
+     border-color: #66A5AD;
+     border-radius: 25px;
+     
 }
 input{
     padding: 14px 16px;
@@ -99,17 +129,17 @@ input[type=file] {
 input[type=text] {
   width: 100%;
   box-sizing: border-box;
-	border: 2px solid;
-	border-color: #66A5AD;
-	border-radius: 25px;
+    border: 2px solid;
+    border-color: #66A5AD;
+    border-radius: 25px;
   outline: none;
 }
 input[type=password] {
     width: 25%;
     box-sizing: border-box;
-	border: 2px solid;
-	border-color: #66A5AD;
-	border-radius: 25px;
+    border: 2px solid;
+    border-color: #66A5AD;
+    border-radius: 25px;
   outline: none;
 }
 footer {
@@ -121,118 +151,168 @@ footer {
 
 #signUp{
     display: none;
-	text-align: center;
+    text-align: center;
 }
 
 #courselist{
     color: #003B46;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+
+
 }
 
 #courselist2{
     color: #003B46;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
 }
 
 #mark1{
     list-style-type: none;
     font-size: 24px;
     color: #FFFFFF;
-    background: #0066cc;
+    background: #068D9D;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
-}
 
+}
+#mark1 input[type=button]{
+    color: #FFFFFF;
+    background: #068D9D;
+    width: 25%;
+} 
 #mark2{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #ff3300;
+    color: #7F055F;
+    background: #80DED9;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark2 input[type=button]{
+    color: #7F055F;
+    background: #80DED9;
+    width: 25%;
+}
 #mark3{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #33cc33;
+    color: #A78682;
+    background: #53599A;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark3 input[type=button]{
+    color: #A78682;
+    background: #53599A;
+    width: 25%;
+}
 #mark4{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #ff3399;
+    color: #A7ADC6;
+    background: #33658A;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark4 input[type=button]{
+    color: #A7ADC6;
+    background: #33658A;
+    width: 25%;
+}
 #mark5{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #996633;
+    color: #CEA07E;
+    background: #129490;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark5 input[type=button]{
+    color: #CEA07E;
+    background: #129490;
+    width: 25%;
+}
 #mark6{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #9933ff;
+    color: #AFD2E9;
+    background: #9D96B8;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark6 input[type=button]{
+    color: #AFD2E9;
+    background: #9D96B8;
+    width: 25%;
+}
 #mark7{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #999966;
+    color: #F0386B;
+    background: #6B2D5C;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark7 input[type=button]{
+    color: #F0386B;
+    background: #6B2D5C;
+    width: 25%;
+}
 #mark8{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #009999;
+    color: #7353BA;
+    background: #2F195F;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark8 input[type=button]{
+    color: #7353BA;
+    background: #2F195F;
+    width: 25%;
+}
 #mark9{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #cccc00;
+    color: #C9B1BD;
+    background: #B49594;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
-
+#mark9 input[type=button]{
+    color: #C9B1BD;
+    background: #B49594;
+    width: 25%;
+}
 #mark10{
     list-style-type: none;
     font-size: 24px;
-    color: #FFFFFF;
-    background: #339966;
+    color: #7F9172;
+    background: #567568;
     padding: 10 px;
     border: 2px solid;
     border-radius: 25px;
 }
+#mark10 input[type=button]{
+    color: #7F9172;
+    background: #567568;
+    width: 25%;
+}
 #loginpage{
-	text-align:center;
+    text-align:center;
 }
 /*
 Responsive UI stuff to be added

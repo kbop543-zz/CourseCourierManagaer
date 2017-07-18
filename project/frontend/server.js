@@ -67,11 +67,11 @@ app.get('/courses', function(req, res) {
 
 });
 
-app.get('/myMarks', function(req, res) {
+app.get('/management', function(req, res) {
     if (req.session.username == undefined) {
         res.sendfile('views/login.html');
     }else {
-        res.sendfile('views/myMarks.html');
+        res.sendfile('views/management.html');
     }
 
 });
@@ -81,6 +81,14 @@ app.get('/addMarkable', function(req, res) {
         res.sendfile('views/login.html');
     } else {
         res.sendfile('views/addMarkable.html');
+    }
+});
+
+app.get('/about', function(req, res) {
+    if (req.session.username == undefined) {
+        res.sendfile('views/login.html');
+    } else {
+        res.sendfile('views/about.html');
     }
 });
 
@@ -103,6 +111,7 @@ var usersDb = require('./models/user');
 //user routes
 app.post('/createAccount', users.signUp);
 app.post('/signIn', users.signIn);
+app.post('/modifyUser',users.modifyUser);
 app.get('/getOneUser', users.getOneUser);
 
 //file routes
@@ -110,6 +119,8 @@ app.post('/parsePdf',file.parsePdf);
 app.post('/addMarkable',file.addMarkable);
 app.post('/addMarkableGrade',file.addMarkableGrade);
 app.post('/uploadSyllabus',file.uploadSyllabus);
+app.delete('/delCourse',file.delCourse);
+app.delete('/deleteMarkable',file.deleteMarkable);
 
 
 

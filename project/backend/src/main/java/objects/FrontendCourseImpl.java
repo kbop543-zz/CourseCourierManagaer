@@ -13,17 +13,21 @@ public class FrontendCourseImpl implements FrontendCourse
 
 	private final String courseName;
 
+	private final float grade;
+
 	private final List< FrontendMarkable > markables;
 
 	public FrontendCourseImpl(
 			@JsonProperty( "courseCode" ) final String code,
 			@JsonProperty( "courseName" ) final String name,
+			@JsonProperty( "grade" ) final float grade,
 			@JsonProperty( "markables" ) final List< FrontendMarkable > markables )
 	{
 
 		this.courseCode = Preconditions.checkNotNull( code, "Precondition. code is NULL in CourseImpl::CourseImpl" );
 		this.courseName = Preconditions.checkNotNull( name, "Precondition. description is NULL in CourseImpl::CourseImpl" );
 		this.markables = Preconditions.checkNotNull( markables, "Precondition. markables is NULL in CourseImpl::CourseImpl" );
+		this.grade = grade;
 	}
 
 	public String getCourseCode()
@@ -35,6 +39,12 @@ public class FrontendCourseImpl implements FrontendCourse
 	{
 		return courseName;
 	}
+
+	public float getGrade()
+	{
+		return grade;
+	}
+
 
 	public List< FrontendMarkable > getMarkables()
 	{
@@ -57,5 +67,4 @@ public class FrontendCourseImpl implements FrontendCourse
 		}
 		return false;
 	}
-
 }

@@ -52,7 +52,7 @@ $(document).ready(function(){
         $('#info').hide();
     });
     $('#about').click(function () {
-        $('#info').show();
+        $('#about').show();
         $('#uploadPdf').hide();
     });
     $('#home').click(function () {
